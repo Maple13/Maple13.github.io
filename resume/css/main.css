@@ -82,8 +82,8 @@ a {
 .return_blog {
 	width: 250px;
 	position:fixed;
-	top:27px;
-	right:-40px;
+	top:0;
+	right:0;
 	_position:absolute;
 	z-index: 999;
     margin: 30px -60px 0 0;
