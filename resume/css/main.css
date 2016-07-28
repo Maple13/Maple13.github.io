@@ -80,17 +80,18 @@ a {
 
 /* 丝带包角 */
 .return_blog {
-	width: 300px;
+	width: 250px;
 	position:fixed;
 	top:27px;
 	right:-40px;
 	_position:absolute;
 	z-index: 999;
+    margin: 30px -60px 0 0;
 
 	/* Rotate div */
-	transform:rotate(387deg);
-	-ms-transform:rotate(387deg); /* IE 9 */
-	-webkit-transform:rotate(387deg); /* Safari and Chrome */
+	transform:rotate(40deg);
+	-ms-transform:rotate(40deg); /* IE 9 */
+	-webkit-transform:rotate(40deg); /* Safari and Chrome */
 }
 .return_blog img {
 	max-width: 100%;
