@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>枫小生的博客</title>
+  <subtitle>自己认为的很努力，对比别人只是表面上的努力而已！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="maple13.github.io/"/>
+  <updated>2016-07-04T09:11:52.000Z</updated>
+  <id>maple13.github.io/</id>
+  
+  <author>
+    <name>Maple13</name>
+    <email>Mr_daijc@163.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IE 条件语句</title>
+    <link href="maple13.github.io/2016/07/04/2016-07-04/"/>
+    <id>maple13.github.io/2016/07/04/2016-07-04/</id>
+    <published>2016-07-04T07:39:20.000Z</published>
+    <updated>2016-07-04T09:11:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><blockquote>
+<p>IE 条件语句包含在HTML注释语句中，只会被 IE 浏览器识别并执行，其他浏览器视其为HTML注释语句，于是全部被忽略，灵活使用IE 条件语句可以开发出兼容不同版本的IE浏览器的样式。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>如果留意一下有些网站的源代码，有时会发现一些这样的代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE5]&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">    /*将IE5*的CSS盒模型宽高计算修正放在这个条件注释中*/</div><div class="line">    <span class="comment">#Test1 &#123; width: 180px; &#125;</span></div><div class="line">    <span class="comment">#Test2 &#123; width: 190px; &#125;</span></div><div class="line">&lt;/style&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;link href=<span class="string">"css/index.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</div><div class="line">&lt;!--[<span class="keyword">if</span> IE7]&gt;</div><div class="line">&lt;link href=<span class="string">"css/ie7.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line">&lt;!--[<span class="keyword">if</span> IE6]&gt;</div><div class="line">&lt;link href=<span class="string">"css/ie7.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><em>&lt;!–</em> 和 <em>–&gt;</em>标识符配对使用表示HTML注释语句。但是IE会把这些特殊的注释语句当做一个简单的逻辑语句进行解析。</p>
+</blockquote>
+<p>#</p>
+<blockquote>
+<ul>
+<li><p>上面的第一段注释，表示如果当前浏览器是IE浏览器，则解析<em>&lt;!–[if IE]&gt;</em> 和 <em>&lt;![endif]–&gt;</em>标识符之间的样式表。而其他浏览器视而不见，当做注释语句全部忽略。因此可以在此放置一些能够兼容IE浏览器的样式代码。</p>
+</li>
+<li><p>在上面的第二段代码中，分别使用了不同的条件语句来设置不同版本的IE浏览器中链接不同的CSS文件，这样，不同版本的IE浏览器就可以导入不同的样式表，以实现兼容性。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="IE条件语句的基本用法"><a href="#IE条件语句的基本用法" class="headerlink" title="IE条件语句的基本用法"></a>IE条件语句的基本用法</h2><p>IE 条件语句一般放在HTML注释语句中，这样可以避免其他浏览器因为无法解析这些条件语句时可能出现的尴尬。其基本语法如下：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE]&gt;</div><div class="line">    IE 下可执行语句</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>条件语句放在中括号内，然后嵌入到HTML注释中。注意，起始条件标记中省略了HTML注释语句的后半部分标记（– –&gt;），而结束标记中省略了HTML注释语句的前半部分标记（!– –），仅是一个半封闭的形式，这样对于其他浏览器来说，前后两个半封闭的HTML注释标记就形成了一个完整的注释标记，从而避免了由于其他浏览器无法解析的尴尬。</li>
+<li>IE浏览器在解析HTML源码时，如果遇到类似<em>&lt;!–[if IE]&gt;</em>或<em>&lt;![endif]–&gt;</em>标记时，会立即解析其中包含的源代码。</li>
+<li>在IE条件中可以放置一些简单的条件语句，或者设置成只能够在特定版本的浏览器中生效的源代码。</li>
+</ul>
+</blockquote>
+<p>#</p>
+<blockquote>
+<p>除了使用这些指定某种版本浏览器的条件语句之外，还可以结合 <strong>lte、lt、get、gt、！</strong>关键字来定义IE浏览器的版本范围，这些关键字的说明如下：<br>``` ruby</p>
+<ul>
+<li>lte: 小于或等于某个版本的IE浏览器。</li>
+<li>lt: 小于某个版本的IE浏览器。</li>
+<li>gte： 大于或等于某个版本的IE浏览器。</li>
+<li>gt： 大于某个版本的IE浏览器。</li>
+<li>！：不等于某个版本的IE浏览器。</li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;用途&quot;&gt;&lt;a href=&quot;#用途&quot; class=&quot;headerlink&quot; title=&quot;用途&quot;&gt;&lt;/a&gt;用途&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;IE 条件语句包含在HTML注释语句中，只会被 IE 浏览器识别并执行，其他浏览器视其为HTML注释语句，于是全部被忽略，灵活使用IE 条件语句可以开发出兼容不同版本的IE浏览器的样式。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="浏览器" scheme="maple13.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="CSS" scheme="maple13.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 3 下编辑Markdown文件后在浏览器下自动刷新预览</title>
+    <link href="maple13.github.io/2016/06/22/2016-06-22/"/>
+    <id>maple13.github.io/2016/06/22/2016-06-22/</id>
+    <published>2016-06-22T08:08:20.000Z</published>
+    <updated>2016-06-29T03:43:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><blockquote>
+<p>近日在Sublime中编辑Markdown文件时想要实时预览一下,于是在网上寻找到了一种比较简单有效的方法，此方法来源于网上的Volcano大神，他的<a href="http://www.ooso.net/archives/611" target="_blank" rel="external">博客</a>，他的<a href="https://github.com/volca/markdown-preview" target="_blank" rel="external">GitHub</a>地址。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="安装Sublime-Text-3"><a href="#安装Sublime-Text-3" class="headerlink" title="安装Sublime Text 3"></a>安装Sublime Text 3</h3><blockquote>
+<ul>
+<li>请前往<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>官网下载Sublime软件并安装</li>
+</ul>
+</blockquote>
+<h3 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h3><blockquote>
+<p>下载用于实时预览Markdown文件的Chrome插件。</p>
+<ul>
+<li><p>使用Git方式下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git://github.com/volca/markdown-preview.git</div></pre></td></tr></table></figure>
+</li>
+<li><p>Zip包<a href="https://github.com/volca/markdown-preview/archive/master.zip" target="_blank" rel="external">下载</a></p>
+</li>
+<li><a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl" target="_blank" rel="external">Chrome 网上应用店下载扩展</a></li>
+</ul>
+</blockquote>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote>
+<ol>
+<li>找到上一步第一、二个方法下载的<strong> markdown-preview </strong>文件夹</li>
+<li>开启chrome扩展的开发者模式，具体位置在<strong> 设置 </strong> -&gt; <strong> 扩展程序 </strong>里</li>
+<li><strong> 加载已解压的扩展程序 </strong></li>
+<li>将<strong> 允许访问文件网址 </strong>勾选上</li>
+</ol>
+<p>然后你就可以尝试用chrome浏览器打开markdown文件预览了，采用趁手的编辑器去修改它。它会在浏览器自动刷新！</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;来源&quot;&gt;&lt;a href=&quot;#来源&quot; class=&quot;headerlink&quot; title=&quot;来源&quot;&gt;&lt;/a&gt;来源&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;近日在Sublime中编辑Markdown文件时想要实时预览一下,于是在网上寻找到了一种比较简单有效的方法，此方法来源于网上的Volcano大神，他的&lt;a href=&quot;http://www.ooso.net/archives/611&quot;&gt;博客&lt;/a&gt;，他的&lt;a href=&quot;https://github.com/volca/markdown-preview&quot;&gt;GitHub&lt;/a&gt;地址。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Sublime" scheme="maple13.github.io/tags/Sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World！</title>
+    <link href="maple13.github.io/2015/09/17/Hello-world/"/>
+    <id>maple13.github.io/2015/09/17/Hello-world/</id>
+    <published>2015-09-17T08:22:52.000Z</published>
+    <updated>2016-06-27T02:09:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! 以下是Hexo的一些常用命令，如果需要详细了解,可以前往 <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> 查询详细文档. 如果你在使用Hexo时出现问题，你可以在<a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a>搜索答案,或者可以前往Hexo的<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>上提出问题.</p>
+<a id="more"></a>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! 以下是Hexo的一些常用命令，如果需要详细了解,可以前往 &lt;a href=&quot;http://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; 查询详细文档. 如果你在使用Hexo时出现问题，你可以在&lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt;搜索答案,或者可以前往Hexo的&lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;上提出问题.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="maple13.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
