@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="maple13.github.io/"/>
-  <updated>2017-07-24T14:51:37.000Z</updated>
+  <updated>2017-07-24T17:00:34.000Z</updated>
   <id>maple13.github.io/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React-redux 初识</title>
+    <link href="maple13.github.io/2017/07/25/2017-07-25/"/>
+    <id>maple13.github.io/2017/07/25/2017-07-25/</id>
+    <published>2017-07-24T16:58:10.000Z</published>
+    <updated>2017-07-24T17:00:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>React-redux 对外提供的 API 有四个：<code>Provider</code>/<code>createProvider</code>/<code>connectAdvanced</code>/<code>connect</code></p>
+</blockquote>
+<h3 id="connectAdvanced"><a href="#connectAdvanced" class="headerlink" title="connectAdvanced"></a><code>connectAdvanced</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connectAdvanced(selectorFactory, [connectOptions])</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p><code>connectAdvanced</code> 用来连接组件到 <code>Redux</code> 的 <code>store</code> 上。是 <code>connect</code> 函数的基础，但并没有规定如果将 <code>state</code> 、<code>props</code> 、 <code>dispatch</code> 处理传入最终的 <code>props</code> 中。</p>
+<p> <code>connectAdvanced</code> 并没有对产生的 <code>props</code> 做缓存来优化性能，都留给了调用者去实现。<br> <code>connectAdvanced</code> 并没有修改传入的组件类，而是返回一个新的、连接到 <code>store</code> 的组件类。</p>
+</blockquote>
+<p>返回：</p>
+<blockquote>
+<p>函数返回一个高阶组件，该高阶组件将从 store 的 state 中构建的 props 传递给被包裹组件。</p>
+</blockquote>
+<h3 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h3><blockquote>
+<p><code>Provider</code> 使组件层级中的 <code>connect()</code> 方法都能获取到 <code>Redux Store</code> 。<br>正常情况下，你的根组件应该嵌套在 <code>&lt;Provider&gt;</code> 中才能使用 <code>connect()</code> 方法。</p>
+<p>如果你真的不想把根组件嵌套在 <code>&lt;Provider&gt;</code> 中，你可以把 <code>store</code> 作为 <code>props</code> 传递到每一个被 <code>connet()</code> 包装的组件，但是我们只推荐您在单元测试中对 <code>store</code> 进行伪造 (stub) 或者在非完全基于 React 的代码中才这样做。<br>正常情况下，你应该使用 <code>&lt;Provider&gt;</code>。</p>
+</blockquote>
+<h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a><code>connect()</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</div></pre></td></tr></table></figure>
+<blockquote>
+<p>连接 React 组件与 Redux store。<br>连接操作不会改变原来的组件类。<br>反而返回一个新的与 Redux store 连接的组件类。</p>
+</blockquote>
+<p>返回值：</p>
+<blockquote>
+<p>根据配置信息，返回一个注入了 state 和 action creator 的 React 组件。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;React-redux 对外提供的 API 有四个：&lt;code&gt;Provider&lt;/code&gt;/&lt;code&gt;createProvider&lt;/code&gt;/&lt;code&gt;connectAdvanced&lt;/code&gt;/&lt;code&gt;connect&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;connectAdvanced&quot;&gt;&lt;a href=&quot;#connectAdvanced&quot; class=&quot;headerlink&quot; title=&quot;connectAdvanced&quot;&gt;&lt;/a&gt;&lt;code&gt;connectAdvanced&lt;/code&gt;&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;connectAdvanced(selectorFactory, [connectOptions])&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="React" scheme="maple13.github.io/tags/React/"/>
+    
+      <category term="React-redux" scheme="maple13.github.io/tags/React-redux/"/>
+    
+  </entry>
   
   <entry>
     <title>React 数据流与组件间通信</title>
