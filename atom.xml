@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="maple13.github.io/"/>
-  <updated>2017-07-19T10:23:15.000Z</updated>
+  <updated>2017-07-24T04:20:03.000Z</updated>
   <id>maple13.github.io/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 理解集锦</title>
+    <link href="maple13.github.io/2017/07/24/2017-07-24/"/>
+    <id>maple13.github.io/2017/07/24/2017-07-24/</id>
+    <published>2017-07-24T04:16:11.000Z</published>
+    <updated>2017-07-24T04:20:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-生命周期常用方法"><a href="#React-生命周期常用方法" class="headerlink" title="React 生命周期常用方法"></a>React 生命周期常用方法</h2><p>实例化：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillMount</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">render</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>存在期：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillReceiveProps</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">shouldComponentUpdate</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentWillUpdate</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">render</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<p>销毁期：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillUnmount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p>
+<h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote>
+<p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p>
+</blockquote>
+<h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote>
+<p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p>
+</blockquote>
+<h2 id="在生命周期中的哪一步应该发起-AJAX-请求？"><a href="#在生命周期中的哪一步应该发起-AJAX-请求？" class="headerlink" title="在生命周期中的哪一步应该发起 AJAX 请求？"></a>在生命周期中的哪一步应该发起 <code>AJAX</code> 请求？</h2><p>我们应该将 <code>AJAX</code> 请求放在 <code>componentDidMount</code> 函数中执行，主要原因是：</p>
+<blockquote>
+<p>React 下一代调和算法 <code>Fiber</code> 会通过开始或停止渲染的方式优化应用性能，其会影响到 <code>componentWillMount</code> 的触发次数。<br>    对于 <code>componentWillMount</code> 这个生命周期函数的调用次数会变得不确定，React 可以会多次频繁调用 <code>componentWillMount</code> 。如果我们将 AJAX 请求放在 <code>componentWillMount</code> 函数中，那么显而易见其会被触发多次，自然不是好选择。</p>
+<p>如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了setState函数将数据添加到组件状态中，对于未挂载的组件则会报错。<br>而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。</p>
+</blockquote>
+<h2 id="shouldComponentUpdate-的作用是啥以及为何它这么重要？"><a href="#shouldComponentUpdate-的作用是啥以及为何它这么重要？" class="headerlink" title="shouldComponentUpdate 的作用是啥以及为何它这么重要？"></a><code>shouldComponentUpdate</code> 的作用是啥以及为何它这么重要？</h2><blockquote>
+<p><code>shouldComponentUpdate</code> 允许我们手动的判断是否要进行组件更新，根据组件的应用场景设置函数的合理返回值能够帮我们避免不必要的更新。</p>
+</blockquote>
+<h2 id="React-中的事件处理逻辑"><a href="#React-中的事件处理逻辑" class="headerlink" title="React 中的事件处理逻辑"></a>React 中的事件处理逻辑</h2><blockquote>
+<p>为了解决跨浏览器兼容性问题，React 会将浏览器原生事件封装为合成事件传入设置的事件处理器中。这里的合成事件提供了与原生事件相同的接口，不过它们屏蔽了底层浏览器的细节差异，保证了行为的一致性。另外有意思的是，React 并没有直接将事件附着到子元素上，而是以单一事件监听器的方式将所有的事件发送到顶层进行处理。这样 React 在更新 DOM 的时候就不需要考虑如何去处理附着在 DOM 上的事件监听器，最终达到优化性能的目的。</p>
+</blockquote>
+<h2 id="createElement-与-cloneElement-的区别是什么？"><a href="#createElement-与-cloneElement-的区别是什么？" class="headerlink" title="createElement 与 cloneElement 的区别是什么？"></a><code>createElement</code> 与 <code>cloneElement</code> 的区别是什么？</h2><blockquote>
+<p><code>createElement</code> 函数是 <code>JSX</code> 编译之后使用的创建 React Element 的函数，而 <code>cloneElement</code> 则是用于复制某个元素并传入新的 <code>Props</code> 。</p>
+</blockquote>
+<h2 id="传入-setState-函数的第二个参数的作用是什么？"><a href="#传入-setState-函数的第二个参数的作用是什么？" class="headerlink" title="传入 setState 函数的第二个参数的作用是什么？"></a>传入 <code>setState</code> 函数的第二个参数的作用是什么？</h2><blockquote>
+<p>该函数会在 <code>setState</code> 函数调用完成并且组件开始重新渲染的时候被调用，我们可以用该函数来监听渲染是否完成。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;React-生命周期常用方法&quot;&gt;&lt;a href=&quot;#React-生命周期常用方法&quot; class=&quot;headerlink&quot; title=&quot;React 生命周期常用方法&quot;&gt;&lt;/a&gt;React 生命周期常用方法&lt;/h2&gt;&lt;p&gt;实例化：&lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;componentWillMount&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;componentDidMount&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="React" scheme="maple13.github.io/tags/React/"/>
+    
+      <category term="面试题" scheme="maple13.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>前端常见知识归纳</title>

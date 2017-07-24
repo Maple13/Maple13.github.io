@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="maple13.github.io">
-  <title>Archives: 2016/7 | 枫小生的博客</title>
+  <title>React 理解集锦 | 枫小生的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习、积累、记录，为了进步！">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="枫小生的博客">
-<meta property="og:url" content="maple13.github.io/archives/2016/07/index.html">
+  <meta name="description" content="React 生命周期常用方法实例化： 123componentWillMount()render()componentDidMount()">
+<meta name="keywords" content="React,面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 理解集锦">
+<meta property="og:url" content="maple13.github.io/2017/07/24/2017-07-24/index.html">
 <meta property="og:site_name" content="枫小生的博客">
-<meta property="og:description" content="学习、积累、记录，为了进步！">
+<meta property="og:description" content="React 生命周期常用方法实例化： 123componentWillMount()render()componentDidMount()">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-24T04:20:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="枫小生的博客">
-<meta name="twitter:description" content="学习、积累、记录，为了进步！">
+<meta name="twitter:title" content="React 理解集锦">
+<meta name="twitter:description" content="React 生命周期常用方法实例化： 123componentWillMount()render()componentDidMount()">
   
     <link rel="alternative" href="/atom.xml" title="枫小生的博客" type="application/atom+xml">
   
@@ -152,64 +153,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2017-07-24" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/07/04/2016-07-04/" class="archive-article-date">
-  	<time datetime="2016-07-04T07:39:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/04/2016-07-04/">IE 条件语句</a>
+    <h1 class="article-title" itemprop="name">
+      React 理解集锦
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/24/2017-07-24/" class="archive-article-date">
+  	<time datetime="2017-07-24T04:16:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="React-生命周期常用方法"><a href="#React-生命周期常用方法" class="headerlink" title="React 生命周期常用方法"></a>React 生命周期常用方法</h2><p>实例化：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillMount</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">render</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>存在期：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillReceiveProps</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">shouldComponentUpdate</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentWillUpdate</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">render</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<p>销毁期：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillUnmount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p>
+<h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote>
+<p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p>
+</blockquote>
+<h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote>
+<p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p>
+</blockquote>
+<h2 id="在生命周期中的哪一步应该发起-AJAX-请求？"><a href="#在生命周期中的哪一步应该发起-AJAX-请求？" class="headerlink" title="在生命周期中的哪一步应该发起 AJAX 请求？"></a>在生命周期中的哪一步应该发起 <code>AJAX</code> 请求？</h2><p>我们应该将 <code>AJAX</code> 请求放在 <code>componentDidMount</code> 函数中执行，主要原因是：</p>
+<blockquote>
+<p>React 下一代调和算法 <code>Fiber</code> 会通过开始或停止渲染的方式优化应用性能，其会影响到 <code>componentWillMount</code> 的触发次数。<br>    对于 <code>componentWillMount</code> 这个生命周期函数的调用次数会变得不确定，React 可以会多次频繁调用 <code>componentWillMount</code> 。如果我们将 AJAX 请求放在 <code>componentWillMount</code> 函数中，那么显而易见其会被触发多次，自然不是好选择。</p>
+<p>如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了setState函数将数据添加到组件状态中，对于未挂载的组件则会报错。<br>而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。</p>
+</blockquote>
+<h2 id="shouldComponentUpdate-的作用是啥以及为何它这么重要？"><a href="#shouldComponentUpdate-的作用是啥以及为何它这么重要？" class="headerlink" title="shouldComponentUpdate 的作用是啥以及为何它这么重要？"></a><code>shouldComponentUpdate</code> 的作用是啥以及为何它这么重要？</h2><blockquote>
+<p><code>shouldComponentUpdate</code> 允许我们手动的判断是否要进行组件更新，根据组件的应用场景设置函数的合理返回值能够帮我们避免不必要的更新。</p>
+</blockquote>
+<h2 id="React-中的事件处理逻辑"><a href="#React-中的事件处理逻辑" class="headerlink" title="React 中的事件处理逻辑"></a>React 中的事件处理逻辑</h2><blockquote>
+<p>为了解决跨浏览器兼容性问题，React 会将浏览器原生事件封装为合成事件传入设置的事件处理器中。这里的合成事件提供了与原生事件相同的接口，不过它们屏蔽了底层浏览器的细节差异，保证了行为的一致性。另外有意思的是，React 并没有直接将事件附着到子元素上，而是以单一事件监听器的方式将所有的事件发送到顶层进行处理。这样 React 在更新 DOM 的时候就不需要考虑如何去处理附着在 DOM 上的事件监听器，最终达到优化性能的目的。</p>
+</blockquote>
+<h2 id="createElement-与-cloneElement-的区别是什么？"><a href="#createElement-与-cloneElement-的区别是什么？" class="headerlink" title="createElement 与 cloneElement 的区别是什么？"></a><code>createElement</code> 与 <code>cloneElement</code> 的区别是什么？</h2><blockquote>
+<p><code>createElement</code> 函数是 <code>JSX</code> 编译之后使用的创建 React Element 的函数，而 <code>cloneElement</code> 则是用于复制某个元素并传入新的 <code>Props</code> 。</p>
+</blockquote>
+<h2 id="传入-setState-函数的第二个参数的作用是什么？"><a href="#传入-setState-函数的第二个参数的作用是什么？" class="headerlink" title="传入 setState 函数的第二个参数的作用是什么？"></a>传入 <code>setState</code> 函数的第二个参数的作用是什么？</h2><blockquote>
+<p>该函数会在 <code>setState</code> 函数调用完成并且组件开始重新渲染的时候被调用，我们可以用该函数来监听渲染是否完成。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">浏览器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNklEQVR42u3aS27DMAxF0ex/0ynQUYHCyn2kXNTU1ShI4ljHA4YfvV54vb/Xz9e/1/qb63euPt28ZMiQ8VjGe7n4hta/efVQrjB8bzJkyDiHwYMsCZ0kKvIQvN6bDBkyZJAQyUMwuVaGDBkydjF4aCYJX3pfGTJknMlIm2hpuKyF41tqcRkyZDyQURsM/M3r2+cbMmTI+PeMd7jItekwkv/y5R1lyJAxmrGt1RUOBmrXfnhAMmTIGMpIb9w5QsEHn/EDlSFDxmgG2Rxp9/Or0sYZb+3JkCFjKoME03TQmJbBtUAsQ4aMkxm8dOSlLx+RFg+fyZAhYzSDN8J4eL1vMIASWRkyZIxj8HDGD43VGmd8eIm6hjJkyBjHICF17wiTF71Bu02GDBmjGTzg8jYZTw1rJXHrf0OGDBmPYqRFLClW+cCSDy+DppsMGTKGMtKmfHpEIw3EcWooQ4aMIxl3hNf+QQ002ZAhQ8Y4Rlqs8kSNY9KiF2W1MmTIGMTgRx94yyxtyaWDTLQ3GTJkDGJ0SlCeuqUjUv4QZciQcRqjX1h2DoSh2cV6EitDhoyhjH4NmG6UY2pjAxkyZMxjtOYJJSQ/+MX/BmTIkDGbkYa52js86UyHEDJkyDiHkbbM0gI1vao105AhQ8ZoRjqS7KRxu5pxHw6HyZAh40jGhpuFSSdJE2XIkCGDBM00NHfSx80BV4YMGY9idI52dUpZEojJ45MhQ8ZsRjoYII2wfjrID5zJkCFjNOMLdPRlqyx3zU4AAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/07/19/2017-07-19/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端常见知识归纳</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2017/07/24/2017-07-24/" data-title="React 理解集锦" data-url="maple13.github.io/2017/07/24/2017-07-24/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fengxiaosheng"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -232,8 +370,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
