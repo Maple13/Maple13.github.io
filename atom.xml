@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="maple13.github.io/"/>
-  <updated>2017-07-24T04:20:03.000Z</updated>
+  <updated>2017-07-24T14:51:37.000Z</updated>
   <id>maple13.github.io/</id>
   
   <author>
@@ -14,6 +14,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 数据流与组件间通信</title>
+    <link href="maple13.github.io/2017/07/24/2017-07-24-1/"/>
+    <id>maple13.github.io/2017/07/24/2017-07-24-1/</id>
+    <published>2017-07-24T14:47:25.000Z</published>
+    <updated>2017-07-24T14:51:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h3><blockquote>
+<p><code>React</code> 是单向数据流，数据主要从父节点传递到子节点（通过Props）。<br>如果顶层的某个 <code>Props</code> 改变了，<code>React</code> 就会重新渲染所有的相关子节点。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h3><ol>
+<li><p>父子组件通信<br> 在 <code>React</code> 中，最常见的组件通信就是父子了，一般：</p>
+<blockquote>
+<p>父组件更新组件状态 –&gt; Prosp –&gt; 子组件更新</p>
+<p>子组件更新父组件状态 –&gt; 需要父组件传递回调函数 –&gt; 子组件调用触发</p>
+</blockquote>
+<p> <a href="https://codepen.io/Maple13/pen/awrobR" target="_blank" rel="external">父子组件通信示例 . codepen</a></p>
+</li>
+<li><p>兄弟组件通信</p>
+<ul>
+<li><p>方式一：<br>  在两个组件处于同一级时（同处父级，或者同处子级），就称为兄弟组件<br>  。</p>
+<blockquote>
+<p>按照 <code>React</code> 单向数据流方式，我们需要借助父组件进行传递，通过 <code>父组件回调函数</code> 改变兄弟组件的 <code>Props</code> .</p>
+<p>其实这种实现方式与子组件更新父组件状态的方式是大同小异的。</p>
+</blockquote>
+</li>
+<li><p>方式二：</p>
+<blockquote>
+<p>方式一只适用于组件层次很少的情况下，当组件层次很深的时候，整个通信的效率就会变得很低。</p>
+<p>React 官方给我们提供了一种上下文方式，可以让子组件直接访问祖先组件的数据或函数，无需从祖先组件一层层传递数据到子组件中。</p>
+<p>但这种方式建议按需使用，可能导致一些不可预期的错误（比如数据传递逻辑结构不清晰）。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>本文借鉴<a href="https://segmentfault.com/a/1190000006831820#articleHeader6" target="_blank" rel="external"><code>Samo</code></a>文章</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;单向数据流&quot;&gt;&lt;a href=&quot;#单向数据流&quot; class=&quot;headerlink&quot; title=&quot;单向数据流&quot;&gt;&lt;/a&gt;单向数据流&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;React&lt;/code&gt; 是单向数据流，数据主要从父节点传递到子节点（通过Props）。&lt;br&gt;如果顶层的某个 &lt;code&gt;Props&lt;/code&gt; 改变了，&lt;code&gt;React&lt;/code&gt; 就会重新渲染所有的相关子节点。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="React" scheme="maple13.github.io/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>React 理解集锦</title>
