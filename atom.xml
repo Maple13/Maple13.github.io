@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="maple13.github.io/"/>
-  <updated>2017-07-24T17:00:34.000Z</updated>
+  <updated>2017-12-30T15:13:44.000Z</updated>
   <id>maple13.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2017 年终总结</title>
+    <link href="maple13.github.io/2017/12/30/2017-12-30/"/>
+    <id>maple13.github.io/2017/12/30/2017-12-30/</id>
+    <published>2017-12-30T12:55:32.000Z</published>
+    <updated>2017-12-30T15:13:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="近期"><a href="#近期" class="headerlink" title="近期"></a>近期</h2><blockquote>
+<p>在过去的一年里, 换了新的工作, 离开了工作2年的外包, 裸辞, 然后因为学历 / 技术 / 个人经历的原因(当然主要是因为技术菜), 面试了1个多月才进入现在的公司.</p>
+<p>新的公司, 不再全国各地的长期出差, 使用的技术栈也稳定在了 React, 但过去2年养成的习惯让我每周末都待在家里, 要么看会书, 写一下不会的 小 Demo 😜, 要么玩游戏 / 逛社区, 眼镜的度数越来越高 ☹️, 身材越来越圆 (●—●), 个人博客也好久没更新 😜, 近期新搬了家, 楼下就是篮球场, 可以让我捡起我曾经热爱的篮球🏀, 让我的周末多了一个选择.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><blockquote>
+<p>过去的一年, 大多数时间还是在做 Hybrid App 开发, 年初结束了第一次使用 React Native 开发的 App 任务, 随后使用 DCloud 的 MUI / 5+ 开发 App, 但感觉没有使用 React Native 做出的体验好, 且文档组织不清晰, 但好处是中文社区响应及时.</p>
+<p>到了新公司使用 React + React-router 做多页面 App 内嵌, 稳定使用 React 作为开发栈. </p>
+</blockquote>
+<h2 id="2018-新年展望"><a href="#2018-新年展望" class="headerlink" title="2018, 新年展望"></a>2018, 新年展望</h2><blockquote>
+<p>新的一年, 愿望有很多, 举几个栗子 🌰 吧: </p>
+<ol>
+<li>更加努力的学习, 学并作出点东西来, 而不是只存在于嘴上说学了; </li>
+<li>定期的更新博客, 及时总结遇到并解决的问题和学习的历程;(但不能只是摘抄😆)</li>
+</ol>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;近期&quot;&gt;&lt;a href=&quot;#近期&quot; class=&quot;headerlink&quot; title=&quot;近期&quot;&gt;&lt;/a&gt;近期&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;在过去的一年里, 换了新的工作, 离开了工作2年的外包, 裸辞, 然后因为学历 / 技术 / 个人经历的原因(当然主要是因为技术菜), 面试了1个多月才进入现在的公司.&lt;/p&gt;
+&lt;p&gt;新的公司, 不再全国各地的长期出差, 使用的技术栈也稳定在了 React, 但过去2年养成的习惯让我每周末都待在家里, 要么看会书, 写一下不会的 小 Demo 😜, 要么玩游戏 / 逛社区, 眼镜的度数越来越高 ☹️, 身材越来越圆 (●—●), 个人博客也好久没更新 😜, 近期新搬了家, 楼下就是篮球场, 可以让我捡起我曾经热爱的篮球🏀, 让我的周末多了一个选择.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="工作" scheme="maple13.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+      <category term="个人" scheme="maple13.github.io/tags/%E4%B8%AA%E4%BA%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>React-redux 初识</title>
