@@ -167,6 +167,199 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript 执行机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/JavaScript 执行机制/">JavaScript 执行机制</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/21/JavaScript 执行机制/" class="archive-article-date">
+  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>JS 是一门<code>单线程</code>的脚本语言.</p>
+</blockquote>
+<h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p>
+<blockquote>
+<p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p>
+</blockquote>
+<p><strong>栈 ( stack )</strong></p>
+<blockquote>
+<p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p>
+</blockquote>
+<p><strong>队列 ( queue )</strong></p>
+<blockquote>
+<p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2018/03/21/JavaScript 执行机制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/21/JavaScript 执行机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-React 版本更新记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/React 版本更新记录/">React 版本更新记录</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/21/React 版本更新记录/" class="archive-article-date">
+  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul>
+<li>新核心架构<code>Fiber</code></li>
+<li><p><code>React.PropTypes</code> <del>废弃</del></p>
+<blockquote>
+<p>使用<code>prop-types</code>库代替</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p><code>React.createClass</code> <del>废弃</del></p>
+<blockquote>
+<p>官方推荐使用 ES6<code>class</code>方式创建组件</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p><code>render</code>可返回数组 或 字符串</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">    return [</div><div class="line">        &lt;div key='1'&gt;1&lt;/div&gt;,</div><div class="line">        &lt;div key='2'&gt;2&lt;/div&gt;,</div><div class="line">        &lt;div key='3'&gt;3&lt;/div&gt;,</div><div class="line">    ];</div><div class="line">&#125;</div><div class="line">// 注：不要忘了加key</div><div class="line">// 也可以直接返回字符串</div><div class="line">render() &#123;</div><div class="line">    return 'Hello World';</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/03/21/React 版本更新记录/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/21/React 版本更新记录/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2017-12-30" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -418,7 +611,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/2017-07-24/">React 理解集锦</a>
+      <a class="article-title" href="/2017/07/24/2017-07-24/">React 理解</a>
     </h1>
   
 
@@ -431,8 +624,13 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="React-生命周期常用方法"><a href="#React-生命周期常用方法" class="headerlink" title="React 生命周期常用方法"></a>React 生命周期常用方法</h2><p>实例化：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillMount</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">render</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+        <h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p>
+<h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote>
+<p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p>
+</blockquote>
+<h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote>
+<p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p>
+</blockquote>
         
           <a class="article-more-a" href="/2017/07/24/2017-07-24/#more">more >></a>
         
@@ -447,6 +645,10 @@ ga('send', 'pageview');
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
@@ -934,6 +1136,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
             <div class="clearfix"></div>

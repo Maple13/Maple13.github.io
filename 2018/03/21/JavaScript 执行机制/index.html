@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//maple13.top">
-  <title>Tag: React | Maple13 的博客</title>
+  <title>JavaScript 执行机制 | Maple13 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习、积累、记录，为了进步！">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Maple13 的博客">
-<meta property="og:url" content="//maple13.top/tags/React/index.html">
+  <meta name="description" content="JS 是一门单线程的脚本语言.  堆/栈/队列堆 ( heap )  堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.  栈 ( stack )  栈遵循的原则是先进后出, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–执行栈( execution context stack ).  队列 ( queue )  队列遵循先进先出, J">
+<meta name="keywords" content="前端,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 执行机制">
+<meta property="og:url" content="//maple13.top/2018/03/21/JavaScript 执行机制/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="学习、积累、记录，为了进步！">
+<meta property="og:description" content="JS 是一门单线程的脚本语言.  堆/栈/队列堆 ( heap )  堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.  栈 ( stack )  栈遵循的原则是先进后出, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–执行栈( execution context stack ).  队列 ( queue )  队列遵循先进先出, J">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-21T08:54:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maple13 的博客">
-<meta name="twitter:description" content="学习、积累、记录，为了进步！">
+<meta name="twitter:title" content="JavaScript 执行机制">
+<meta name="twitter:description" content="JS 是一门单线程的脚本语言.  堆/栈/队列堆 ( heap )  堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.  栈 ( stack )  栈遵循的原则是先进后出, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–执行栈( execution context stack ).  队列 ( queue )  队列遵循先进先出, J">
   
     <link rel="alternative" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
   
@@ -165,36 +166,85 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JavaScript 执行机制" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JavaScript 执行机制
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/21/React 版本更新记录/" class="archive-article-date">
+
+        
+        <a href="/2018/03/21/JavaScript 执行机制/" class="archive-article-date">
   	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/21/React 版本更新记录/">React 版本更新记录</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>JS 是一门<code>单线程</code>的脚本语言.</p>
+</blockquote>
+<h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p>
+<blockquote>
+<p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p>
+</blockquote>
+<p><strong>栈 ( stack )</strong></p>
+<blockquote>
+<p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p>
+</blockquote>
+<p><strong>队列 ( queue )</strong></p>
+<blockquote>
+<p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="怎样知道主进程执行栈为空呢"><a href="#怎样知道主进程执行栈为空呢" class="headerlink" title="怎样知道主进程执行栈为空呢?"></a>怎样知道主进程执行栈为空呢?</h2><blockquote>
+<p>JS 引擎存在 <code>monitoring process</code> 进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去<code>任务队列 (Event Queue)</code>那里检查是否有等待被调用的函数。</p>
+</blockquote>
+<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><ul>
+<li>同步和异步任务分别进入不同的执行”场所”，同步的进入<code>主线程</code>，异步的进入<code>Event Table</code>并注册函数。</li>
+<li>当指定的事情完成时，<code>Event Table</code>会将这个函数移入<code>Event Queue</code>。</li>
+<li><code>Event Loop</code>在不同的运行环境下有着不同的方式。</li>
+</ul>
+<p><strong>微任务(<code>micro-task</code>)与宏任务(<code>macro-task</code>)</strong></p>
+<blockquote>
+<p>任务队列中任务是有区别的, 总是有一些任务会有一些特权(比如插队), 有特权的<code>微任务</code>, 和无特权的<code>宏任务</code>.<br>就是说, 实际任务队列有两个, 微任务队列/宏任务队列, 当主线程执行完毕, 如果微任务队列中有任务则<code>优先执行</code>, 当微任务队列没有任务时才执行宏任务队列.</p>
+<p>微任务: <code>原生Promise(有些实现的promise将then方法放到了宏任务中),Object.observe(已废弃), MutationObserver， MessageChannel, process.nextTick, setImmediate</code></p>
+<p>宏任务: <code>setTimeout, setInterval, setImmediate, I/O</code></p>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -204,161 +254,110 @@ ga('send', 'pageview');
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/25/2017-07-25/" class="archive-article-date">
-  	<time datetime="2017-07-24T16:58:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/25/2017-07-25/">React-redux 初识</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">React-redux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3awY7DIAxF0f7/T2ek2XYC99ntSDGXVRUVwsnCMjavFx7X73h/sn7+PtZz7971sSFDhozHMviL13PXT+5+330IvjcZMmScw1gHvs0Sy/+Qj1L7fDJkyJCRBk2S0pG5MmTIkNEPuHxuP8jKkCFDRq1ARkpvFxi1oPyBs7gMGTIeyEgbA//5+4v9DRkyZDyEcYWjM6tzMN6sL0OGjNGM9fGycw2ic8EibSrIkCFjNqNTUOMZWpoIxruSIUPGaAYPfPyVadE/3SL6rDJkyBjHSJuLaWmepHq1464MGTJOY3QOmXyLKYPzZMiQMZvRudbA00Gy3Q80O2XIkDGUkZbv08sQvKnJD7GbFqYMGTKOYZAA2rk61i+6yZAh4wRGLQWs1bh4gshTTxkyZJzA4JckisWv8LCaNi3iux4yZMh4IKMT/tKmJm88rFsIf8ySIUPGAYy0+FVrHqTH2uBDyJAh4xhGraBGtkie8PU3AVeGDBnjGP2yfprM1cJxsLIMGTLGMfpJGwmF/D/pfmTIkHEOg78gLd93Er7gEoYMGTJGM2pBk7Q808JZP4mUIUPGVMYVju9dv0gD7uZ2mwwZMgYx+Ogkf52jMg/0MmTImM1IX1wr6JO3tEpvMmTIOICRFt3SxJEzSNC/DbgyZMg4nsFJBFMLzbd4GTJkyAgLZzz54+tvVpYhQ8YBjE6gJNcyeFLID8bFs7gMGTIeyKgdIHnKSBqWtcthrf6GDBkynsH4Ae0BN/U/Y8d2AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/24/2017-07-24-1/" class="archive-article-date">
-  	<time datetime="2017-07-24T14:47:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/21/React 版本更新记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React 版本更新记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/2017-07-24-1/">React 数据流与组件间通信</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/24/2017-07-24/" class="archive-article-date">
-  	<time datetime="2017-07-24T04:16:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/2017-07-24/">React 理解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -381,9 +380,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

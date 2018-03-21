@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//maple13.top/"/>
-  <updated>2017-12-30T15:13:44.000Z</updated>
+  <updated>2018-03-21T08:54:20.000Z</updated>
   <id>//maple13.top/</id>
   
   <author>
@@ -14,6 +14,170 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 执行机制</title>
+    <link href="//maple13.top/2018/03/21/JavaScript%20%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"/>
+    <id>//maple13.top/2018/03/21/JavaScript 执行机制/</id>
+    <published>2018-03-21T12:00:32.000Z</published>
+    <updated>2018-03-21T08:54:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>JS 是一门<code>单线程</code>的脚本语言.</p>
+</blockquote>
+<h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p>
+<blockquote>
+<p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p>
+</blockquote>
+<p><strong>栈 ( stack )</strong></p>
+<blockquote>
+<p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p>
+</blockquote>
+<p><strong>队列 ( queue )</strong></p>
+<blockquote>
+<p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="怎样知道主进程执行栈为空呢"><a href="#怎样知道主进程执行栈为空呢" class="headerlink" title="怎样知道主进程执行栈为空呢?"></a>怎样知道主进程执行栈为空呢?</h2><blockquote>
+<p>JS 引擎存在 <code>monitoring process</code> 进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去<code>任务队列 (Event Queue)</code>那里检查是否有等待被调用的函数。</p>
+</blockquote>
+<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><ul>
+<li>同步和异步任务分别进入不同的执行”场所”，同步的进入<code>主线程</code>，异步的进入<code>Event Table</code>并注册函数。</li>
+<li>当指定的事情完成时，<code>Event Table</code>会将这个函数移入<code>Event Queue</code>。</li>
+<li><code>Event Loop</code>在不同的运行环境下有着不同的方式。</li>
+</ul>
+<p><strong>微任务(<code>micro-task</code>)与宏任务(<code>macro-task</code>)</strong></p>
+<blockquote>
+<p>任务队列中任务是有区别的, 总是有一些任务会有一些特权(比如插队), 有特权的<code>微任务</code>, 和无特权的<code>宏任务</code>.<br>就是说, 实际任务队列有两个, 微任务队列/宏任务队列, 当主线程执行完毕, 如果微任务队列中有任务则<code>优先执行</code>, 当微任务队列没有任务时才执行宏任务队列.</p>
+<p>微任务: <code>原生Promise(有些实现的promise将then方法放到了宏任务中),Object.observe(已废弃), MutationObserver， MessageChannel, process.nextTick, setImmediate</code></p>
+<p>宏任务: <code>setTimeout, setInterval, setImmediate, I/O</code></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;JS 是一门&lt;code&gt;单线程&lt;/code&gt;的脚本语言.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;堆-栈-队列&quot;&gt;&lt;a href=&quot;#堆-栈-队列&quot; class=&quot;headerlink&quot; title=&quot;堆/栈/队列&quot;&gt;&lt;/a&gt;堆/栈/队列&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;堆 ( heap )&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;栈 ( stack )&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;栈遵循的原则是&lt;code&gt;先进后出&lt;/code&gt;, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–&lt;code&gt;执行栈( execution context stack )&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;队列 ( queue )&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;队列遵循&lt;code&gt;先进先出&lt;/code&gt;, JS 中除了&lt;code&gt;主线程&lt;/code&gt;之外还存在一个&lt;code&gt;任务队列&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="//maple13.top/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 版本更新记录</title>
+    <link href="//maple13.top/2018/03/21/React%20%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/"/>
+    <id>//maple13.top/2018/03/21/React 版本更新记录/</id>
+    <published>2018-03-21T12:00:32.000Z</published>
+    <updated>2018-03-21T09:37:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul>
+<li>新核心架构<code>Fiber</code></li>
+<li><p><code>React.PropTypes</code> <del>废弃</del></p>
+<blockquote>
+<p>使用<code>prop-types</code>库代替</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p><code>React.createClass</code> <del>废弃</del></p>
+<blockquote>
+<p>官方推荐使用 ES6<code>class</code>方式创建组件</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p><code>render</code>可返回数组 或 字符串</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">    return [</div><div class="line">        &lt;div key='1'&gt;1&lt;/div&gt;,</div><div class="line">        &lt;div key='2'&gt;2&lt;/div&gt;,</div><div class="line">        &lt;div key='3'&gt;3&lt;/div&gt;,</div><div class="line">    ];</div><div class="line">&#125;</div><div class="line">// 注：不要忘了加key</div><div class="line">// 也可以直接返回字符串</div><div class="line">render() &#123;</div><div class="line">    return 'Hello World';</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>新的生命周期 <code>componentDidCatch</code></p>
+<p>  &gt;<br>  错误处理机制，如同<code>try…catch</code><br>  可以用于捕获子组件的错误，即使子组件有代码报错，也不至于导致整个APP崩溃</p>
+</li>
+<li><p>接受元素上的自定义属性</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">abc</span>=<span class="string">'123'</span>&gt;</span></div><div class="line">// 以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误</div><div class="line">// 现在会正确的把abc赋加在p标签上</div></pre></td></tr></table></figure>
+</li>
+<li><p>新增<code>ReactDOM.createPortal</code>方法</p>
+<p>  &gt;<br>  以前一个组件只能被默认的渲染到父级所引用它的地方，<br>  createPortal方法可以把组件自身的内容渲染到任意一个指定的dom元素下<br>  但事件的冒泡仍然会从它原本的父级传递<br>  官方文档：<a href="https://reactjs.org/docs/portals.html" target="_blank" rel="external">Portals</a></p>
+</li>
+<li><p>其他<br>&gt;<br>服务端渲染优化，比以前更好<br><code>react</code>和<code>react-dom</code>库文件大小比以前更小<br>react开源协议为<code>MIT</code>协议</p>
+</li>
+</ul>
+<h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul>
+<li><p>新增 <code>Fragment</code></p>
+<p>  提高了对子组件的渲染方法返回多个子元素的支持<br>  <a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html" target="_blank" rel="external">官方文档 Fragment</a></p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    <span class="xml"><span class="tag">&lt;&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">ChildA</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">ChildB</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">ChildC</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>componentWillMount /</code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p>
+</li>
+<li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p>
+<blockquote>
+<p>它会生成一个新<code>state</code>，方便让你<code>setState</code>。所有生命周期钩子（除了构造器）的<code>context</code>传参都被无效了</p>
+</blockquote>
+</li>
+<li><p>新增 <code>createContext()</code></p>
+<blockquote>
+<p>它会返回一个具有<code>Provider</code>和<code>Consumer</code>方法的对象</p>
+</blockquote>
+</li>
+<li><p>严格模式 <code>StrictMode</code><br>  严格模式确保你的代码遵循最佳实践 就像原生js 的 <code>use strict</code></p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render()&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">StrictMode</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">Context.Provider</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">Title</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">Context.Provider</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">StrictMode</span>&gt;</span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;v16-0-变动&quot;&gt;&lt;a href=&quot;#v16-0-变动&quot; class=&quot;headerlink&quot; title=&quot;v16.0 变动&quot;&gt;&lt;/a&gt;v16.0 变动&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;新核心架构&lt;code&gt;Fiber&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;React.PropTypes&lt;/code&gt; &lt;del&gt;废弃&lt;/del&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用&lt;code&gt;prop-types&lt;/code&gt;库代替&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;React.createClass&lt;/code&gt; &lt;del&gt;废弃&lt;/del&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官方推荐使用 ES6&lt;code&gt;class&lt;/code&gt;方式创建组件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;render&lt;/code&gt;可返回数组 或 字符串&lt;/p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div key=&#39;1&#39;&amp;gt;1&amp;lt;/div&amp;gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div key=&#39;2&#39;&amp;gt;2&amp;lt;/div&amp;gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div key=&#39;3&#39;&amp;gt;3&amp;lt;/div&amp;gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 注：不要忘了加key&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 也可以直接返回字符串&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return &#39;Hello World&#39;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="//maple13.top/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>2017 年终总结</title>
@@ -162,32 +326,27 @@
   </entry>
   
   <entry>
-    <title>React 理解集锦</title>
+    <title>React 理解</title>
     <link href="//maple13.top/2017/07/24/2017-07-24/"/>
     <id>//maple13.top/2017/07/24/2017-07-24/</id>
     <published>2017-07-24T04:16:11.000Z</published>
-    <updated>2017-07-24T04:20:03.000Z</updated>
+    <updated>2018-03-21T09:36:44.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="React-生命周期常用方法"><a href="#React-生命周期常用方法" class="headerlink" title="React 生命周期常用方法"></a>React 生命周期常用方法</h2><p>实例化：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillMount</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">render</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>存在期：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillReceiveProps</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">shouldComponentUpdate</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentWillUpdate</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">render</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<p>销毁期：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">componentWillUnmount</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p>
+    <content type="html"><![CDATA[<h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p>
 <h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote>
 <p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p>
 </blockquote>
 <h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote>
 <p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="在生命周期中的哪一步应该发起-AJAX-请求？"><a href="#在生命周期中的哪一步应该发起-AJAX-请求？" class="headerlink" title="在生命周期中的哪一步应该发起 AJAX 请求？"></a>在生命周期中的哪一步应该发起 <code>AJAX</code> 请求？</h2><p>我们应该将 <code>AJAX</code> 请求放在 <code>componentDidMount</code> 函数中执行，主要原因是：</p>
 <blockquote>
 <p>React 下一代调和算法 <code>Fiber</code> 会通过开始或停止渲染的方式优化应用性能，其会影响到 <code>componentWillMount</code> 的触发次数。<br>    对于 <code>componentWillMount</code> 这个生命周期函数的调用次数会变得不确定，React 可以会多次频繁调用 <code>componentWillMount</code> 。如果我们将 AJAX 请求放在 <code>componentWillMount</code> 函数中，那么显而易见其会被触发多次，自然不是好选择。</p>
 <p>如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了setState函数将数据添加到组件状态中，对于未挂载的组件则会报错。<br>而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。</p>
 </blockquote>
-<h2 id="shouldComponentUpdate-的作用是啥以及为何它这么重要？"><a href="#shouldComponentUpdate-的作用是啥以及为何它这么重要？" class="headerlink" title="shouldComponentUpdate 的作用是啥以及为何它这么重要？"></a><code>shouldComponentUpdate</code> 的作用是啥以及为何它这么重要？</h2><blockquote>
+<h2 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h2><pre><code><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 构造函数</span></div><div class="line">Constructor()</div><div class="line"></div><div class="line"><span class="comment">// 在渲染前调用,在客户端也在服务端</span></div><div class="line">componentWillMout()</div><div class="line"></div><div class="line"><span class="comment">// 渲染</span></div><div class="line">render()</div><div class="line"></div><div class="line"><span class="comment">// 在第一次渲染后调用，只在客户端。</span></div><div class="line"><span class="comment">// 之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。</span></div><div class="line">componentDidMout()</div><div class="line"></div><div class="line"><span class="comment">// 在组件接收到一个新的 prop (更新后)时被调用。</span></div><div class="line"><span class="comment">// 这个方法在初始化render时不会被调用。</span></div><div class="line">componentWillReceiveProps()</div><div class="line"></div><div class="line"><span class="comment">// 返回一个布尔值。</span></div><div class="line"><span class="comment">// 在组件接收到新的props或者state时被调用。</span></div><div class="line"><span class="comment">// 在初始化时或者使用forceUpdate时不被调用。</span></div><div class="line"><span class="comment">// 可以在你确认不需要更新组件时使用</span></div><div class="line">shouldComponentUpdate()</div><div class="line"></div><div class="line"><span class="comment">// 在组件接收到新的props或者state但还没有render时被调用。</span></div><div class="line"><span class="comment">// 在初始化时不会被调用</span></div><div class="line">componentWillUpdate()</div><div class="line"></div><div class="line"><span class="comment">// 渲染</span></div><div class="line">render()</div><div class="line"></div><div class="line"><span class="comment">// 在组件完成更新后立即调用。</span></div><div class="line"><span class="comment">// 在初始化时不会被调用。</span></div><div class="line">componentDidUpdate()</div><div class="line"></div><div class="line"><span class="comment">// 在组件从 DOM 中移除的时候立刻被调用</span></div><div class="line">componentWillUnmount</div></pre></td></tr></table></figure>
+</code></pre><h2 id="shouldComponentUpdate-的作用是啥以及为何它这么重要？"><a href="#shouldComponentUpdate-的作用是啥以及为何它这么重要？" class="headerlink" title="shouldComponentUpdate 的作用是啥以及为何它这么重要？"></a><code>shouldComponentUpdate</code> 的作用是啥以及为何它这么重要？</h2><blockquote>
 <p><code>shouldComponentUpdate</code> 允许我们手动的判断是否要进行组件更新，根据组件的应用场景设置函数的合理返回值能够帮我们避免不必要的更新。</p>
 </blockquote>
 <h2 id="React-中的事件处理逻辑"><a href="#React-中的事件处理逻辑" class="headerlink" title="React 中的事件处理逻辑"></a>React 中的事件处理逻辑</h2><blockquote>
@@ -203,11 +362,18 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;React-生命周期常用方法&quot;&gt;&lt;a href=&quot;#React-生命周期常用方法&quot; class=&quot;headerlink&quot; title=&quot;React 生命周期常用方法&quot;&gt;&lt;/a&gt;React 生命周期常用方法&lt;/h2&gt;&lt;p&gt;实例化：&lt;/p&gt;
-&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;componentWillMount&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;componentDidMount&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h2 id=&quot;React-中-Element-与-Component-的区别？&quot;&gt;&lt;a href=&quot;#React-中-Element-与-Component-的区别？&quot; class=&quot;headerlink&quot; title=&quot;React 中 Element 与 Component 的区别？&quot;&gt;&lt;/a&gt;React 中 &lt;code&gt;Element&lt;/code&gt; 与 &lt;code&gt;Component&lt;/code&gt; 的区别？&lt;/h2&gt;&lt;p&gt;简单而言，&lt;code&gt;React Element&lt;/code&gt; 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 &lt;code&gt;React Element&lt;/code&gt; 就是利用 &lt;code&gt;JSX&lt;/code&gt; 构建的声明式代码片然后被转化为 &lt;code&gt;createElement&lt;/code&gt; 的调用组合。而 &lt;code&gt;React Component&lt;/code&gt; 则是可以接收参数输入并且返回某个 &lt;code&gt;React Element&lt;/code&gt; 的函数或者类。&lt;/p&gt;
+&lt;h2 id=&quot;在什么情况下会优先使用-Class-Component-而不是-Functional-Component&quot;&gt;&lt;a href=&quot;#在什么情况下会优先使用-Class-Component-而不是-Functional-Component&quot; class=&quot;headerlink&quot; title=&quot;在什么情况下会优先使用 Class Component 而不是 Functional Component&quot;&gt;&lt;/a&gt;在什么情况下会优先使用 &lt;code&gt;Class Component&lt;/code&gt; 而不是 &lt;code&gt;Functional Component&lt;/code&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;在组件需要包含内部状态或者使用到生命周期函数的时候使用 &lt;code&gt;Class Component&lt;/code&gt; ，否则使用函数式组件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;React-中-refs-的作用是什么？&quot;&gt;&lt;a href=&quot;#React-中-refs-的作用是什么？&quot; class=&quot;headerlink&quot; title=&quot;React 中 refs 的作用是什么？&quot;&gt;&lt;/a&gt;React 中 &lt;code&gt;refs&lt;/code&gt; 的作用是什么？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Refs&lt;/code&gt; 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 &lt;code&gt;ref&lt;/code&gt; 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
+    
+      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="React" scheme="//maple13.top/tags/React/"/>
     
