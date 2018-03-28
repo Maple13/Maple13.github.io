@@ -167,43 +167,35 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JavaScript 执行机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CSS-盒模型与-BFC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/21/JavaScript 执行机制/">JavaScript 执行机制</a>
+      <a class="article-title" href="/2018/03/28/CSS-盒模型与-BFC/">CSS 盒模型与 BFC</a>
     </h1>
   
 
         
-        <a href="/2018/03/21/JavaScript 执行机制/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+        <a href="/2018/03/28/CSS-盒模型与-BFC/" class="archive-article-date">
+  	<time datetime="2018-03-28T01:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>JS 是一门<code>单线程</code>的脚本语言.</p>
-</blockquote>
-<h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p>
-<blockquote>
-<p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p>
-</blockquote>
-<p><strong>栈 ( stack )</strong></p>
-<blockquote>
-<p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p>
-</blockquote>
-<p><strong>队列 ( queue )</strong></p>
-<blockquote>
-<p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p>
-</blockquote>
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><img src="/2018/03/28/CSS-盒模型与-BFC/1.jpg" alt=""></p>
+<p>盒模型的基本组成, 由里到外 content / padding / border / margin.<br>盒模型有两种标准:</p>
+<ul>
+<li>标准盒模型</li>
+<li>IE 模型</li>
+</ul>
+<p>它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.</p>
         
-          <a class="article-more-a" href="/2018/03/21/JavaScript 执行机制/#more">more >></a>
+          <a class="article-more-a" href="/2018/03/28/CSS-盒模型与-BFC/#more">more >></a>
         
       
 
@@ -217,11 +209,11 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -231,7 +223,7 @@ ga('send', 'pageview');
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/21/JavaScript 执行机制/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/03/28/CSS-盒模型与-BFC/">展开全文 >></a>
         </p>
       
 
@@ -316,11 +308,11 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -331,6 +323,100 @@ ga('send', 'pageview');
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/21/React 版本更新记录/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaScript 执行机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/JavaScript 执行机制/">JavaScript 执行机制</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/21/JavaScript 执行机制/" class="archive-article-date">
+  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>JS 是一门<code>单线程</code>的脚本语言.</p>
+</blockquote>
+<h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p>
+<blockquote>
+<p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p>
+</blockquote>
+<p><strong>栈 ( stack )</strong></p>
+<blockquote>
+<p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p>
+</blockquote>
+<p><strong>队列 ( queue )</strong></p>
+<blockquote>
+<p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2018/03/21/JavaScript 执行机制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/21/JavaScript 执行机制/">展开全文 >></a>
         </p>
       
 
@@ -646,11 +732,11 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -934,82 +1020,10 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/17/Hello-world/">Hello World！</a>
-    </h1>
-  
-
-        
-        <a href="/2015/09/17/Hello-world/" class="archive-article-date">
-  	<time datetime="2015-09-17T08:22:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! 以下是Hexo的一些常用命令，如果需要详细了解,可以前往 <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> 查询详细文档. 如果你在使用Hexo时出现问题，你可以在<a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a>搜索答案,或者可以前往Hexo的<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>上提出问题.</p>
-        
-          <a class="article-more-a" href="/2015/09/17/Hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/09/17/Hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1111,11 +1125,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">

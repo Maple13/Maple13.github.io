@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//maple13.top">
-  <title>Archives: 2018 | Maple13 的博客</title>
+  <title>CSS 盒模型与 BFC | Maple13 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习、积累、记录，为了进步！">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Maple13 的博客">
-<meta property="og:url" content="//maple13.top/archives/2018/index.html">
+  <meta name="description" content="基本概念 盒模型的基本组成, 由里到外 content / padding / border / margin.盒模型有两种标准:  标准盒模型 IE 模型  它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.">
+<meta name="keywords" content="CSS,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 盒模型与 BFC">
+<meta property="og:url" content="//maple13.top/2018/03/28/CSS-盒模型与-BFC/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="学习、积累、记录，为了进步！">
+<meta property="og:description" content="基本概念 盒模型的基本组成, 由里到外 content / padding / border / margin.盒模型有两种标准:  标准盒模型 IE 模型  它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="//maple13.top/2018/03/28/CSS-盒模型与-BFC/1.jpg">
+<meta property="og:image" content="//maple13.top/2018/03/28/CSS-盒模型与-BFC/2.jpg">
+<meta property="og:image" content="//maple13.top/2018/03/28/CSS-盒模型与-BFC/3.jpg">
+<meta property="og:updated_time" content="2018-03-28T01:20:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maple13 的博客">
-<meta name="twitter:description" content="学习、积累、记录，为了进步！">
+<meta name="twitter:title" content="CSS 盒模型与 BFC">
+<meta name="twitter:description" content="基本概念 盒模型的基本组成, 由里到外 content / padding / border / margin.盒模型有两种标准:  标准盒模型 IE 模型  它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.">
+<meta name="twitter:image" content="//maple13.top/2018/03/28/CSS-盒模型与-BFC/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
   
@@ -165,36 +170,107 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CSS-盒模型与-BFC" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/28/CSS-盒模型与-BFC/" class="archive-article-date">
-  	<time datetime="2018-03-28T01:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/28/CSS-盒模型与-BFC/">CSS 盒模型与 BFC</a>
+    <h1 class="article-title" itemprop="name">
+      CSS 盒模型与 BFC
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/03/28/CSS-盒模型与-BFC/" class="archive-article-date">
+  	<time datetime="2018-03-28T01:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><img src="/2018/03/28/CSS-盒模型与-BFC/1.jpg" alt=""></p>
+<p>盒模型的基本组成, 由里到外 content / padding / border / margin.<br>盒模型有两种标准:</p>
+<ul>
+<li>标准盒模型</li>
+<li>IE 模型</li>
+</ul>
+<p>它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.</p>
+<a id="more"></a>
+<h3 id="css-中两种模式的切换"><a href="#css-中两种模式的切换" class="headerlink" title="css 中两种模式的切换"></a>css 中两种模式的切换</h3><p>可以使用 <code>box-sizing</code> 来设置.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 标准模型 */</span></div><div class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">content-box</span>;</div><div class="line"></div><div class="line"><span class="comment">/* IE 模型 */</span></div><div class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">border-box</span>;</div><div class="line"></div><div class="line"><span class="comment">/* 规定应从父元素继承 box-sizing 属性的值 */</span></div><div class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">inherit</span>;</div></pre></td></tr></table></figure>
+<p>关于 <code>border-box</code> 的使用:</p>
+<ul>
+<li>一个box宽度为100%，又想要两边有内间距，这时候用就比较好</li>
+<li>全局设置 border-box 很好，首先它符合直觉，其次它可以省去一次又一次的加加减减，它还有一个关键作用——让有边框的盒子正常使用百分比宽度</li>
+</ul>
+<h3 id="边距重叠"><a href="#边距重叠" class="headerlink" title="边距重叠"></a>边距重叠</h3><p>什么是边距重叠呢?<br>两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值,如下图:<br><img src="/2018/03/28/CSS-盒模型与-BFC/2.jpg" alt=""></p>
+<p>当然外边距合并其实也有存在的意义，如下图：<br><img src="/2018/03/28/CSS-盒模型与-BFC/3.jpg" alt=""></p>
+<p>折叠时的取值:</p>
+<ul>
+<li>两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。</li>
+<li>两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。</li>
+<li>两个外边距一正一负时，折叠结果是两者的相加的和</li>
+</ul>
+<p>需要注意的是：只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并.</p>
+<h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p>BFC 意为 Block Formatting Context (块级格式化上下文)</p>
+<h4 id="BFC-的原理"><a href="#BFC-的原理" class="headerlink" title="BFC 的原理:"></a>BFC 的原理:</h4><ol>
+<li>内部的 box 会在垂直方向一个接一个的放置</li>
+<li>每个元素的 <code>margin box</code> 的左边与包含块 <code>border box</code> 的左边相接触(对于从左往右的格式化,否则相反)</li>
+<li>box 垂直方向的距离由 <code>margin</code> 决定,属于同一个 BFC 的两个相邻 box 的 <code>margin</code> 会发生重叠</li>
+<li>BFC 的区域不会与浮动区域的 box 重叠</li>
+<li>BFC 是一个页面上的独立容器, 外面的元素不会影响 BFC 里的元素; 反过来,里面的也不会影响外面的</li>
+<li>计算 BFC 高度的时候, 浮动元素也会参与计算</li>
+</ol>
+<h4 id="怎么创建-BFC"><a href="#怎么创建-BFC" class="headerlink" title="怎么创建 BFC"></a>怎么创建 BFC</h4><ol>
+<li><code>float</code>属性不为 none (脱离文档流)</li>
+<li><code>position</code>为<code>absolute</code>或<code>flex</code></li>
+<li><code>display</code>为<code>inline-block</code>/<code>inline-table</code>/<code>inline-grid</code>/<code>table-cell</code>/<code>table-caption</code>/<code>flex</code>/<code>inline-flex</code></li>
+<li><code>overflow</code>不为<code>visible</code></li>
+<li>根元素</li>
+</ol>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
+<li><code>display: table</code> 可能会产生一些问题</li>
+<li><code>overflow: scroll</code> 可能会显示不必要的滚动条</li>
+<li><code>float: left</code> 将会把元素置于容器的左边，其他元素环绕着它</li>
+<li><code>overflow: hidden</code> 将会剪切掉溢出的元素</li>
+</ul>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ol>
+<li>自适应两栏布局</li>
+<li>清除内部浮动</li>
+<li>防止垂直 <code>margin</code> 重叠</li>
+</ol>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p><a href="https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html" target="_blank" rel="external">理解CSS中BFC</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank" rel="external">盒模型</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="external">BFC</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -210,103 +286,104 @@ ga('send', 'pageview');
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3ay26DQAwFUP7/p6nUVaUUeu2BSpgzqyhBwJmFM35sW7z277Vy/f5jfX7z+f12x8LAwHgsYz9d5y+R3CFf1TtjYGC8jXEeNM+DYHLlUQi+6m4YGBgYSSDOf60GXAwMDIy7GcnLYWBgYCSM9cQyqYAlL317Lo6BgfFARrXQ/5+fb+xvYGBgPIRxRxE/b39e1WbAwMCYzciT1fsKcPlR8o8tw8DAGMrIE8hkwKsXgvMnHl6DgYExmtErkFUfsLIdzeIaBgbGOEavubhemMsPgklKjIGBMZuRXLpegDvfoN6oBwYGxjsZ+XBDdSQiP3Re0JXFwMAYxKiW2FaS0t50RKExgIGBMZpRbU+uBO6rGgy/zIxgYGAMZVST2F6JrXeIrJbwMDAwpjJWhiGSElgvcOeHQgwMjDcw8sNWryhW3aakkhb1YzEwMAYx8iJ+tTGwjilsDQYGxusZ1aDcC9zV1BcDA+OdjPUCWe/Al6fEh1uJgYExmlENmvnhr1oy67ExMDDewMiT2C1eObJ60IwqhRgYGOMYeYjsDVIkhbP8FTEwMN7J2IurkEYWAfl2HM6MYGBgDGX0Dnx5mazaBF0f48DAwJjKqAbZasvzKnw5I8fAwBjHqKa11dGK9X8ADAwMjN5xcH2Q4rKUFQMDAyNOMvMH90Y6Lgi4GBgYj2X0ktj8mtuHyTAwMEYzeo2B9aGNatluqXmJgYHxVMYXNUTrQZcn2VEAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/21/React 版本更新记录/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/21/React 版本更新记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React 版本更新记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/21/React 版本更新记录/">React 版本更新记录</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/21/JavaScript 执行机制/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/21/JavaScript 执行机制/">JavaScript 执行机制</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -329,8 +406,8 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
