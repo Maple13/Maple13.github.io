@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Maple13 的博客</title>
+  <icon>https://www.gravatar.com/avatar/87be24c4a5f76ea8a5900563a8bbcf67</icon>
   <subtitle>自己认为的很努力，对比别人只是表面上的努力而已！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -22,59 +23,7 @@
     <published>2018-03-28T01:07:12.000Z</published>
     <updated>2018-03-28T01:20:56.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><img src="/2018/03/28/CSS-盒模型与-BFC/1.jpg" alt=""></p>
-<p>盒模型的基本组成, 由里到外 content / padding / border / margin.<br>盒模型有两种标准:</p>
-<ul>
-<li>标准盒模型</li>
-<li>IE 模型</li>
-</ul>
-<p>它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.</p>
-<a id="more"></a>
-<h3 id="css-中两种模式的切换"><a href="#css-中两种模式的切换" class="headerlink" title="css 中两种模式的切换"></a>css 中两种模式的切换</h3><p>可以使用 <code>box-sizing</code> 来设置.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 标准模型 */</span></div><div class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">content-box</span>;</div><div class="line"></div><div class="line"><span class="comment">/* IE 模型 */</span></div><div class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">border-box</span>;</div><div class="line"></div><div class="line"><span class="comment">/* 规定应从父元素继承 box-sizing 属性的值 */</span></div><div class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">inherit</span>;</div></pre></td></tr></table></figure>
-<p>关于 <code>border-box</code> 的使用:</p>
-<ul>
-<li>一个box宽度为100%，又想要两边有内间距，这时候用就比较好</li>
-<li>全局设置 border-box 很好，首先它符合直觉，其次它可以省去一次又一次的加加减减，它还有一个关键作用——让有边框的盒子正常使用百分比宽度</li>
-</ul>
-<h3 id="边距重叠"><a href="#边距重叠" class="headerlink" title="边距重叠"></a>边距重叠</h3><p>什么是边距重叠呢?<br>两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值,如下图:<br><img src="/2018/03/28/CSS-盒模型与-BFC/2.jpg" alt=""></p>
-<p>当然外边距合并其实也有存在的意义，如下图：<br><img src="/2018/03/28/CSS-盒模型与-BFC/3.jpg" alt=""></p>
-<p>折叠时的取值:</p>
-<ul>
-<li>两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。</li>
-<li>两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。</li>
-<li>两个外边距一正一负时，折叠结果是两者的相加的和</li>
-</ul>
-<p>需要注意的是：只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并.</p>
-<h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p>BFC 意为 Block Formatting Context (块级格式化上下文)</p>
-<h4 id="BFC-的原理"><a href="#BFC-的原理" class="headerlink" title="BFC 的原理:"></a>BFC 的原理:</h4><ol>
-<li>内部的 box 会在垂直方向一个接一个的放置</li>
-<li>每个元素的 <code>margin box</code> 的左边与包含块 <code>border box</code> 的左边相接触(对于从左往右的格式化,否则相反)</li>
-<li>box 垂直方向的距离由 <code>margin</code> 决定,属于同一个 BFC 的两个相邻 box 的 <code>margin</code> 会发生重叠</li>
-<li>BFC 的区域不会与浮动区域的 box 重叠</li>
-<li>BFC 是一个页面上的独立容器, 外面的元素不会影响 BFC 里的元素; 反过来,里面的也不会影响外面的</li>
-<li>计算 BFC 高度的时候, 浮动元素也会参与计算</li>
-</ol>
-<h4 id="怎么创建-BFC"><a href="#怎么创建-BFC" class="headerlink" title="怎么创建 BFC"></a>怎么创建 BFC</h4><ol>
-<li><code>float</code>属性不为 none (脱离文档流)</li>
-<li><code>position</code>为<code>absolute</code>或<code>flex</code></li>
-<li><code>display</code>为<code>inline-block</code>/<code>inline-table</code>/<code>inline-grid</code>/<code>table-cell</code>/<code>table-caption</code>/<code>flex</code>/<code>inline-flex</code></li>
-<li><code>overflow</code>不为<code>visible</code></li>
-<li>根元素</li>
-</ol>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
-<li><code>display: table</code> 可能会产生一些问题</li>
-<li><code>overflow: scroll</code> 可能会显示不必要的滚动条</li>
-<li><code>float: left</code> 将会把元素置于容器的左边，其他元素环绕着它</li>
-<li><code>overflow: hidden</code> 将会剪切掉溢出的元素</li>
-</ul>
-<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ol>
-<li>自适应两栏布局</li>
-<li>清除内部浮动</li>
-<li>防止垂直 <code>margin</code> 重叠</li>
-</ol>
-<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p><a href="https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html" target="_blank" rel="external">理解CSS中BFC</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank" rel="external">盒模型</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="external">BFC</a></p>
-]]></content>
+    <content type="html"><![CDATA[<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><img src="/2018/03/28/CSS-盒模型与-BFC/1.jpg" alt=""></p><p>盒模型的基本组成, 由里到外 content / padding / border / margin.<br>盒模型有两种标准:</p><ul><li>标准盒模型</li><li>IE 模型</li></ul><p>它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.</p><a id="more"></a><h3 id="css-中两种模式的切换"><a href="#css-中两种模式的切换" class="headerlink" title="css 中两种模式的切换"></a>css 中两种模式的切换</h3><p>可以使用 <code>box-sizing</code> 来设置.</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 标准模型 */</span></span><br><span class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">content-box</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* IE 模型 */</span></span><br><span class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">border-box</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 规定应从父元素继承 box-sizing 属性的值 */</span></span><br><span class="line"><span class="selector-tag">box-sizing</span>: <span class="selector-tag">inherit</span>;</span><br></pre></td></tr></table></figure><p>关于 <code>border-box</code> 的使用:</p><ul><li>一个box宽度为100%，又想要两边有内间距，这时候用就比较好</li><li>全局设置 border-box 很好，首先它符合直觉，其次它可以省去一次又一次的加加减减，它还有一个关键作用——让有边框的盒子正常使用百分比宽度</li></ul><h3 id="边距重叠"><a href="#边距重叠" class="headerlink" title="边距重叠"></a>边距重叠</h3><p>什么是边距重叠呢?<br>两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值,如下图:<br><img src="/2018/03/28/CSS-盒模型与-BFC/2.jpg" alt=""></p><p>当然外边距合并其实也有存在的意义，如下图：<br><img src="/2018/03/28/CSS-盒模型与-BFC/3.jpg" alt=""></p><p>折叠时的取值:</p><ul><li>两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。</li><li>两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。</li><li>两个外边距一正一负时，折叠结果是两者的相加的和</li></ul><p>需要注意的是：只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并.</p><h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p>BFC 意为 Block Formatting Context (块级格式化上下文)</p><h4 id="BFC-的原理"><a href="#BFC-的原理" class="headerlink" title="BFC 的原理:"></a>BFC 的原理:</h4><ol><li>内部的 box 会在垂直方向一个接一个的放置</li><li>每个元素的 <code>margin box</code> 的左边与包含块 <code>border box</code> 的左边相接触(对于从左往右的格式化,否则相反)</li><li>box 垂直方向的距离由 <code>margin</code> 决定,属于同一个 BFC 的两个相邻 box 的 <code>margin</code> 会发生重叠</li><li>BFC 的区域不会与浮动区域的 box 重叠</li><li>BFC 是一个页面上的独立容器, 外面的元素不会影响 BFC 里的元素; 反过来,里面的也不会影响外面的</li><li>计算 BFC 高度的时候, 浮动元素也会参与计算</li></ol><h4 id="怎么创建-BFC"><a href="#怎么创建-BFC" class="headerlink" title="怎么创建 BFC"></a>怎么创建 BFC</h4><ol><li><code>float</code>属性不为 none (脱离文档流)</li><li><code>position</code>为<code>absolute</code>或<code>flex</code></li><li><code>display</code>为<code>inline-block</code>/<code>inline-table</code>/<code>inline-grid</code>/<code>table-cell</code>/<code>table-caption</code>/<code>flex</code>/<code>inline-flex</code></li><li><code>overflow</code>不为<code>visible</code></li><li>根元素</li></ol><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul><li><code>display: table</code> 可能会产生一些问题</li><li><code>overflow: scroll</code> 可能会显示不必要的滚动条</li><li><code>float: left</code> 将会把元素置于容器的左边，其他元素环绕着它</li><li><code>overflow: hidden</code> 将会剪切掉溢出的元素</li></ul><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ol><li>自适应两栏布局</li><li>清除内部浮动</li><li>防止垂直 <code>margin</code> 重叠</li></ol><h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p><a href="https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html" target="_blank" rel="noopener">理解CSS中BFC</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank" rel="noopener">盒模型</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">BFC</a></p>]]></content>
     
     <summary type="html">
     
@@ -96,141 +45,13 @@
   </entry>
   
   <entry>
-    <title>React 版本更新记录</title>
-    <link href="//maple13.top/2018/03/21/React%20%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/"/>
-    <id>//maple13.top/2018/03/21/React 版本更新记录/</id>
-    <published>2018-03-21T12:00:32.000Z</published>
-    <updated>2018-03-21T09:37:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul>
-<li>新核心架构<code>Fiber</code></li>
-<li><p><code>React.PropTypes</code> <del>废弃</del></p>
-<blockquote>
-<p>使用<code>prop-types</code>库代替</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p><code>React.createClass</code> <del>废弃</del></p>
-<blockquote>
-<p>官方推荐使用 ES6<code>class</code>方式创建组件</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p><code>render</code>可返回数组 或 字符串</p>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">    return [</div><div class="line">        &lt;div key='1'&gt;1&lt;/div&gt;,</div><div class="line">        &lt;div key='2'&gt;2&lt;/div&gt;,</div><div class="line">        &lt;div key='3'&gt;3&lt;/div&gt;,</div><div class="line">    ];</div><div class="line">&#125;</div><div class="line">// 注：不要忘了加key</div><div class="line">// 也可以直接返回字符串</div><div class="line">render() &#123;</div><div class="line">    return 'Hello World';</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>新的生命周期 <code>componentDidCatch</code></p>
-<p>  &gt;<br>  错误处理机制，如同<code>try…catch</code><br>  可以用于捕获子组件的错误，即使子组件有代码报错，也不至于导致整个APP崩溃</p>
-</li>
-<li><p>接受元素上的自定义属性</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">abc</span>=<span class="string">'123'</span>&gt;</span></div><div class="line">// 以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误</div><div class="line">// 现在会正确的把abc赋加在p标签上</div></pre></td></tr></table></figure>
-</li>
-<li><p>新增<code>ReactDOM.createPortal</code>方法</p>
-<p>  &gt;<br>  以前一个组件只能被默认的渲染到父级所引用它的地方，<br>  createPortal方法可以把组件自身的内容渲染到任意一个指定的dom元素下<br>  但事件的冒泡仍然会从它原本的父级传递<br>  官方文档：<a href="https://reactjs.org/docs/portals.html" target="_blank" rel="external">Portals</a></p>
-</li>
-<li><p>其他<br>&gt;<br>服务端渲染优化，比以前更好<br><code>react</code>和<code>react-dom</code>库文件大小比以前更小<br>react开源协议为<code>MIT</code>协议</p>
-</li>
-</ul>
-<h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul>
-<li><p>新增 <code>Fragment</code></p>
-<p>  提高了对子组件的渲染方法返回多个子元素的支持<br>  <a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html" target="_blank" rel="external">官方文档 Fragment</a></p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    <span class="xml"><span class="tag">&lt;&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">ChildA</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">ChildB</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">ChildC</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>componentWillMount /</code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p>
-</li>
-<li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p>
-<blockquote>
-<p>它会生成一个新<code>state</code>，方便让你<code>setState</code>。所有生命周期钩子（除了构造器）的<code>context</code>传参都被无效了</p>
-</blockquote>
-</li>
-<li><p>新增 <code>createContext()</code></p>
-<blockquote>
-<p>它会返回一个具有<code>Provider</code>和<code>Consumer</code>方法的对象</p>
-</blockquote>
-</li>
-<li><p>严格模式 <code>StrictMode</code><br>  严格模式确保你的代码遵循最佳实践 就像原生js 的 <code>use strict</code></p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render()&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">StrictMode</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">Context.Provider</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">Title</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">Context.Provider</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">StrictMode</span>&gt;</span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;v16-0-变动&quot;&gt;&lt;a href=&quot;#v16-0-变动&quot; class=&quot;headerlink&quot; title=&quot;v16.0 变动&quot;&gt;&lt;/a&gt;v16.0 变动&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;新核心架构&lt;code&gt;Fiber&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;React.PropTypes&lt;/code&gt; &lt;del&gt;废弃&lt;/del&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;使用&lt;code&gt;prop-types&lt;/code&gt;库代替&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;React.createClass&lt;/code&gt; &lt;del&gt;废弃&lt;/del&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;官方推荐使用 ES6&lt;code&gt;class&lt;/code&gt;方式创建组件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;render&lt;/code&gt;可返回数组 或 字符串&lt;/p&gt;
-  &lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div key=&#39;1&#39;&amp;gt;1&amp;lt;/div&amp;gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div key=&#39;2&#39;&amp;gt;2&amp;lt;/div&amp;gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div key=&#39;3&#39;&amp;gt;3&amp;lt;/div&amp;gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 注：不要忘了加key&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 也可以直接返回字符串&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return &#39;Hello World&#39;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="React" scheme="//maple13.top/tags/React/"/>
-    
-      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript 执行机制</title>
     <link href="//maple13.top/2018/03/21/JavaScript%20%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"/>
     <id>//maple13.top/2018/03/21/JavaScript 执行机制/</id>
     <published>2018-03-21T12:00:32.000Z</published>
     <updated>2018-03-21T08:54:20.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>JS 是一门<code>单线程</code>的脚本语言.</p>
-</blockquote>
-<h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p>
-<blockquote>
-<p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p>
-</blockquote>
-<p><strong>栈 ( stack )</strong></p>
-<blockquote>
-<p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p>
-</blockquote>
-<p><strong>队列 ( queue )</strong></p>
-<blockquote>
-<p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="怎样知道主进程执行栈为空呢"><a href="#怎样知道主进程执行栈为空呢" class="headerlink" title="怎样知道主进程执行栈为空呢?"></a>怎样知道主进程执行栈为空呢?</h2><blockquote>
-<p>JS 引擎存在 <code>monitoring process</code> 进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去<code>任务队列 (Event Queue)</code>那里检查是否有等待被调用的函数。</p>
-</blockquote>
-<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><ul>
-<li>同步和异步任务分别进入不同的执行”场所”，同步的进入<code>主线程</code>，异步的进入<code>Event Table</code>并注册函数。</li>
-<li>当指定的事情完成时，<code>Event Table</code>会将这个函数移入<code>Event Queue</code>。</li>
-<li><code>Event Loop</code>在不同的运行环境下有着不同的方式。</li>
-</ul>
-<p><strong>微任务(<code>micro-task</code>)与宏任务(<code>macro-task</code>)</strong></p>
-<blockquote>
-<p>任务队列中任务是有区别的, 总是有一些任务会有一些特权(比如插队), 有特权的<code>微任务</code>, 和无特权的<code>宏任务</code>.<br>就是说, 实际任务队列有两个, 微任务队列/宏任务队列, 当主线程执行完毕, 如果微任务队列中有任务则<code>优先执行</code>, 当微任务队列没有任务时才执行宏任务队列.</p>
-<p>微任务: <code>原生Promise(有些实现的promise将then方法放到了宏任务中),Object.observe(已废弃), MutationObserver， MessageChannel, process.nextTick, setImmediate</code></p>
-<p>宏任务: <code>setTimeout, setInterval, setImmediate, I/O</code></p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<blockquote><p>JS 是一门<code>单线程</code>的脚本语言.</p></blockquote><h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p><blockquote><p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p></blockquote><p><strong>栈 ( stack )</strong></p><blockquote><p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p></blockquote><p><strong>队列 ( queue )</strong></p><blockquote><p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p></blockquote><a id="more"></a><h2 id="怎样知道主进程执行栈为空呢"><a href="#怎样知道主进程执行栈为空呢" class="headerlink" title="怎样知道主进程执行栈为空呢?"></a>怎样知道主进程执行栈为空呢?</h2><blockquote><p>JS 引擎存在 <code>monitoring process</code> 进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去<code>任务队列 (Event Queue)</code>那里检查是否有等待被调用的函数。</p></blockquote><h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><ul><li>同步和异步任务分别进入不同的执行”场所”，同步的进入<code>主线程</code>，异步的进入<code>Event Table</code>并注册函数。</li><li>当指定的事情完成时，<code>Event Table</code>会将这个函数移入<code>Event Queue</code>。</li><li><code>Event Loop</code>在不同的运行环境下有着不同的方式。</li></ul><p><strong>微任务(<code>micro-task</code>)与宏任务(<code>macro-task</code>)</strong></p><blockquote><p>任务队列中任务是有区别的, 总是有一些任务会有一些特权(比如插队), 有特权的<code>微任务</code>, 和无特权的<code>宏任务</code>.<br>就是说, 实际任务队列有两个, 微任务队列/宏任务队列, 当主线程执行完毕, 如果微任务队列中有任务则<code>优先执行</code>, 当微任务队列没有任务时才执行宏任务队列.</p><p>微任务: <code>原生Promise(有些实现的promise将then方法放到了宏任务中),Object.observe(已废弃), MutationObserver， MessageChannel, process.nextTick, setImmediate</code></p><p>宏任务: <code>setTimeout, setInterval, setImmediate, I/O</code></p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -260,34 +81,61 @@
   </entry>
   
   <entry>
+    <title>React 版本更新记录</title>
+    <link href="//maple13.top/2018/03/21/React%20%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/"/>
+    <id>//maple13.top/2018/03/21/React 版本更新记录/</id>
+    <published>2018-03-21T12:00:32.000Z</published>
+    <updated>2018-03-21T09:37:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul><li>新核心架构<code>Fiber</code></li><li><p><code>React.PropTypes</code> <del>废弃</del></p><blockquote><p>使用<code>prop-types</code>库代替</p></blockquote></li></ul><ul><li><p><code>React.createClass</code> <del>废弃</del></p><blockquote><p>官方推荐使用 ES6<code>class</code>方式创建组件</p></blockquote></li></ul><ul><li><p><code>render</code>可返回数组 或 字符串</p>  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        &lt;div key=<span class="string">'1'</span>&gt;<span class="number">1</span>&lt;<span class="regexp">/div&gt;,</span></span><br><span class="line"><span class="regexp">        &lt;div key='2'&gt;2&lt;/</span>div&gt;,</span><br><span class="line">        &lt;div key=<span class="string">'3'</span>&gt;<span class="number">3</span>&lt;<span class="regexp">/div&gt;,</span></span><br><span class="line"><span class="regexp">    ];</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 注：不要忘了加key</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 也可以直接返回字符串</span></span><br><span class="line"><span class="regexp">render() &#123;</span></span><br><span class="line"><span class="regexp">    return 'Hello World';</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><ul><li><p>新的生命周期 <code>componentDidCatch</code></p><blockquote></blockquote><p>  错误处理机制，如同<code>try…catch</code><br>  可以用于捕获子组件的错误，即使子组件有代码报错，也不至于导致整个APP崩溃</p></li><li><p>接受元素上的自定义属性</p>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">abc</span>=<span class="string">'123'</span>&gt;</span></span><br><span class="line">// 以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误</span><br><span class="line">// 现在会正确的把abc赋加在p标签上</span><br></pre></td></tr></table></figure></li><li><p>新增<code>ReactDOM.createPortal</code>方法</p><blockquote></blockquote><p>  以前一个组件只能被默认的渲染到父级所引用它的地方，<br>  createPortal方法可以把组件自身的内容渲染到任意一个指定的dom元素下<br>  但事件的冒泡仍然会从它原本的父级传递<br>  官方文档：<a href="https://reactjs.org/docs/portals.html" target="_blank" rel="noopener">Portals</a></p></li><li><p>其他</p><blockquote></blockquote><p>服务端渲染优化，比以前更好<br><code>react</code>和<code>react-dom</code>库文件大小比以前更小<br>react开源协议为<code>MIT</code>协议</p></li></ul><h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul><li><p>新增 <code>Fragment</code></p><p>  提高了对子组件的渲染方法返回多个子元素的支持<br>  <a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html" target="_blank" rel="noopener">官方文档 Fragment</a></p>  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;ChildA /&gt;</span><br><span class="line">      &lt;ChildB /&gt;</span><br><span class="line">      &lt;ChildC /&gt;</span><br><span class="line">    &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></li><li><p><code>componentWillMount /</code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p></li><li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p><blockquote><p>它会生成一个新<code>state</code>，方便让你<code>setState</code>。所有生命周期钩子（除了构造器）的<code>context</code>传参都被无效了</p></blockquote></li><li><p>新增 <code>createContext()</code></p><blockquote><p>它会返回一个具有<code>Provider</code>和<code>Consumer</code>方法的对象</p></blockquote></li><li><p>严格模式 <code>StrictMode</code><br>  严格模式确保你的代码遵循最佳实践 就像原生js 的 <code>use strict</code></p>  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;StrictMode&gt;</span><br><span class="line">            &lt;Context.Provider&gt;</span><br><span class="line">                &lt;Title/&gt;</span><br><span class="line">            &lt;<span class="regexp">/Context.Provider&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>StrictMode&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;v16-0-变动&quot;&gt;&lt;a href=&quot;#v16-0-变动&quot; class=&quot;headerlink&quot; title=&quot;v16.0 变动&quot;&gt;&lt;/a&gt;v16.0 变动&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;新核心架构&lt;code&gt;Fiber&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;React.PropTypes&lt;/code&gt; &lt;del&gt;废弃&lt;/del&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用&lt;code&gt;prop-types&lt;/code&gt;库代替&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;React.createClass&lt;/code&gt; &lt;del&gt;废弃&lt;/del&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官方推荐使用 ES6&lt;code&gt;class&lt;/code&gt;方式创建组件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;render&lt;/code&gt;可返回数组 或 字符串&lt;/p&gt;
+  &lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;render() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;div key=&lt;span class=&quot;string&quot;&gt;&#39;1&#39;&lt;/span&gt;&amp;gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/div&amp;gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;        &amp;lt;div key=&#39;2&#39;&amp;gt;2&amp;lt;/&lt;/span&gt;div&amp;gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;div key=&lt;span class=&quot;string&quot;&gt;&#39;3&#39;&lt;/span&gt;&amp;gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/div&amp;gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;    ];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/ 注：不要忘了加key&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/ 也可以直接返回字符串&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;render() &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;    return &#39;Hello World&#39;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="React" scheme="//maple13.top/tags/React/"/>
+    
+      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2017 年终总结</title>
     <link href="//maple13.top/2017/12/30/2017-12-30/"/>
     <id>//maple13.top/2017/12/30/2017-12-30/</id>
     <published>2017-12-30T12:55:32.000Z</published>
     <updated>2017-12-30T15:13:44.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="近期"><a href="#近期" class="headerlink" title="近期"></a>近期</h2><blockquote>
-<p>在过去的一年里, 换了新的工作, 离开了工作2年的外包, 裸辞, 然后因为学历 / 技术 / 个人经历的原因(当然主要是因为技术菜), 面试了1个多月才进入现在的公司.</p>
-<p>新的公司, 不再全国各地的长期出差, 使用的技术栈也稳定在了 React, 但过去2年养成的习惯让我每周末都待在家里, 要么看会书, 写一下不会的 小 Demo 😜, 要么玩游戏 / 逛社区, 眼镜的度数越来越高 ☹️, 身材越来越圆 (●—●), 个人博客也好久没更新 😜, 近期新搬了家, 楼下就是篮球场, 可以让我捡起我曾经热爱的篮球🏀, 让我的周末多了一个选择.</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><blockquote>
-<p>过去的一年, 大多数时间还是在做 Hybrid App 开发, 年初结束了第一次使用 React Native 开发的 App 任务, 随后使用 DCloud 的 MUI / 5+ 开发 App, 但感觉没有使用 React Native 做出的体验好, 且文档组织不清晰, 但好处是中文社区响应及时.</p>
-<p>到了新公司使用 React + React-router 做多页面 App 内嵌, 稳定使用 React 作为开发栈. </p>
-</blockquote>
-<h2 id="2018-新年展望"><a href="#2018-新年展望" class="headerlink" title="2018, 新年展望"></a>2018, 新年展望</h2><blockquote>
-<p>新的一年, 愿望有很多, 举几个栗子 🌰 吧: </p>
-<ol>
-<li>更加努力的学习, 学并作出点东西来, 而不是只存在于嘴上说学了; </li>
-<li>定期的更新博客, 及时总结遇到并解决的问题和学习的历程;(但不能只是摘抄😆)</li>
-</ol>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="近期"><a href="#近期" class="headerlink" title="近期"></a>近期</h2><blockquote><p>在过去的一年里, 换了新的工作, 离开了工作2年的外包, 裸辞, 然后因为学历 / 技术 / 个人经历的原因(当然主要是因为技术菜), 面试了1个多月才进入现在的公司.</p></blockquote><blockquote><p>新的公司, 不再全国各地的长期出差, 使用的技术栈也稳定在了 React, 但过去2年养成的习惯让我每周末都待在家里, 要么看会书, 写一下不会的 小 Demo 😜, 要么玩游戏 / 逛社区, 眼镜的度数越来越高 ☹️, 身材越来越圆 (●—●), 个人博客也好久没更新 😜, 近期新搬了家, 楼下就是篮球场, 可以让我捡起我曾经热爱的篮球🏀, 让我的周末多了一个选择.</p></blockquote><a id="more"></a><h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><blockquote><p>过去的一年, 大多数时间还是在做 Hybrid App 开发, 年初结束了第一次使用 React Native 开发的 App 任务, 随后使用 DCloud 的 MUI / 5+ 开发 App, 但感觉没有使用 React Native 做出的体验好, 且文档组织不清晰, 但好处是中文社区响应及时.</p></blockquote><blockquote><p>到了新公司使用 React + React-router 做多页面 App 内嵌, 稳定使用 React 作为开发栈. </p></blockquote><h2 id="2018-新年展望"><a href="#2018-新年展望" class="headerlink" title="2018, 新年展望"></a>2018, 新年展望</h2><blockquote><p>新的一年, 愿望有很多, 举几个栗子 🌰 吧: </p><ol><li>更加努力的学习, 学并作出点东西来, 而不是只存在于嘴上说学了; </li><li>定期的更新博客, 及时总结遇到并解决的问题和学习的历程;(但不能只是摘抄😆)</li></ol></blockquote>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;近期&quot;&gt;&lt;a href=&quot;#近期&quot; class=&quot;headerlink&quot; title=&quot;近期&quot;&gt;&lt;/a&gt;近期&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;在过去的一年里, 换了新的工作, 离开了工作2年的外包, 裸辞, 然后因为学历 / 技术 / 个人经历的原因(当然主要是因为技术菜), 面试了1个多月才进入现在的公司.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;新的公司, 不再全国各地的长期出差, 使用的技术栈也稳定在了 React, 但过去2年养成的习惯让我每周末都待在家里, 要么看会书, 写一下不会的 小 Demo 😜, 要么玩游戏 / 逛社区, 眼镜的度数越来越高 ☹️, 身材越来越圆 (●—●), 个人博客也好久没更新 😜, 近期新搬了家, 楼下就是篮球场, 可以让我捡起我曾经热爱的篮球🏀, 让我的周末多了一个选择.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -307,39 +155,14 @@
     <published>2017-07-24T16:58:10.000Z</published>
     <updated>2017-07-24T17:00:34.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>React-redux 对外提供的 API 有四个：<code>Provider</code>/<code>createProvider</code>/<code>connectAdvanced</code>/<code>connect</code></p>
-</blockquote>
-<h3 id="connectAdvanced"><a href="#connectAdvanced" class="headerlink" title="connectAdvanced"></a><code>connectAdvanced</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connectAdvanced(selectorFactory, [connectOptions])</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<blockquote>
-<p><code>connectAdvanced</code> 用来连接组件到 <code>Redux</code> 的 <code>store</code> 上。是 <code>connect</code> 函数的基础，但并没有规定如果将 <code>state</code> 、<code>props</code> 、 <code>dispatch</code> 处理传入最终的 <code>props</code> 中。</p>
-<p> <code>connectAdvanced</code> 并没有对产生的 <code>props</code> 做缓存来优化性能，都留给了调用者去实现。<br> <code>connectAdvanced</code> 并没有修改传入的组件类，而是返回一个新的、连接到 <code>store</code> 的组件类。</p>
-</blockquote>
-<p>返回：</p>
-<blockquote>
-<p>函数返回一个高阶组件，该高阶组件将从 store 的 state 中构建的 props 传递给被包裹组件。</p>
-</blockquote>
-<h3 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h3><blockquote>
-<p><code>Provider</code> 使组件层级中的 <code>connect()</code> 方法都能获取到 <code>Redux Store</code> 。<br>正常情况下，你的根组件应该嵌套在 <code>&lt;Provider&gt;</code> 中才能使用 <code>connect()</code> 方法。</p>
-<p>如果你真的不想把根组件嵌套在 <code>&lt;Provider&gt;</code> 中，你可以把 <code>store</code> 作为 <code>props</code> 传递到每一个被 <code>connet()</code> 包装的组件，但是我们只推荐您在单元测试中对 <code>store</code> 进行伪造 (stub) 或者在非完全基于 React 的代码中才这样做。<br>正常情况下，你应该使用 <code>&lt;Provider&gt;</code>。</p>
-</blockquote>
-<h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a><code>connect()</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</div></pre></td></tr></table></figure>
-<blockquote>
-<p>连接 React 组件与 Redux store。<br>连接操作不会改变原来的组件类。<br>反而返回一个新的与 Redux store 连接的组件类。</p>
-</blockquote>
-<p>返回值：</p>
-<blockquote>
-<p>根据配置信息，返回一个注入了 state 和 action creator 的 React 组件。</p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<blockquote><p>React-redux 对外提供的 API 有四个：<code>Provider</code>/<code>createProvider</code>/<code>connectAdvanced</code>/<code>connect</code></p></blockquote><h3 id="connectAdvanced"><a href="#connectAdvanced" class="headerlink" title="connectAdvanced"></a><code>connectAdvanced</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connectAdvanced(selectorFactory, [connectOptions])</span><br></pre></td></tr></table></figure><a id="more"></a><blockquote><p><code>connectAdvanced</code> 用来连接组件到 <code>Redux</code> 的 <code>store</code> 上。是 <code>connect</code> 函数的基础，但并没有规定如果将 <code>state</code> 、<code>props</code> 、 <code>dispatch</code> 处理传入最终的 <code>props</code> 中。</p></blockquote><blockquote><p> <code>connectAdvanced</code> 并没有对产生的 <code>props</code> 做缓存来优化性能，都留给了调用者去实现。<br> <code>connectAdvanced</code> 并没有修改传入的组件类，而是返回一个新的、连接到 <code>store</code> 的组件类。</p></blockquote><p>返回：</p><blockquote><p>函数返回一个高阶组件，该高阶组件将从 store 的 state 中构建的 props 传递给被包裹组件。</p></blockquote><h3 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h3><blockquote><p><code>Provider</code> 使组件层级中的 <code>connect()</code> 方法都能获取到 <code>Redux Store</code> 。<br>正常情况下，你的根组件应该嵌套在 <code>&lt;Provider&gt;</code> 中才能使用 <code>connect()</code> 方法。</p></blockquote><blockquote><p>如果你真的不想把根组件嵌套在 <code>&lt;Provider&gt;</code> 中，你可以把 <code>store</code> 作为 <code>props</code> 传递到每一个被 <code>connet()</code> 包装的组件，但是我们只推荐您在单元测试中对 <code>store</code> 进行伪造 (stub) 或者在非完全基于 React 的代码中才这样做。<br>正常情况下，你应该使用 <code>&lt;Provider&gt;</code>。</p></blockquote><h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a><code>connect()</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</span><br></pre></td></tr></table></figure><blockquote><p>连接 React 组件与 Redux store。<br>连接操作不会改变原来的组件类。<br>反而返回一个新的与 Redux store 连接的组件类。</p></blockquote><p>返回值：</p><blockquote><p>根据配置信息，返回一个注入了 state 和 action creator 的 React 组件。</p></blockquote>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;React-redux 对外提供的 API 有四个：&lt;code&gt;Provider&lt;/code&gt;/&lt;code&gt;createProvider&lt;/code&gt;/&lt;code&gt;connectAdvanced&lt;/code&gt;/&lt;code&gt;connect&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;connectAdvanced&quot;&gt;&lt;a href=&quot;#connectAdvanced&quot; class=&quot;headerlink&quot; title=&quot;connectAdvanced&quot;&gt;&lt;/a&gt;&lt;code&gt;connectAdvanced&lt;/code&gt;&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;connectAdvanced(selectorFactory, [connectOptions])&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;connectAdvanced&quot;&gt;&lt;a href=&quot;#connectAdvanced&quot; class=&quot;headerlink&quot; title=&quot;connectAdvanced&quot;&gt;&lt;/a&gt;&lt;code&gt;connectAdvanced&lt;/code&gt;&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;connectAdvanced(selectorFactory, [connectOptions])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -357,40 +180,7 @@
     <published>2017-07-24T14:47:25.000Z</published>
     <updated>2017-07-24T14:51:37.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h3><blockquote>
-<p><code>React</code> 是单向数据流，数据主要从父节点传递到子节点（通过Props）。<br>如果顶层的某个 <code>Props</code> 改变了，<code>React</code> 就会重新渲染所有的相关子节点。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h3><ol>
-<li><p>父子组件通信<br> 在 <code>React</code> 中，最常见的组件通信就是父子了，一般：</p>
-<blockquote>
-<p>父组件更新组件状态 –&gt; Prosp –&gt; 子组件更新</p>
-<p>子组件更新父组件状态 –&gt; 需要父组件传递回调函数 –&gt; 子组件调用触发</p>
-</blockquote>
-<p> <a href="https://codepen.io/Maple13/pen/awrobR" target="_blank" rel="external">父子组件通信示例 . codepen</a></p>
-</li>
-<li><p>兄弟组件通信</p>
-<ul>
-<li><p>方式一：<br>  在两个组件处于同一级时（同处父级，或者同处子级），就称为兄弟组件<br>  。</p>
-<blockquote>
-<p>按照 <code>React</code> 单向数据流方式，我们需要借助父组件进行传递，通过 <code>父组件回调函数</code> 改变兄弟组件的 <code>Props</code> .</p>
-<p>其实这种实现方式与子组件更新父组件状态的方式是大同小异的。</p>
-</blockquote>
-</li>
-<li><p>方式二：</p>
-<blockquote>
-<p>方式一只适用于组件层次很少的情况下，当组件层次很深的时候，整个通信的效率就会变得很低。</p>
-<p>React 官方给我们提供了一种上下文方式，可以让子组件直接访问祖先组件的数据或函数，无需从祖先组件一层层传递数据到子组件中。</p>
-<p>但这种方式建议按需使用，可能导致一些不可预期的错误（比如数据传递逻辑结构不清晰）。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>本文借鉴<a href="https://segmentfault.com/a/1190000006831820#articleHeader6" target="_blank" rel="external"><code>Samo</code></a>文章</p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<h3 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h3><blockquote><p><code>React</code> 是单向数据流，数据主要从父节点传递到子节点（通过Props）。<br>如果顶层的某个 <code>Props</code> 改变了，<code>React</code> 就会重新渲染所有的相关子节点。</p></blockquote><a id="more"></a><h3 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h3><ol><li><p>父子组件通信<br> 在 <code>React</code> 中，最常见的组件通信就是父子了，一般：</p><blockquote><p>父组件更新组件状态 –&gt; Prosp –&gt; 子组件更新</p></blockquote><blockquote><p>子组件更新父组件状态 –&gt; 需要父组件传递回调函数 –&gt; 子组件调用触发</p></blockquote><p> <a href="https://codepen.io/Maple13/pen/awrobR" target="_blank" rel="noopener">父子组件通信示例 . codepen</a></p></li><li><p>兄弟组件通信</p><ul><li><p>方式一：<br>  在两个组件处于同一级时（同处父级，或者同处子级），就称为兄弟组件<br>  。</p><blockquote><p>按照 <code>React</code> 单向数据流方式，我们需要借助父组件进行传递，通过 <code>父组件回调函数</code> 改变兄弟组件的 <code>Props</code> .</p></blockquote><blockquote><p>其实这种实现方式与子组件更新父组件状态的方式是大同小异的。</p></blockquote></li><li><p>方式二：</p><blockquote><p>方式一只适用于组件层次很少的情况下，当组件层次很深的时候，整个通信的效率就会变得很低。</p></blockquote><blockquote><p>React 官方给我们提供了一种上下文方式，可以让子组件直接访问祖先组件的数据或函数，无需从祖先组件一层层传递数据到子组件中。</p></blockquote><blockquote><p>但这种方式建议按需使用，可能导致一些不可预期的错误（比如数据传递逻辑结构不清晰）。</p></blockquote></li></ul></li></ol><blockquote><p>本文借鉴<a href="https://segmentfault.com/a/1190000006831820#articleHeader6" target="_blank" rel="noopener"><code>Samo</code></a>文章</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -412,33 +202,7 @@
     <published>2017-07-24T04:16:11.000Z</published>
     <updated>2018-03-21T09:36:44.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p>
-<h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote>
-<p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p>
-</blockquote>
-<h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote>
-<p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="在生命周期中的哪一步应该发起-AJAX-请求？"><a href="#在生命周期中的哪一步应该发起-AJAX-请求？" class="headerlink" title="在生命周期中的哪一步应该发起 AJAX 请求？"></a>在生命周期中的哪一步应该发起 <code>AJAX</code> 请求？</h2><p>我们应该将 <code>AJAX</code> 请求放在 <code>componentDidMount</code> 函数中执行，主要原因是：</p>
-<blockquote>
-<p>React 下一代调和算法 <code>Fiber</code> 会通过开始或停止渲染的方式优化应用性能，其会影响到 <code>componentWillMount</code> 的触发次数。<br>    对于 <code>componentWillMount</code> 这个生命周期函数的调用次数会变得不确定，React 可以会多次频繁调用 <code>componentWillMount</code> 。如果我们将 AJAX 请求放在 <code>componentWillMount</code> 函数中，那么显而易见其会被触发多次，自然不是好选择。</p>
-<p>如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了setState函数将数据添加到组件状态中，对于未挂载的组件则会报错。<br>而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。</p>
-</blockquote>
-<h2 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h2><pre><code><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 构造函数</span></div><div class="line">Constructor()</div><div class="line"></div><div class="line"><span class="comment">// 在渲染前调用,在客户端也在服务端</span></div><div class="line">componentWillMout()</div><div class="line"></div><div class="line"><span class="comment">// 渲染</span></div><div class="line">render()</div><div class="line"></div><div class="line"><span class="comment">// 在第一次渲染后调用，只在客户端。</span></div><div class="line"><span class="comment">// 之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。</span></div><div class="line">componentDidMout()</div><div class="line"></div><div class="line"><span class="comment">// 在组件接收到一个新的 prop (更新后)时被调用。</span></div><div class="line"><span class="comment">// 这个方法在初始化render时不会被调用。</span></div><div class="line">componentWillReceiveProps()</div><div class="line"></div><div class="line"><span class="comment">// 返回一个布尔值。</span></div><div class="line"><span class="comment">// 在组件接收到新的props或者state时被调用。</span></div><div class="line"><span class="comment">// 在初始化时或者使用forceUpdate时不被调用。</span></div><div class="line"><span class="comment">// 可以在你确认不需要更新组件时使用</span></div><div class="line">shouldComponentUpdate()</div><div class="line"></div><div class="line"><span class="comment">// 在组件接收到新的props或者state但还没有render时被调用。</span></div><div class="line"><span class="comment">// 在初始化时不会被调用</span></div><div class="line">componentWillUpdate()</div><div class="line"></div><div class="line"><span class="comment">// 渲染</span></div><div class="line">render()</div><div class="line"></div><div class="line"><span class="comment">// 在组件完成更新后立即调用。</span></div><div class="line"><span class="comment">// 在初始化时不会被调用。</span></div><div class="line">componentDidUpdate()</div><div class="line"></div><div class="line"><span class="comment">// 在组件从 DOM 中移除的时候立刻被调用</span></div><div class="line">componentWillUnmount</div></pre></td></tr></table></figure>
-</code></pre><h2 id="shouldComponentUpdate-的作用是啥以及为何它这么重要？"><a href="#shouldComponentUpdate-的作用是啥以及为何它这么重要？" class="headerlink" title="shouldComponentUpdate 的作用是啥以及为何它这么重要？"></a><code>shouldComponentUpdate</code> 的作用是啥以及为何它这么重要？</h2><blockquote>
-<p><code>shouldComponentUpdate</code> 允许我们手动的判断是否要进行组件更新，根据组件的应用场景设置函数的合理返回值能够帮我们避免不必要的更新。</p>
-</blockquote>
-<h2 id="React-中的事件处理逻辑"><a href="#React-中的事件处理逻辑" class="headerlink" title="React 中的事件处理逻辑"></a>React 中的事件处理逻辑</h2><blockquote>
-<p>为了解决跨浏览器兼容性问题，React 会将浏览器原生事件封装为合成事件传入设置的事件处理器中。这里的合成事件提供了与原生事件相同的接口，不过它们屏蔽了底层浏览器的细节差异，保证了行为的一致性。另外有意思的是，React 并没有直接将事件附着到子元素上，而是以单一事件监听器的方式将所有的事件发送到顶层进行处理。这样 React 在更新 DOM 的时候就不需要考虑如何去处理附着在 DOM 上的事件监听器，最终达到优化性能的目的。</p>
-</blockquote>
-<h2 id="createElement-与-cloneElement-的区别是什么？"><a href="#createElement-与-cloneElement-的区别是什么？" class="headerlink" title="createElement 与 cloneElement 的区别是什么？"></a><code>createElement</code> 与 <code>cloneElement</code> 的区别是什么？</h2><blockquote>
-<p><code>createElement</code> 函数是 <code>JSX</code> 编译之后使用的创建 React Element 的函数，而 <code>cloneElement</code> 则是用于复制某个元素并传入新的 <code>Props</code> 。</p>
-</blockquote>
-<h2 id="传入-setState-函数的第二个参数的作用是什么？"><a href="#传入-setState-函数的第二个参数的作用是什么？" class="headerlink" title="传入 setState 函数的第二个参数的作用是什么？"></a>传入 <code>setState</code> 函数的第二个参数的作用是什么？</h2><blockquote>
-<p>该函数会在 <code>setState</code> 函数调用完成并且组件开始重新渲染的时候被调用，我们可以用该函数来监听渲染是否完成。</p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p><h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote><p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p></blockquote><h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote><p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p></blockquote><a id="more"></a><h2 id="在生命周期中的哪一步应该发起-AJAX-请求？"><a href="#在生命周期中的哪一步应该发起-AJAX-请求？" class="headerlink" title="在生命周期中的哪一步应该发起 AJAX 请求？"></a>在生命周期中的哪一步应该发起 <code>AJAX</code> 请求？</h2><p>我们应该将 <code>AJAX</code> 请求放在 <code>componentDidMount</code> 函数中执行，主要原因是：</p><blockquote><p>React 下一代调和算法 <code>Fiber</code> 会通过开始或停止渲染的方式优化应用性能，其会影响到 <code>componentWillMount</code> 的触发次数。<br>    对于 <code>componentWillMount</code> 这个生命周期函数的调用次数会变得不确定，React 可以会多次频繁调用 <code>componentWillMount</code> 。如果我们将 AJAX 请求放在 <code>componentWillMount</code> 函数中，那么显而易见其会被触发多次，自然不是好选择。</p></blockquote><blockquote><p>如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了setState函数将数据添加到组件状态中，对于未挂载的组件则会报错。<br>而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。</p></blockquote><h2 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h2><pre><code><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line">Constructor()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在渲染前调用,在客户端也在服务端</span></span><br><span class="line">componentWillMout()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 渲染</span></span><br><span class="line">render()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在第一次渲染后调用，只在客户端。</span></span><br><span class="line"><span class="comment">// 之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。</span></span><br><span class="line">componentDidMout()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在组件接收到一个新的 prop (更新后)时被调用。</span></span><br><span class="line"><span class="comment">// 这个方法在初始化render时不会被调用。</span></span><br><span class="line">componentWillReceiveProps()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回一个布尔值。</span></span><br><span class="line"><span class="comment">// 在组件接收到新的props或者state时被调用。</span></span><br><span class="line"><span class="comment">// 在初始化时或者使用forceUpdate时不被调用。</span></span><br><span class="line"><span class="comment">// 可以在你确认不需要更新组件时使用</span></span><br><span class="line">shouldComponentUpdate()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在组件接收到新的props或者state但还没有render时被调用。</span></span><br><span class="line"><span class="comment">// 在初始化时不会被调用</span></span><br><span class="line">componentWillUpdate()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 渲染</span></span><br><span class="line">render()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在组件完成更新后立即调用。</span></span><br><span class="line"><span class="comment">// 在初始化时不会被调用。</span></span><br><span class="line">componentDidUpdate()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在组件从 DOM 中移除的时候立刻被调用</span></span><br><span class="line">componentWillUnmount</span><br></pre></td></tr></table></figure></code></pre><h2 id="shouldComponentUpdate-的作用是啥以及为何它这么重要？"><a href="#shouldComponentUpdate-的作用是啥以及为何它这么重要？" class="headerlink" title="shouldComponentUpdate 的作用是啥以及为何它这么重要？"></a><code>shouldComponentUpdate</code> 的作用是啥以及为何它这么重要？</h2><blockquote><p><code>shouldComponentUpdate</code> 允许我们手动的判断是否要进行组件更新，根据组件的应用场景设置函数的合理返回值能够帮我们避免不必要的更新。</p></blockquote><h2 id="React-中的事件处理逻辑"><a href="#React-中的事件处理逻辑" class="headerlink" title="React 中的事件处理逻辑"></a>React 中的事件处理逻辑</h2><blockquote><p>为了解决跨浏览器兼容性问题，React 会将浏览器原生事件封装为合成事件传入设置的事件处理器中。这里的合成事件提供了与原生事件相同的接口，不过它们屏蔽了底层浏览器的细节差异，保证了行为的一致性。另外有意思的是，React 并没有直接将事件附着到子元素上，而是以单一事件监听器的方式将所有的事件发送到顶层进行处理。这样 React 在更新 DOM 的时候就不需要考虑如何去处理附着在 DOM 上的事件监听器，最终达到优化性能的目的。</p></blockquote><h2 id="createElement-与-cloneElement-的区别是什么？"><a href="#createElement-与-cloneElement-的区别是什么？" class="headerlink" title="createElement 与 cloneElement 的区别是什么？"></a><code>createElement</code> 与 <code>cloneElement</code> 的区别是什么？</h2><blockquote><p><code>createElement</code> 函数是 <code>JSX</code> 编译之后使用的创建 React Element 的函数，而 <code>cloneElement</code> 则是用于复制某个元素并传入新的 <code>Props</code> 。</p></blockquote><h2 id="传入-setState-函数的第二个参数的作用是什么？"><a href="#传入-setState-函数的第二个参数的作用是什么？" class="headerlink" title="传入 setState 函数的第二个参数的作用是什么？"></a>传入 <code>setState</code> 函数的第二个参数的作用是什么？</h2><blockquote><p>该函数会在 <code>setState</code> 函数调用完成并且组件开始重新渲染的时候被调用，我们可以用该函数来监听渲染是否完成。</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -468,136 +232,7 @@
     <published>2017-07-19T09:35:55.000Z</published>
     <updated>2017-07-19T10:23:15.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="什么是伪数组？如何将其转化为标准数组？"><a href="#什么是伪数组？如何将其转化为标准数组？" class="headerlink" title="什么是伪数组？如何将其转化为标准数组？"></a>什么是伪数组？如何将其转化为标准数组？</h2><ul>
-<li><p>什么是伪数组（类数组）：</p>
-<p>  无法直接调用数组方法或期望 <code>length</code> 属性有什么特殊的行为，但仍可以使用真正数组遍历方法遍历它们。<br>典型的就是 <code>arguments</code> 参数，还有像调用 <code>getElementsByTagName / document.childNodes</code>之类方法，它们都返回的 <code>NodeList</code> 对象都属于伪数组。</p>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>如何转换为标准数组？</p>
-<p>可以使用<code>Array.prototype.slice.call(fakeArray)</code>将伪数组转换为真正的Array对象。<br>但对于<code>NodeList</code>则不行，其在IE8下会报错，只能是JS引擎有所限制。因此，如果需要把 NodeList 转换为标准数组，就需要做向下兼容：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">realArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(arr);</div><div class="line">  &#125; <span class="keyword">catch</span> &#123;</div><div class="line">    <span class="keyword">var</span> ret = [], len = arr.length;</div><div class="line">    <span class="keyword">for</span> (; i &lt; len; i++) &#123;</div><div class="line">      ret[i] = (c[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>方法二：使用ES6 数组扩展的 form() 方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>);</div></pre></td></tr></table></figure>
-<p>伪数组转换为标准数组的条件：</p>
-<blockquote>
-<p>1、伪数组的键值需要为数字，否则转换后数组均无初始值<br>  2、有 length 属性</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="数组去重与排序"><a href="#数组去重与排序" class="headerlink" title="数组去重与排序"></a>数组去重与排序</h2><ol>
-<li><p>去重之一：创建一个新数组，使用 <code>indexOf</code> 判断新数组中是否存在值，例：</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">const</span> dedupOne = <span class="function"><span class="params">arr</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> ret = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (ret.indexOf(arr[i) === <span class="number">-1</span>) &#123;</div><div class="line">            ret.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>去重之二：创建一个新对象</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> dedupTwo = arr = &gt; &#123;</div><div class="line">    <span class="keyword">let</span> hash = &#123;&#125;,</div><div class="line">        len  = arr.length,</div><div class="line">        ret  = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (!hash[arr[i]]) &#123;</div><div class="line">            hash[arr[i]] = arr[i];</div><div class="line">            ret.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>数组排序</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">一般使用 Array 的原生方法 sort() 方法排序。</div><div class="line"><span class="bullet">1. </span>排序顺序可以是字母和数字，并按升序或降序。</div><div class="line"><span class="bullet">2. </span>默认排序是字母升序。</div><div class="line"><span class="bullet">3. </span>在原始数组上排序，不会生成数组副本。</div><div class="line"></div><div class="line">使用数字排序，你必须通过一个函数作为参数来调用。</div><div class="line">函数指定数字是按照升序还是降序排列。</div></pre></td></tr></table></figure>
-<p> 数组数字升序排序，例：</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">33</span>, <span class="number">45</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">332</span>, <span class="number">3342</span>, <span class="number">33</span>, <span class="number">334</span>,<span class="number">33</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">55</span>, <span class="number">55</span>, <span class="number">88</span>, <span class="number">99</span> ];</div><div class="line">arr.sort(<span class="function">(<span class="params">&#123;a, b&#125;</span>) =&gt;</span> a-b);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="异步加载-JS-的方式"><a href="#异步加载-JS-的方式" class="headerlink" title="异步加载 JS 的方式"></a>异步加载 JS 的方式</h2><ol>
-<li><p><code>async</code></p>
-<blockquote>
-<ol>
-<li>async 属性是一个布尔值<ol>
-<li>async 属性一旦脚本可用，则立即异步执行</li>
-<li>async 仅适用于外部脚本(只有在使用 src 属性时)</li>
-</ol>
-</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-<h2 id="Redux-的作用及优缺点"><a href="#Redux-的作用及优缺点" class="headerlink" title="Redux 的作用及优缺点"></a>Redux 的作用及优缺点</h2><p>  <code>redux</code> 让 <code>state</code> 的变化变得可预测、可回溯。</p>
-<blockquote>
-<p>三个原则：</p>
-<pre><code>1. 单一数据源
-2. state 是只读的
-3. 使用纯函数来执行修改
-</code></pre></blockquote>
-<p>  <code>Immutable</code> 是一个可实现持续数据结构的 JavaScript 库。</p>
-<h2 id="跨域的解决方法"><a href="#跨域的解决方法" class="headerlink" title="跨域的解决方法"></a>跨域的解决方法</h2><blockquote>
-<p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
-</blockquote>
-<p>  1、 JSONP</p>
-<blockquote>
-<p> JSONP 包含两部分：回调函数和数据。<br>    回调函数是当响应到来时要放在当前页面被调用的函数。<br>    数据就是传入回调函数中的 json 数据，也就是回调函数的参数了。<br>    缺点：</p>
-<pre><code>* 安全问题(请求代码中可能存在安全隐患)
-* 要确定 jsonp 请求是否失败并不容易
-</code></pre></blockquote>
-<p>  2、 跨域资源共享（CORS）</p>
-<blockquote>
-<p> CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。<br>      CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</p>
-</blockquote>
-<p>  3、 Web Sockets</p>
-<blockquote>
-<p>   一种浏览器 API ，它的目标是在一个单独的持久连接上提供全双工、双向通信。（同源策略不适用）<br>      原理：在 js 创建了 web socket 之后，会有一个 HTTP 请求发送到浏览器以发起连接。<br>        取得服务器响应后，建立的连接会使用 HTTP 升级从 HTTP 协议交换为 web sockt 协议。<br>      只有在支持 web socket 协议的服务器上才能正常工作。</p>
-</blockquote>
-<h2 id="什么是服务端渲染？有什么好处？"><a href="#什么是服务端渲染？有什么好处？" class="headerlink" title="什么是服务端渲染？有什么好处？"></a>什么是服务端渲染？有什么好处？</h2><blockquote>
-<p>1、 首次加载页面更快。<br>  2、 SEO</p>
-</blockquote>
-<h2 id="单页面（SPA）是什么？有什么优缺点？"><a href="#单页面（SPA）是什么？有什么优缺点？" class="headerlink" title="单页面（SPA）是什么？有什么优缺点？"></a>单页面（SPA）是什么？有什么优缺点？</h2><blockquote>
-<p>它将所有的活动局限于一个Web页面中，仅在该Web页面初始化时加载相应的HTML、JavaScript 和 CSS。一旦页面加载完成了，SPA不会因为用户的操作而进行页面的重新加载或跳转。取而代之的是利用 JavaScript 动态的变换HTML的内容，从而实现UI与用户的交互。由于避免了页面的重新加载，SPA 可以提供较为流畅的用户体验。</p>
-</blockquote>
-<p>优点：</p>
-<blockquote>
-<p>1、良好的交互体验<br>    用户不需要从新刷新页面，获取数据也是通过 AJAX 异步获取，页面显示流畅<br>  2、良好的前后端分离工作模式<br>    单页Web应用可以和RESTful规约一起使用，通过REST API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。<br>  3、减轻服务器压力<br>    服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；<br>  4、公用一套后端程序代码<br>    不用修改后端程序代码就可以同时用于Web界面、手机、平板等多种客户端；</p>
-</blockquote>
-<p>缺点：</p>
-<blockquote>
-<p>1、SEO 难度较高<br>    由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧。<br>  2、前进、后退管理<br>    由于单页Web应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理，当然此问题也有解决方案，比如利用URI中的散列+iframe实现<br>  3、初次加载耗时多<br>    为实现单页Web应用功能及显示效果，需要在加载页面的时候将JavaScript、CSS统一加载，部分页面可以在需要的时候加载。所以必须对JavaScript及CSS代码进行合并压缩处理，如果使用第三方库，建议使用一些大公司的CDN，因此带宽的消耗是必然的。</p>
-</blockquote>
-<h2 id="常用-HTML-状态吗"><a href="#常用-HTML-状态吗" class="headerlink" title="常用 HTML 状态吗"></a>常用 <code>HTML</code> 状态吗</h2><table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>请求已成功，请求所希望的响应头或数据体将随此响应返回。</td>
-</tr>
-<tr>
-<td>400</td>
-<td>1、语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。    2、请求参数有误。</td>
-</tr>
-<tr>
-<td>403</td>
-<td>服务器已经理解请求，但是拒绝执行它。</td>
-</tr>
-<tr>
-<td>404</td>
-<td>请求失败，请求所希望得到的资源未被在服务器上发现</td>
-</tr>
-<tr>
-<td>500</td>
-<td>服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器的程序码出错时出现。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="link-与-import-的区别？"><a href="#link-与-import-的区别？" class="headerlink" title="link 与 @import 的区别？"></a><code>link</code> 与 <code>@import</code> 的区别？</h2><blockquote>
-<ol>
-<li><code>link</code> 属于<code>XHTML</code>标签，而<code>@import</code>是<code>css</code>提供的.</li>
-<li>页面在加载的时候，<code>link</code>会同时被加载；而<code>@import</code>引用的<code>CSS</code>会在页面加载完成后加载。</li>
-<li><code>@import</code>只在<code>IE5</code>以上才能生效；而<code>link</code>是<code>XHTML</code>标签，无兼容性问题.</li>
-<li><code>link</code>方式引进的样式比 <code>@import</code>方式引进的样式权重高.</li>
-</ol>
-</blockquote>
-<h2 id="谈一下对HTML语义化的理解"><a href="#谈一下对HTML语义化的理解" class="headerlink" title="谈一下对HTML语义化的理解"></a>谈一下对<code>HTML</code>语义化的理解</h2><blockquote>
-<ol>
-<li><code>html</code> 语义化让页面的内容结构化，结构更清晰，便于浏览器、搜索引擎解析.</li>
-<li>即使在没有样式的情况下也以一种文档格式显示，并且是容易阅读的.</li>
-<li>搜索引擎的爬虫也依赖于<code>HTML</code>标记来确定上下文和各个关键字的权重，利于 <code>SEO</code>.</li>
-<li>使阅读源码的人对网站更容易将网站分块，便以阅读维护理解.</li>
-</ol>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="什么是伪数组？如何将其转化为标准数组？"><a href="#什么是伪数组？如何将其转化为标准数组？" class="headerlink" title="什么是伪数组？如何将其转化为标准数组？"></a>什么是伪数组？如何将其转化为标准数组？</h2><ul><li><p>什么是伪数组（类数组）：</p><p>  无法直接调用数组方法或期望 <code>length</code> 属性有什么特殊的行为，但仍可以使用真正数组遍历方法遍历它们。<br>典型的就是 <code>arguments</code> 参数，还有像调用 <code>getElementsByTagName / document.childNodes</code>之类方法，它们都返回的 <code>NodeList</code> 对象都属于伪数组。</p></li></ul><a id="more"></a><ul><li><p>如何转换为标准数组？</p><p>可以使用<code>Array.prototype.slice.call(fakeArray)</code>将伪数组转换为真正的Array对象。<br>但对于<code>NodeList</code>则不行，其在IE8下会报错，只能是JS引擎有所限制。因此，如果需要把 NodeList 转换为标准数组，就需要做向下兼容：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">realArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(arr);</span><br><span class="line">  &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> ret = [], len = arr.length;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; len; i++) &#123;</span><br><span class="line">      ret[i] = (c[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>方法二：使用ES6 数组扩展的 form() 方法</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>);</span><br></pre></td></tr></table></figure><p>伪数组转换为标准数组的条件：</p><blockquote><p>1、伪数组的键值需要为数字，否则转换后数组均无初始值<br>  2、有 length 属性</p></blockquote></li></ul><h2 id="数组去重与排序"><a href="#数组去重与排序" class="headerlink" title="数组去重与排序"></a>数组去重与排序</h2><ol><li><p>去重之一：创建一个新数组，使用 <code>indexOf</code> 判断新数组中是否存在值，例：</p> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> dedupOne = <span class="function"><span class="params">arr</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> ret = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ret.indexOf(arr[i) === <span class="number">-1</span>) &#123;</span><br><span class="line">            ret.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>去重之二：创建一个新对象</p> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dedupTwo = arr = &gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> hash = &#123;&#125;,</span><br><span class="line">        len  = arr.length,</span><br><span class="line">        ret  = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!hash[arr[i]]) &#123;</span><br><span class="line">            hash[arr[i]] = arr[i];</span><br><span class="line">            ret.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>数组排序</p> <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">一般使用 Array 的原生方法 sort() 方法排序。</span><br><span class="line"><span class="bullet">1. </span>排序顺序可以是字母和数字，并按升序或降序。</span><br><span class="line"><span class="bullet">2. </span>默认排序是字母升序。</span><br><span class="line"><span class="bullet">3. </span>在原始数组上排序，不会生成数组副本。</span><br><span class="line"></span><br><span class="line">使用数字排序，你必须通过一个函数作为参数来调用。</span><br><span class="line">函数指定数字是按照升序还是降序排列。</span><br></pre></td></tr></table></figure><p> 数组数字升序排序，例：</p> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">33</span>, <span class="number">45</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">332</span>, <span class="number">3342</span>, <span class="number">33</span>, <span class="number">334</span>,<span class="number">33</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">55</span>, <span class="number">55</span>, <span class="number">88</span>, <span class="number">99</span> ];</span><br><span class="line">arr.sort(<span class="function">(<span class="params">&#123;a, b&#125;</span>) =&gt;</span> a-b);</span><br></pre></td></tr></table></figure></li></ol><h2 id="异步加载-JS-的方式"><a href="#异步加载-JS-的方式" class="headerlink" title="异步加载 JS 的方式"></a>异步加载 JS 的方式</h2><ol><li><p><code>async</code></p><blockquote><ol><li>async 属性是一个布尔值<ol start="2"><li>async 属性一旦脚本可用，则立即异步执行</li><li>async 仅适用于外部脚本(只有在使用 src 属性时)</li></ol></li></ol></blockquote></li></ol><h2 id="Redux-的作用及优缺点"><a href="#Redux-的作用及优缺点" class="headerlink" title="Redux 的作用及优缺点"></a>Redux 的作用及优缺点</h2><p>  <code>redux</code> 让 <code>state</code> 的变化变得可预测、可回溯。</p><blockquote><p>三个原则：</p><pre><code>1. 单一数据源2. state 是只读的3. 使用纯函数来执行修改</code></pre></blockquote><p>  <code>Immutable</code> 是一个可实现持续数据结构的 JavaScript 库。</p><h2 id="跨域的解决方法"><a href="#跨域的解决方法" class="headerlink" title="跨域的解决方法"></a>跨域的解决方法</h2><blockquote><p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p></blockquote><p>  1、 JSONP</p><blockquote><p> JSONP 包含两部分：回调函数和数据。<br>    回调函数是当响应到来时要放在当前页面被调用的函数。<br>    数据就是传入回调函数中的 json 数据，也就是回调函数的参数了。<br>    缺点：</p><pre><code>* 安全问题(请求代码中可能存在安全隐患)* 要确定 jsonp 请求是否失败并不容易</code></pre></blockquote><p>  2、 跨域资源共享（CORS）</p><blockquote><p> CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。<br>      CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</p></blockquote><p>  3、 Web Sockets</p><blockquote><p>   一种浏览器 API ，它的目标是在一个单独的持久连接上提供全双工、双向通信。（同源策略不适用）<br>      原理：在 js 创建了 web socket 之后，会有一个 HTTP 请求发送到浏览器以发起连接。<br>        取得服务器响应后，建立的连接会使用 HTTP 升级从 HTTP 协议交换为 web sockt 协议。<br>      只有在支持 web socket 协议的服务器上才能正常工作。</p></blockquote><h2 id="什么是服务端渲染？有什么好处？"><a href="#什么是服务端渲染？有什么好处？" class="headerlink" title="什么是服务端渲染？有什么好处？"></a>什么是服务端渲染？有什么好处？</h2><blockquote><p>1、 首次加载页面更快。<br>  2、 SEO</p></blockquote><h2 id="单页面（SPA）是什么？有什么优缺点？"><a href="#单页面（SPA）是什么？有什么优缺点？" class="headerlink" title="单页面（SPA）是什么？有什么优缺点？"></a>单页面（SPA）是什么？有什么优缺点？</h2><blockquote><p>它将所有的活动局限于一个Web页面中，仅在该Web页面初始化时加载相应的HTML、JavaScript 和 CSS。一旦页面加载完成了，SPA不会因为用户的操作而进行页面的重新加载或跳转。取而代之的是利用 JavaScript 动态的变换HTML的内容，从而实现UI与用户的交互。由于避免了页面的重新加载，SPA 可以提供较为流畅的用户体验。</p></blockquote><p>优点：</p><blockquote><p>1、良好的交互体验<br>    用户不需要从新刷新页面，获取数据也是通过 AJAX 异步获取，页面显示流畅<br>  2、良好的前后端分离工作模式<br>    单页Web应用可以和RESTful规约一起使用，通过REST API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。<br>  3、减轻服务器压力<br>    服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；<br>  4、公用一套后端程序代码<br>    不用修改后端程序代码就可以同时用于Web界面、手机、平板等多种客户端；</p></blockquote><p>缺点：</p><blockquote><p>1、SEO 难度较高<br>    由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧。<br>  2、前进、后退管理<br>    由于单页Web应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理，当然此问题也有解决方案，比如利用URI中的散列+iframe实现<br>  3、初次加载耗时多<br>    为实现单页Web应用功能及显示效果，需要在加载页面的时候将JavaScript、CSS统一加载，部分页面可以在需要的时候加载。所以必须对JavaScript及CSS代码进行合并压缩处理，如果使用第三方库，建议使用一些大公司的CDN，因此带宽的消耗是必然的。</p></blockquote><h2 id="常用-HTML-状态吗"><a href="#常用-HTML-状态吗" class="headerlink" title="常用 HTML 状态吗"></a>常用 <code>HTML</code> 状态吗</h2><table><thead><tr><th>状态码</th><th>含义</th></tr></thead><tbody><tr><td>200</td><td>请求已成功，请求所希望的响应头或数据体将随此响应返回。</td></tr><tr><td>400</td><td>1、语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。    2、请求参数有误。</td></tr><tr><td>403</td><td>服务器已经理解请求，但是拒绝执行它。</td></tr><tr><td>404</td><td>请求失败，请求所希望得到的资源未被在服务器上发现</td></tr><tr><td>500</td><td>服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器的程序码出错时出现。</td></tr></tbody></table><h2 id="link-与-import-的区别？"><a href="#link-与-import-的区别？" class="headerlink" title="link 与 @import 的区别？"></a><code>link</code> 与 <code>@import</code> 的区别？</h2><blockquote><ol><li><code>link</code> 属于<code>XHTML</code>标签，而<code>@import</code>是<code>css</code>提供的.</li><li>页面在加载的时候，<code>link</code>会同时被加载；而<code>@import</code>引用的<code>CSS</code>会在页面加载完成后加载。</li><li><code>@import</code>只在<code>IE5</code>以上才能生效；而<code>link</code>是<code>XHTML</code>标签，无兼容性问题.</li><li><code>link</code>方式引进的样式比 <code>@import</code>方式引进的样式权重高.</li></ol></blockquote><h2 id="谈一下对HTML语义化的理解"><a href="#谈一下对HTML语义化的理解" class="headerlink" title="谈一下对HTML语义化的理解"></a>谈一下对<code>HTML</code>语义化的理解</h2><blockquote><ol><li><code>html</code> 语义化让页面的内容结构化，结构更清晰，便于浏览器、搜索引擎解析.</li><li>即使在没有样式的情况下也以一种文档格式显示，并且是容易阅读的.</li><li>搜索引擎的爬虫也依赖于<code>HTML</code>标记来确定上下文和各个关键字的权重，利于 <code>SEO</code>.</li><li>使阅读源码的人对网站更容易将网站分块，便以阅读维护理解.</li></ol></blockquote>]]></content>
     
     <summary type="html">
     
@@ -621,44 +256,7 @@
     <published>2016-07-04T07:39:20.000Z</published>
     <updated>2016-07-04T09:11:52.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><blockquote>
-<p>IE 条件语句包含在HTML注释语句中，只会被 IE 浏览器识别并执行，其他浏览器视其为HTML注释语句，于是全部被忽略，灵活使用IE 条件语句可以开发出兼容不同版本的IE浏览器的样式。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>如果留意一下有些网站的源代码，有时会发现一些这样的代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE5]&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">    /*将IE5*的CSS盒模型宽高计算修正放在这个条件注释中*/</div><div class="line">    <span class="comment">#Test1 &#123; width: 180px; &#125;</span></div><div class="line">    <span class="comment">#Test2 &#123; width: 190px; &#125;</span></div><div class="line">&lt;/style&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;link href=<span class="string">"css/index.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</div><div class="line">&lt;!--[<span class="keyword">if</span> IE7]&gt;</div><div class="line">&lt;link href=<span class="string">"css/ie7.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line">&lt;!--[<span class="keyword">if</span> IE6]&gt;</div><div class="line">&lt;link href=<span class="string">"css/ie7.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p><em>&lt;!–</em> 和 <em>–&gt;</em>标识符配对使用表示HTML注释语句。但是IE会把这些特殊的注释语句当做一个简单的逻辑语句进行解析。</p>
-</blockquote>
-<p>#</p>
-<blockquote>
-<ul>
-<li><p>上面的第一段注释，表示如果当前浏览器是IE浏览器，则解析<em>&lt;!–[if IE]&gt;</em> 和 <em>&lt;![endif]–&gt;</em>标识符之间的样式表。而其他浏览器视而不见，当做注释语句全部忽略。因此可以在此放置一些能够兼容IE浏览器的样式代码。</p>
-</li>
-<li><p>在上面的第二段代码中，分别使用了不同的条件语句来设置不同版本的IE浏览器中链接不同的CSS文件，这样，不同版本的IE浏览器就可以导入不同的样式表，以实现兼容性。</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="IE条件语句的基本用法"><a href="#IE条件语句的基本用法" class="headerlink" title="IE条件语句的基本用法"></a>IE条件语句的基本用法</h2><p>IE 条件语句一般放在HTML注释语句中，这样可以避免其他浏览器因为无法解析这些条件语句时可能出现的尴尬。其基本语法如下：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE]&gt;</div><div class="line">    IE 下可执行语句</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<ul>
-<li>条件语句放在中括号内，然后嵌入到HTML注释中。注意，起始条件标记中省略了HTML注释语句的后半部分标记（– –&gt;），而结束标记中省略了HTML注释语句的前半部分标记（!– –），仅是一个半封闭的形式，这样对于其他浏览器来说，前后两个半封闭的HTML注释标记就形成了一个完整的注释标记，从而避免了由于其他浏览器无法解析的尴尬。</li>
-<li>IE浏览器在解析HTML源码时，如果遇到类似<em>&lt;!–[if IE]&gt;</em>或<em>&lt;![endif]–&gt;</em>标记时，会立即解析其中包含的源代码。</li>
-<li>在IE条件中可以放置一些简单的条件语句，或者设置成只能够在特定版本的浏览器中生效的源代码。</li>
-</ul>
-</blockquote>
-<p>#</p>
-<blockquote>
-<p>除了使用这些指定某种版本浏览器的条件语句之外，还可以结合 <strong>lte、lt、get、gt、！</strong>关键字来定义IE浏览器的版本范围，这些关键字的说明如下：<br>``` ruby</p>
-<ul>
-<li>lte: 小于或等于某个版本的IE浏览器。</li>
-<li>lt: 小于某个版本的IE浏览器。</li>
-<li>gte： 大于或等于某个版本的IE浏览器。</li>
-<li>gt： 大于某个版本的IE浏览器。</li>
-<li>！：不等于某个版本的IE浏览器。</li>
-</ul>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><blockquote><p>IE 条件语句包含在HTML注释语句中，只会被 IE 浏览器识别并执行，其他浏览器视其为HTML注释语句，于是全部被忽略，灵活使用IE 条件语句可以开发出兼容不同版本的IE浏览器的样式。</p></blockquote><a id="more"></a><h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>如果留意一下有些网站的源代码，有时会发现一些这样的代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[<span class="keyword">if</span> IE5]&gt;</span><br><span class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">    /*将IE5*的CSS盒模型宽高计算修正放在这个条件注释中*/</span><br><span class="line">    <span class="comment">#Test1 &#123; width: 180px; &#125;</span></span><br><span class="line">    <span class="comment">#Test2 &#123; width: 190px; &#125;</span></span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p><p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=<span class="string">"css/index.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</span><br><span class="line">&lt;!--[<span class="keyword">if</span> IE7]&gt;</span><br><span class="line">&lt;link href=<span class="string">"css/ie7.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br><span class="line">&lt;!--[<span class="keyword">if</span> IE6]&gt;</span><br><span class="line">&lt;link href=<span class="string">"css/ie7.css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> /&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p><blockquote><p><em>&lt;!–</em> 和 <em>–&gt;</em>标识符配对使用表示HTML注释语句。但是IE会把这些特殊的注释语句当做一个简单的逻辑语句进行解析。</p></blockquote><p>#</p><blockquote><ul><li>上面的第一段注释，表示如果当前浏览器是IE浏览器，则解析<em>&lt;!–[if IE]&gt;</em> 和 <em>&lt;![endif]–&gt;</em>标识符之间的样式表。而其他浏览器视而不见，当做注释语句全部忽略。因此可以在此放置一些能够兼容IE浏览器的样式代码。</li></ul></blockquote><blockquote><ul><li>在上面的第二段代码中，分别使用了不同的条件语句来设置不同版本的IE浏览器中链接不同的CSS文件，这样，不同版本的IE浏览器就可以导入不同的样式表，以实现兼容性。</li></ul></blockquote><h2 id="IE条件语句的基本用法"><a href="#IE条件语句的基本用法" class="headerlink" title="IE条件语句的基本用法"></a>IE条件语句的基本用法</h2><p>IE 条件语句一般放在HTML注释语句中，这样可以避免其他浏览器因为无法解析这些条件语句时可能出现的尴尬。其基本语法如下：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[<span class="keyword">if</span> IE]&gt;</span><br><span class="line">    IE 下可执行语句</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p><blockquote><ul><li>条件语句放在中括号内，然后嵌入到HTML注释中。注意，起始条件标记中省略了HTML注释语句的后半部分标记（– –&gt;），而结束标记中省略了HTML注释语句的前半部分标记（!– –），仅是一个半封闭的形式，这样对于其他浏览器来说，前后两个半封闭的HTML注释标记就形成了一个完整的注释标记，从而避免了由于其他浏览器无法解析的尴尬。</li><li>IE浏览器在解析HTML源码时，如果遇到类似<em>&lt;!–[if IE]&gt;</em>或<em>&lt;![endif]–&gt;</em>标记时，会立即解析其中包含的源代码。</li><li>在IE条件中可以放置一些简单的条件语句，或者设置成只能够在特定版本的浏览器中生效的源代码。</li></ul></blockquote><p>#</p><blockquote><p>除了使用这些指定某种版本浏览器的条件语句之外，还可以结合 <strong>lte、lt、get、gt、！</strong>关键字来定义IE浏览器的版本范围，这些关键字的说明如下：<br><code>`</code> ruby</p><ul><li>lte: 小于或等于某个版本的IE浏览器。</li><li>lt: 小于某个版本的IE浏览器。</li><li>gte： 大于或等于某个版本的IE浏览器。</li><li>gt： 大于某个版本的IE浏览器。</li><li>！：不等于某个版本的IE浏览器。</li></ul></blockquote>]]></content>
     
     <summary type="html">
     
@@ -682,41 +280,12 @@
     <published>2016-06-22T08:08:20.000Z</published>
     <updated>2016-06-29T03:43:50.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><blockquote>
-<p>近日在Sublime中编辑Markdown文件时想要实时预览一下,于是在网上寻找到了一种比较简单有效的方法，此方法来源于网上的Volcano大神，他的<a href="http://www.ooso.net/archives/611" target="_blank" rel="external">博客</a>，他的<a href="https://github.com/volca/markdown-preview" target="_blank" rel="external">GitHub</a>地址。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="安装Sublime-Text-3"><a href="#安装Sublime-Text-3" class="headerlink" title="安装Sublime Text 3"></a>安装Sublime Text 3</h3><blockquote>
-<ul>
-<li>请前往<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>官网下载Sublime软件并安装</li>
-</ul>
-</blockquote>
-<h3 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h3><blockquote>
-<p>下载用于实时预览Markdown文件的Chrome插件。</p>
-<ul>
-<li><p>使用Git方式下载</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git://github.com/volca/markdown-preview.git</div></pre></td></tr></table></figure>
-</li>
-<li><p>Zip包<a href="https://github.com/volca/markdown-preview/archive/master.zip" target="_blank" rel="external">下载</a></p>
-</li>
-<li><a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl" target="_blank" rel="external">Chrome 网上应用店下载扩展</a></li>
-</ul>
-</blockquote>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote>
-<ol>
-<li>找到上一步第一、二个方法下载的<strong> markdown-preview </strong>文件夹</li>
-<li>开启chrome扩展的开发者模式，具体位置在<strong> 设置 </strong> -&gt; <strong> 扩展程序 </strong>里</li>
-<li><strong> 加载已解压的扩展程序 </strong></li>
-<li>将<strong> 允许访问文件网址 </strong>勾选上</li>
-</ol>
-<p>然后你就可以尝试用chrome浏览器打开markdown文件预览了，采用趁手的编辑器去修改它。它会在浏览器自动刷新！</p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><blockquote><p>近日在Sublime中编辑Markdown文件时想要实时预览一下,于是在网上寻找到了一种比较简单有效的方法，此方法来源于网上的Volcano大神，他的<a href="http://www.ooso.net/archives/611" target="_blank" rel="noopener">博客</a>，他的<a href="https://github.com/volca/markdown-preview" target="_blank" rel="noopener">GitHub</a>地址。</p></blockquote><a id="more"></a><h3 id="安装Sublime-Text-3"><a href="#安装Sublime-Text-3" class="headerlink" title="安装Sublime Text 3"></a>安装Sublime Text 3</h3><blockquote><ul><li>请前往<a href="http://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a>官网下载Sublime软件并安装</li></ul></blockquote><h3 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h3><blockquote><p>下载用于实时预览Markdown文件的Chrome插件。</p><ul><li>使用Git方式下载<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git://github.com/volca/markdown-preview.git</span><br></pre></td></tr></table></figure></li></ul></blockquote><blockquote><ul><li>Zip包<a href="https://github.com/volca/markdown-preview/archive/master.zip" target="_blank" rel="noopener">下载</a></li><li><a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl" target="_blank" rel="noopener">Chrome 网上应用店下载扩展</a></li></ul></blockquote><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote><ol><li>找到上一步第一、二个方法下载的<strong> markdown-preview </strong>文件夹</li><li>开启chrome扩展的开发者模式，具体位置在<strong> 设置 </strong> -&gt; <strong> 扩展程序 </strong>里</li><li><strong> 加载已解压的扩展程序 </strong></li><li>将<strong> 允许访问文件网址 </strong>勾选上</li></ol></blockquote><blockquote><p>然后你就可以尝试用chrome浏览器打开markdown文件预览了，采用趁手的编辑器去修改它。它会在浏览器自动刷新！</p></blockquote>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;来源&quot;&gt;&lt;a href=&quot;#来源&quot; class=&quot;headerlink&quot; title=&quot;来源&quot;&gt;&lt;/a&gt;来源&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;近日在Sublime中编辑Markdown文件时想要实时预览一下,于是在网上寻找到了一种比较简单有效的方法，此方法来源于网上的Volcano大神，他的&lt;a href=&quot;http://www.ooso.net/archives/611&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博客&lt;/a&gt;，他的&lt;a href=&quot;https://github.com/volca/markdown-preview&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;地址。&lt;/p&gt;
+&lt;p&gt;近日在Sublime中编辑Markdown文件时想要实时预览一下,于是在网上寻找到了一种比较简单有效的方法，此方法来源于网上的Volcano大神，他的&lt;a href=&quot;http://www.ooso.net/archives/611&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客&lt;/a&gt;，他的&lt;a href=&quot;https://github.com/volca/markdown-preview&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;地址。&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -733,21 +302,11 @@
     <published>2015-09-17T08:22:52.000Z</published>
     <updated>2016-06-27T02:09:04.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! 以下是Hexo的一些常用命令，如果需要详细了解,可以前往 <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> 查询详细文档. 如果你在使用Hexo时出现问题，你可以在<a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a>搜索答案,或者可以前往Hexo的<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>上提出问题.</p>
-<a id="more"></a>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 以下是Hexo的一些常用命令，如果需要详细了解,可以前往 <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> 查询详细文档. 如果你在使用Hexo时出现问题，你可以在<a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a>搜索答案,或者可以前往Hexo的<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>上提出问题.</p><a id="more"></a><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! 以下是Hexo的一些常用命令，如果需要详细了解,可以前往 &lt;a href=&quot;http://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; 查询详细文档. 如果你在使用Hexo时出现问题，你可以在&lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt;搜索答案,或者可以前往Hexo的&lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;上提出问题.&lt;/p&gt;
+      &lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! 以下是Hexo的一些常用命令，如果需要详细了解,可以前往 &lt;a href=&quot;http://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; 查询详细文档. 如果你在使用Hexo时出现问题，你可以在&lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt;搜索答案,或者可以前往Hexo的&lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;上提出问题.&lt;/p&gt;
     
     </summary>
     
