@@ -5,15 +5,15 @@
     
   <url>
     <loc>//maple13.top/2018/12/31/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-12-31T15:09:28.353Z</lastmod>
+    <lastmod>2018-12-31T15:26:25.801Z</lastmod>
     <data>
         <display>
         <title>2018 年终总结</title>
         <pubTime>2018-12-31T14:01:02.000Z</pubTime>
         
-        <tag>个人</tag>
-         
         <tag>工作</tag>
+         
+        <tag>个人</tag>
          
         <tag>年度总结</tag>
          
@@ -32,9 +32,9 @@
         <title>2017 年终总结</title>
         <pubTime>2017-12-30T12:55:32.000Z</pubTime>
         
-        <tag>个人</tag>
-         
         <tag>工作</tag>
+         
+        <tag>个人</tag>
          
         <tag>年度</tag>
          
