@@ -4,14 +4,58 @@
 
     
   <url>
-    <loc>//maple13.top/2018/03/28/CSS-%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8E-BFC/</loc>
-    <lastmod>2018-03-28T01:20:56.000Z</lastmod>
+    <loc>//maple13.top/2018/12/31/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-12-31T15:09:28.353Z</lastmod>
     <data>
         <display>
-        <title>CSS 盒模型与 BFC</title>
-        <pubTime>2018-03-28T01:07:12.000Z</pubTime>
+        <title>2018 年终总结</title>
+        <pubTime>2018-12-31T14:01:02.000Z</pubTime>
         
-        <tag>CSS</tag>
+        <tag>工作</tag>
+         
+        <tag>个人</tag>
+         
+        <tag>年度总结</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//maple13.top/2017/12/30/2017-12-30/</loc>
+    <lastmod>2018-12-31T14:56:49.837Z</lastmod>
+    <data>
+        <display>
+        <title>2017 年终总结</title>
+        <pubTime>2017-12-30T12:55:32.000Z</pubTime>
+        
+        <tag>工作</tag>
+         
+        <tag>个人</tag>
+         
+        <tag>年度</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//maple13.top/2017/07/24/2017-07-24/</loc>
+    <lastmod>2018-12-31T13:58:07.449Z</lastmod>
+    <data>
+        <display>
+        <title>React 理解</title>
+        <pubTime>2017-07-24T04:16:11.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>面试题</tag>
          
         <tag>前端</tag>
          
@@ -24,15 +68,15 @@
     
   <url>
     <loc>//maple13.top/2018/03/21/React%20%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2018-03-21T09:37:06.000Z</lastmod>
+    <lastmod>2018-12-31T13:57:18.547Z</lastmod>
     <data>
         <display>
         <title>React 版本更新记录</title>
         <pubTime>2018-03-21T12:00:32.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>React</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -42,18 +86,16 @@
 
     
   <url>
-    <loc>//maple13.top/2017/07/24/2017-07-24/</loc>
-    <lastmod>2018-03-21T09:36:44.000Z</lastmod>
+    <loc>//maple13.top/2018/03/28/CSS-%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8E-BFC/</loc>
+    <lastmod>2018-12-31T13:53:34.820Z</lastmod>
     <data>
         <display>
-        <title>React 理解</title>
-        <pubTime>2017-07-24T04:16:11.000Z</pubTime>
+        <title>CSS 盒模型与 BFC</title>
+        <pubTime>2018-03-28T01:07:12.000Z</pubTime>
         
+        <tag>CSS</tag>
+         
         <tag>前端</tag>
-         
-        <tag>React</tag>
-         
-        <tag>面试题</tag>
          
          
            
@@ -73,25 +115,6 @@
         <tag>前端</tag>
          
         <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//maple13.top/2017/12/30/2017-12-30/</loc>
-    <lastmod>2017-12-30T15:13:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017 年终总结</title>
-        <pubTime>2017-12-30T12:55:32.000Z</pubTime>
-        
-        <tag>工作</tag>
-         
-        <tag>个人</tag>
          
          
            

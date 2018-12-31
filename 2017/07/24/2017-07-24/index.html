@@ -9,14 +9,14 @@
   <title>React 理解 | Maple13 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="React 中 Element 与 Component 的区别？简单而言，React Element 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 React Element 就是利用 JSX 构建的声明式代码片然后被转化为 createElement 的调用组合。而 React Component 则是可以接收参数输入并且返回某个 React Element 的函数或者类。">
-<meta name="keywords" content="前端,React,面试题">
+<meta name="keywords" content="React,面试题,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React 理解">
 <meta property="og:url" content="//maple13.top/2017/07/24/2017-07-24/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
 <meta property="og:description" content="React 中 Element 与 Component 的区别？简单而言，React Element 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 React Element 就是利用 JSX 构建的声明式代码片然后被转化为 createElement 的调用组合。而 React Component 则是可以接收参数输入并且返回某个 React Element 的函数或者类。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-21T09:36:44.000Z">
+<meta property="og:updated_time" content="2018-12-31T13:58:07.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React 理解">
 <meta name="twitter:description" content="React 中 Element 与 Component 的区别？简单而言，React Element 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 React Element 就是利用 JSX 构建的声明式代码片然后被转化为 createElement 的调用组合。而 React Component 则是可以接收参数输入并且返回某个 React Element 的函数或者类。">
@@ -190,10 +190,10 @@ ga('send', 'pageview');
 <h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote>
 <p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote>
 <p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p>
 </blockquote>
-<a id="more"></a>
 <h2 id="在生命周期中的哪一步应该发起-AJAX-请求？"><a href="#在生命周期中的哪一步应该发起-AJAX-请求？" class="headerlink" title="在生命周期中的哪一步应该发起 AJAX 请求？"></a>在生命周期中的哪一步应该发起 <code>AJAX</code> 请求？</h2><p>我们应该将 <code>AJAX</code> 请求放在 <code>componentDidMount</code> 函数中执行，主要原因是：</p>
 <blockquote>
 <p>React 下一代调和算法 <code>Fiber</code> 会通过开始或停止渲染的方式优化应用性能，其会影响到 <code>componentWillMount</code> 的触发次数。<br>    对于 <code>componentWillMount</code> 这个生命周期函数的调用次数会变得不确定，React 可以会多次频繁调用 <code>componentWillMount</code> 。如果我们将 AJAX 请求放在 <code>componentWillMount</code> 函数中，那么显而易见其会被触发多次，自然不是好选择。</p>
@@ -248,15 +248,15 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -487,15 +487,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">React-redux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,7 +511,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">React-redux</a>
+                <a href="javascript:void(0)" class="js-tag color3">年度</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
