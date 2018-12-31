@@ -11,9 +11,9 @@
         <title>2018 年终总结</title>
         <pubTime>2018-12-31T14:01:02.000Z</pubTime>
         
-        <tag>工作</tag>
-         
         <tag>个人</tag>
+         
+        <tag>工作</tag>
          
         <tag>年度总结</tag>
          
@@ -32,9 +32,9 @@
         <title>2017 年终总结</title>
         <pubTime>2017-12-30T12:55:32.000Z</pubTime>
         
-        <tag>工作</tag>
-         
         <tag>个人</tag>
+         
+        <tag>工作</tag>
          
         <tag>年度</tag>
          
@@ -55,9 +55,9 @@
         
         <tag>React</tag>
          
-        <tag>面试题</tag>
-         
         <tag>前端</tag>
+         
+        <tag>面试题</tag>
          
          
            
