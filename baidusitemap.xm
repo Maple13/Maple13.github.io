@@ -4,16 +4,35 @@
 
     
   <url>
-    <loc>//maple13.top/2018/12/31/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-12-31T15:26:25.801Z</lastmod>
+    <loc>//maple13.top/2019/05/30/vue-cli3-x-%E7%BC%96%E8%AF%91%E6%97%B6%E6%B8%85%E9%99%A4console/</loc>
+    <lastmod>2019-05-30T07:22:25.323Z</lastmod>
     <data>
         <display>
-        <title>2018 年终总结</title>
-        <pubTime>2018-12-31T14:01:02.000Z</pubTime>
+        <title>vue-cli3.x 编译时清除console</title>
+        <pubTime>2019-05-30T06:54:18.000Z</pubTime>
         
-        <tag>工作</tag>
+        <tag>Vue</tag>
          
+        <tag>webpack</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//maple13.top/2017/12/30/2017-12-30/</loc>
+    <lastmod>2019-01-02T04:30:12.690Z</lastmod>
+    <data>
+        <display>
+        <title>2017 年终总结</title>
+        <pubTime>2017-12-30T12:55:32.000Z</pubTime>
+        
         <tag>个人</tag>
+         
+        <tag>工作</tag>
          
         <tag>年度总结</tag>
          
@@ -25,18 +44,18 @@
 
     
   <url>
-    <loc>//maple13.top/2017/12/30/2017-12-30/</loc>
-    <lastmod>2018-12-31T14:56:49.837Z</lastmod>
+    <loc>//maple13.top/2018/12/31/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-12-31T15:26:25.801Z</lastmod>
     <data>
         <display>
-        <title>2017 年终总结</title>
-        <pubTime>2017-12-30T12:55:32.000Z</pubTime>
+        <title>2018 年终总结</title>
+        <pubTime>2018-12-31T14:01:02.000Z</pubTime>
         
-        <tag>工作</tag>
-         
         <tag>个人</tag>
          
-        <tag>年度</tag>
+        <tag>工作</tag>
+         
+        <tag>年度总结</tag>
          
          
            
@@ -53,9 +72,9 @@
         <title>React 理解</title>
         <pubTime>2017-07-24T04:16:11.000Z</pubTime>
         
-        <tag>React</tag>
-         
         <tag>前端</tag>
+         
+        <tag>React</tag>
          
         <tag>面试题</tag>
          
@@ -74,9 +93,9 @@
         <title>React 版本更新记录</title>
         <pubTime>2018-03-21T12:00:32.000Z</pubTime>
         
-        <tag>React</tag>
-         
         <tag>前端</tag>
+         
+        <tag>React</tag>
          
          
            

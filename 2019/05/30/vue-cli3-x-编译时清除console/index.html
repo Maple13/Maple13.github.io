@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//maple13.top">
-  <title>Tag: 年度 | Maple13 的博客</title>
+  <title>vue-cli3.x 编译时清除console | Maple13 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习、积累、记录，为了进步！">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Maple13 的博客">
-<meta property="og:url" content="//maple13.top/tags/年度/index.html">
+  <meta name="description" content="目的在我们开发Vue项目时, 时常需要使用console.log来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用npm build / yarn run build编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的console.log, 开发环境下保留调试代码.">
+<meta name="keywords" content="Vue,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cli3.x 编译时清除console">
+<meta property="og:url" content="//maple13.top/2019/05/30/vue-cli3-x-编译时清除console/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="学习、积累、记录，为了进步！">
+<meta property="og:description" content="目的在我们开发Vue项目时, 时常需要使用console.log来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用npm build / yarn run build编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的console.log, 开发环境下保留调试代码.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-30T07:22:25.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maple13 的博客">
-<meta name="twitter:description" content="学习、积累、记录，为了进步！">
+<meta name="twitter:title" content="vue-cli3.x 编译时清除console">
+<meta name="twitter:description" content="目的在我们开发Vue项目时, 时常需要使用console.log来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用npm build / yarn run build编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的console.log, 开发环境下保留调试代码.">
   
     <link rel="alternative" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
   
@@ -165,68 +166,197 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-cli3-x-编译时清除console" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/30/2017-12-30/" class="archive-article-date">
-  	<time datetime="2017-12-30T12:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/30/2017-12-30/">2017 年终总结</a>
+    <h1 class="article-title" itemprop="name">
+      vue-cli3.x 编译时清除console
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/05/30/vue-cli3-x-编译时清除console/" class="archive-article-date">
+  	<time datetime="2019-05-30T06:54:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>在我们开发<code>Vue</code>项目时, 时常需要使用<code>console.log</code>来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用<code>npm build / yarn run build</code>编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的<code>console.log</code>, 开发环境下保留调试代码.</p>
+<a id="more"></a>
+<h3 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h3><ul>
+<li><code>@vue/cli 3.5.1</code></li>
+<li><code>terser-webpack-plugin 1.3.0</code></li>
+<li><code>yarn 1.15.2</code></li>
+</ul>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在<code>vue.config.js</code>文件中配置如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> TerserPlugin = <span class="built_in">require</span>(<span class="string">'terser-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  configureWebpack: &#123;</span><br><span class="line">    optimization: &#123;</span><br><span class="line">      minimizer: [</span><br><span class="line">        <span class="keyword">new</span> TerserPlugin(&#123;</span><br><span class="line">          terserOptions: &#123;</span><br><span class="line">            compress: &#123;</span><br><span class="line">              drop_console: <span class="literal">true</span> <span class="comment">// 清除console</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>配置完成后, 我们就实现了开发模式下保留console调试信息, 预发布/生产模式下自动清除console调试信息了.</p>
+<h3 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h3><p><a href="https://github.com/vuejs/vue-cli/issues/3088" target="_blank" rel="noopener">如何在vue.config.js中配置vue-cli3.0打包之后不显示console</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">个人</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">年度</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQW7jMBAEQP//09nrAl7L3TNiICxKJyNQGBYNkJMevl7x8/PXc/3z93fe33x///q5HvmGBw8PD28x9WQS7797Tf005qdJXy9QPmc8PDy807xkuHZCCTJfjvz4wcPDw3saLymmr9/Pi2Y8PDy8/5XXxgdJrPCggwEPDw9vEUZcTyWPcZN4N6HenLXg4eHhxby8i/Scz0f6e3h4eHjrrnrb7M+PgU3gW8wWDw8P7wDvrmgg2dBnba22XMbDw8P7HV5LykvbfbCbHzltTIyHh4c34yVl6wn8/juJinU8PDy8A7ykeM1Dh/1iXZfj+TLh4eHhnePlrfdZpDuLJ1bfUr72eHh4eCPeLBKdYdrxkzhjdfUKDw8Pb8TbN7Ta6DYfMwksvnzGw8PDO8bLYXmluok52jgjulOGh4eHdxMvmcSmtZ9fHdiEJsPcBQ8PD280Zv6PfbuJ51Oc/a0o5MXDw8P7Rd6mo5Tnx22c0cbEeHh4eKd5mwD33OHRXiD4x6UrPDw8vFt5OWx2iSrZ3OvtfnOFCw8PD+9W3r1b+V0Fenvk1EcCHh4eXslrG1QtJr8ocGI58PDw8E7wZlPfhAX7lCDhrb4ZPDw8vJI3K7Lz6HZWfLf4L2EEHh4e3prXlsKzsDVvuSVhRPI+Hh4e3mnepn0127jzSeejrfJgPDw8vHUMMSusi2g1DhTynxcBLh4eHt6a127lG0YbYbRtMDw8PLxzvJ/yaa8XtA2zJMAtYl88PDy8A7x2w23L7qQo338uggk8PDy8m3jtYdCuXFuIzwr3jzPEw8PDO8bLrzrlf6ANcF8nHjw8PLwH8No322ijvVLwZSnx8PDwHsBLSuH2ElU+Wt1sw8PDwzvGS7bvdnL5wTBrxRU3I/Dw8PBu5W3+o5+VwvsLCjf09PDw8PAmvD+5ZFS5fAYXLQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/12/31/2018-年终总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2018 年终总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "//maple13.top/2019/05/30/vue-cli3-x-编译时清除console/",
+  owner: 'maple13',
+  repo: 'Maple13.github.io',
+  oauth: {
+    client_id: '25b2986bc8dba2768d79',
+    client_secret: '2b499ba2abfe4f5349c9e82a82e448f037f89bf8',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -236,7 +366,7 @@ ga('send', 'pageview');
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Maple13
+    		&copy; 2019 Maple13
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -249,9 +379,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -327,19 +457,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">个人</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">年度</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -347,7 +469,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">个人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -355,11 +485,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//maple13.top/"/>
-  <updated>2018-12-31T15:26:25.801Z</updated>
+  <updated>2019-05-30T07:22:25.323Z</updated>
   <id>//maple13.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue-cli3.x 编译时清除console</title>
+    <link href="//maple13.top/2019/05/30/vue-cli3-x-%E7%BC%96%E8%AF%91%E6%97%B6%E6%B8%85%E9%99%A4console/"/>
+    <id>//maple13.top/2019/05/30/vue-cli3-x-编译时清除console/</id>
+    <published>2019-05-30T06:54:18.000Z</published>
+    <updated>2019-05-30T07:22:25.323Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>在我们开发<code>Vue</code>项目时, 时常需要使用<code>console.log</code>来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用<code>npm build / yarn run build</code>编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的<code>console.log</code>, 开发环境下保留调试代码.</p><a id="more"></a><h3 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h3><ul><li><code>@vue/cli 3.5.1</code></li><li><code>terser-webpack-plugin 1.3.0</code></li><li><code>yarn 1.15.2</code></li></ul><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在<code>vue.config.js</code>文件中配置如下:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> TerserPlugin = <span class="built_in">require</span>(<span class="string">'terser-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  configureWebpack: &#123;</span><br><span class="line">    optimization: &#123;</span><br><span class="line">      minimizer: [</span><br><span class="line">        <span class="keyword">new</span> TerserPlugin(&#123;</span><br><span class="line">          terserOptions: &#123;</span><br><span class="line">            compress: &#123;</span><br><span class="line">              drop_console: <span class="literal">true</span> <span class="comment">// 清除console</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>配置完成后, 我们就实现了开发模式下保留console调试信息, 预发布/生产模式下自动清除console调试信息了.</p><h3 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h3><p><a href="https://github.com/vuejs/vue-cli/issues/3088" target="_blank" rel="noopener">如何在vue.config.js中配置vue-cli3.0打包之后不显示console</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h3&gt;&lt;p&gt;在我们开发&lt;code&gt;Vue&lt;/code&gt;项目时, 时常需要使用&lt;code&gt;console.log&lt;/code&gt;来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用&lt;code&gt;npm build / yarn run build&lt;/code&gt;编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的&lt;code&gt;console.log&lt;/code&gt;, 开发环境下保留调试代码.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="//maple13.top/tags/Vue/"/>
+    
+      <category term="webpack" scheme="//maple13.top/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>2018 年终总结</title>
@@ -39,9 +61,9 @@
     </summary>
     
     
-      <category term="工作" scheme="//maple13.top/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
       <category term="个人" scheme="//maple13.top/tags/%E4%B8%AA%E4%BA%BA/"/>
+    
+      <category term="工作" scheme="//maple13.top/tags/%E5%B7%A5%E4%BD%9C/"/>
     
       <category term="年度总结" scheme="//maple13.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     
@@ -126,9 +148,9 @@
     </summary>
     
     
-      <category term="React" scheme="//maple13.top/tags/React/"/>
-    
       <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="//maple13.top/tags/React/"/>
     
   </entry>
   
@@ -137,7 +159,7 @@
     <link href="//maple13.top/2017/12/30/2017-12-30/"/>
     <id>//maple13.top/2017/12/30/2017-12-30/</id>
     <published>2017-12-30T12:55:32.000Z</published>
-    <updated>2018-12-31T14:56:49.837Z</updated>
+    <updated>2019-01-02T04:30:12.690Z</updated>
     
     <content type="html"><![CDATA[<h2 id="近期"><a href="#近期" class="headerlink" title="近期"></a>近期</h2><blockquote><p>在过去的一年里, 换了新的工作, 离开了工作2年的外包, 裸辞, 然后因为学历 / 技术 / 个人经历的原因(当然主要是因为技术菜), 面试了1个多月才进入现在的公司.</p></blockquote><blockquote><p>新的公司, 不再全国各地的长期出差, 使用的技术栈也稳定在了 React, 但过去2年养成的习惯让我每周末都待在家里, 要么看会书, 写一下不会的 小 Demo 😜, 要么玩游戏 / 逛社区, 眼镜的度数越来越高 ☹️, 身材越来越圆 (●—●), 个人博客也好久没更新 😜, 近期新搬了家, 楼下就是篮球场, 可以让我捡起我曾经热爱的篮球🏀, 让我的周末多了一个选择.</p></blockquote><a id="more"></a><h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><blockquote><p>过去的一年, 大多数时间还是在做 Hybrid App 开发, 年初结束了第一次使用 React Native 开发的 App 任务, 随后使用 DCloud 的 MUI / 5+ 开发 App, 但感觉没有使用 React Native 做出的体验好, 且文档组织不清晰, 但好处是中文社区响应及时.</p></blockquote><blockquote><p>到了新公司使用 React + React-router 做多页面 App 内嵌, 稳定使用 React 作为开发栈.</p></blockquote><h2 id="2018-新年展望"><a href="#2018-新年展望" class="headerlink" title="2018, 新年展望"></a>2018, 新年展望</h2><blockquote><p>新的一年, 愿望有很多, 举几个栗子 🌰 吧:</p><ol><li>更加努力的学习, 学并作出点东西来, 而不是只存在于嘴上说学了;</li><li>定期的更新博客, 及时总结遇到并解决的问题和学习的历程;(但不能只是摘抄😆)</li></ol></blockquote>]]></content>
     
@@ -153,11 +175,11 @@
     </summary>
     
     
-      <category term="工作" scheme="//maple13.top/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
       <category term="个人" scheme="//maple13.top/tags/%E4%B8%AA%E4%BA%BA/"/>
     
-      <category term="年度" scheme="//maple13.top/tags/%E5%B9%B4%E5%BA%A6/"/>
+      <category term="工作" scheme="//maple13.top/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+      <category term="年度总结" scheme="//maple13.top/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -227,9 +249,9 @@
     </summary>
     
     
-      <category term="React" scheme="//maple13.top/tags/React/"/>
-    
       <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="React" scheme="//maple13.top/tags/React/"/>
     
       <category term="面试题" scheme="//maple13.top/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
