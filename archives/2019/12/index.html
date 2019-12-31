@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//maple13.top">
-  <title>React 版本更新记录 | Maple13 的博客</title>
+  <title>Archives: 2019/12 | Maple13 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="v16.3">
-<meta name="keywords" content="前端,React">
-<meta property="og:type" content="article">
-<meta property="og:title" content="React 版本更新记录">
-<meta property="og:url" content="//maple13.top/2018/03/21/React 版本更新记录/index.html">
+  <meta name="description" content="学习、积累、记录，为了进步！">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maple13 的博客">
+<meta property="og:url" content="//maple13.top/archives/2019/12/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="v16.3">
+<meta property="og:description" content="学习、积累、记录，为了进步！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-31T13:57:18.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React 版本更新记录">
-<meta name="twitter:description" content="v16.3">
+<meta name="twitter:title" content="Maple13 的博客">
+<meta name="twitter:description" content="学习、积累、记录，为了进步！">
   
     <link rel="alternative" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
   
@@ -166,260 +165,68 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-React 版本更新记录" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      React 版本更新记录
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/12/31/2019-年度总结/" class="archive-article-date">
+  	<time datetime="2019-12-31T15:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/31/2019-年度总结/">2019-年度总结</a>
     </h1>
   
 
-        
-        <a href="/2018/03/21/React 版本更新记录/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="v16-3"><a href="#v16-3" class="headerlink" title="v16.3"></a>v16.3</h2><a id="more"></a>
-<h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul>
-<li><p>新增 <code>Fragment</code></p>
-<p>  提高了对子组件的渲染方法返回多个子元素的支持<br>  <a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html" target="_blank" rel="noopener">官方文档 Fragment</a></p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;ChildA /&gt;</span><br><span class="line">      &lt;ChildB /&gt;</span><br><span class="line">      &lt;ChildC /&gt;</span><br><span class="line">    &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>componentWillMount /</code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p>
-</li>
-<li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p>
-<blockquote>
-<p>它会生成一个新<code>state</code>，方便让你<code>setState</code>。所有生命周期钩子（除了构造器）的<code>context</code>传参都被无效了</p>
-</blockquote>
-</li>
-<li><p>新增 <code>createContext()</code></p>
-<blockquote>
-<p>它会返回一个具有<code>Provider</code>和<code>Consumer</code>方法的对象</p>
-</blockquote>
-</li>
-<li><p>严格模式 <code>StrictMode</code><br>  严格模式确保你的代码遵循最佳实践 就像原生js 的 <code>use strict</code></p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;StrictMode&gt;</span><br><span class="line">            &lt;Context.Provider&gt;</span><br><span class="line">                &lt;Title/&gt;</span><br><span class="line">            &lt;<span class="regexp">/Context.Provider&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>StrictMode&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p>
-</li>
-</ul>
-<h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul>
-<li>新核心架构<code>Fiber</code></li>
-<li><p><code>React.PropTypes</code> <del>废弃</del></p>
-<blockquote>
-<p>使用<code>prop-types</code>库代替</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p><code>React.createClass</code> <del>废弃</del></p>
-<blockquote>
-<p>官方推荐使用 ES6<code>class</code>方式创建组件</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p><code>render</code>可返回数组 或 字符串</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        &lt;div key=<span class="string">'1'</span>&gt;<span class="number">1</span>&lt;<span class="regexp">/div&gt;,</span></span><br><span class="line"><span class="regexp">        &lt;div key='2'&gt;2&lt;/</span>div&gt;,</span><br><span class="line">        &lt;div key=<span class="string">'3'</span>&gt;<span class="number">3</span>&lt;<span class="regexp">/div&gt;,</span></span><br><span class="line"><span class="regexp">    ];</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 注：不要忘了加key</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 也可以直接返回字符串</span></span><br><span class="line"><span class="regexp">render() &#123;</span></span><br><span class="line"><span class="regexp">    return 'Hello World';</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<!-- more -->
-<ul>
-<li><p>新的生命周期 <code>componentDidCatch</code></p>
-<blockquote>
-</blockquote>
-<p>  错误处理机制，如同<code>try…catch</code><br>  可以用于捕获子组件的错误，即使子组件有代码报错，也不至于导致整个APP崩溃</p>
-</li>
-<li><p>接受元素上的自定义属性</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">abc</span>=<span class="string">'123'</span>&gt;</span></span><br><span class="line">// 以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误</span><br><span class="line">// 现在会正确的把abc赋加在p标签上</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>新增<code>ReactDOM.createPortal</code>方法</p>
-<blockquote>
-</blockquote>
-<p>  以前一个组件只能被默认的渲染到父级所引用它的地方，<br>  createPortal方法可以把组件自身的内容渲染到任意一个指定的dom元素下<br>  但事件的冒泡仍然会从它原本的父级传递<br>  官方文档：<a href="https://reactjs.org/docs/portals.html" target="_blank" rel="noopener">Portals</a></p>
-</li>
-<li><p>其他</p>
-<blockquote>
-</blockquote>
-<p>服务端渲染优化，比以前更好<br><code>react</code>和<code>react-dom</code>库文件大小比以前更小<br>react开源协议为<code>MIT</code>协议</p>
-</li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">个人</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">年度总结</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3ay46DMAwF0P7/T3e2lSrg2h4qkRxWqIogh4XrR16v+Hp/XN+/nF+f67/vj971uuPCwMB4LCPfRPL67zXnTz5ak+8NAwNjH8Z54EvC5dHm8gA9eRcGBgZGHmrPw/T5/fl6DAwMjEnAraaM+dMwMDAwqkXsvCjNW3g31uIYGBgPZORd99/f3zLfwMDAeBTjXbwmvDxQlneFgYGxNCMPcHc09HuD0sOVGBgY2zCS1nx1zbzdFjX4MDAwFmVU21iFNn3rgEUTjIGBsQ0jD6ZJKKxuujcAwMDA2IEx6b33HpqH2iRZxMDA2IeRhMV8ZT6MnLTqCl8aAwNjCUaVVG3oJw27aoC+gGFgYCzESNruk6FjtUiuBmsMDIwdGHkQ7B0Om6SDvZ1gYGCszciPPowC4mDYUK7LMTAwFmLkrfk8ZZxX1fnhMwwMjLUZvQMTk6Fj71jGxd8DBgbG9ow8/CUjhHkiWB4MYGBgPJxRPWyRp5LJYPK/2nYYGBh7MnonNXqjyuqBj0ItjoGBsRyjWoJWP0H+hGqKiYGBsRujl/b1mnHVtPIiBGNgYCzKmA8A5gPLJNSWG20YGBgLMSbb+k1pWihiMTAwlmbM2215cpmE8mbAxcDA2IDRGyhOjl/0Ur3DT4CBgYHRatnPw24hn8XAwMAY1MfnjGoBfPiBMDAwNmDkByZ6JWsegkepIQYGxqKMvHSsZmL5M6ttuNF8AwMD40mMP9UEaphAKRFnAAAAAElFTkSuQmCC" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/03/21/JavaScript 执行机制/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JavaScript 执行机制
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/12/30/2017-12-30/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2017 年终总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "//maple13.top/2018/03/21/React 版本更新记录/",
-  owner: 'maple13',
-  repo: 'Maple13.github.io',
-  oauth: {
-    client_id: '25b2986bc8dba2768d79',
-    client_secret: '2b499ba2abfe4f5349c9e82a82e448f037f89bf8',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -442,8 +249,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
