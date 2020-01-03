@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="//maple13.top">
   <title>Package.json中npm依赖版本管理 | Maple13 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Package.json 中npm依赖版本管理 来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。 警告⚠️信息如下: 12345678910111213=============WARNING: You are currently running a version of TypeScript which is not offi">
+  <meta name="description" content="来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。 警告⚠️信息如下: 12345678910111213=============WARNING: You are currently running a version of TypeScript which is not officially supported by typ">
 <meta name="keywords" content="前端,Typescript,Npm,Package.json">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Package.json中npm依赖版本管理">
 <meta property="og:url" content="//maple13.top/2020/01/03/Package-json中npm依赖版本管理/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="Package.json 中npm依赖版本管理 来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。 警告⚠️信息如下: 12345678910111213=============WARNING: You are currently running a version of TypeScript which is not offi">
+<meta property="og:description" content="来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。 警告⚠️信息如下: 12345678910111213=============WARNING: You are currently running a version of TypeScript which is not officially supported by typ">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.maple13.cn/2020-01-03-15780370570177.jpg">
-<meta property="og:updated_time" content="2020-01-03T07:39:36.362Z">
+<meta property="og:updated_time" content="2020-01-03T07:41:09.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Package.json中npm依赖版本管理">
-<meta name="twitter:description" content="Package.json 中npm依赖版本管理 来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。 警告⚠️信息如下: 12345678910111213=============WARNING: You are currently running a version of TypeScript which is not offi">
+<meta name="twitter:description" content="来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。 警告⚠️信息如下: 12345678910111213=============WARNING: You are currently running a version of TypeScript which is not officially supported by typ">
 <meta name="twitter:image" content="https://img.maple13.cn/2020-01-03-15780370570177.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
@@ -188,7 +188,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Package-json-中npm依赖版本管理"><a href="#Package-json-中npm依赖版本管理" class="headerlink" title="Package.json 中npm依赖版本管理"></a>Package.json 中npm依赖版本管理</h1><p><img src="https://img.maple13.cn/2020-01-03-15780370570177.jpg" alt="什么时候能干完啊"></p>
+        <p><img src="https://img.maple13.cn/2020-01-03-15780370570177.jpg" alt="什么时候能干完啊"></p>
 <h2 id="来由"><a href="#来由" class="headerlink" title="来由"></a>来由</h2><p>近期项目中总是报<code>Typescript</code>版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。</p>
 <p>警告⚠️信息如下:</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">=============</span><br><span class="line"></span><br><span class="line">WARNING: You are currently <span class="built_in">running</span> a <span class="built_in">version</span> <span class="keyword">of</span> TypeScript which <span class="keyword">is</span> <span class="keyword">not</span> officially supported <span class="keyword">by</span> typescript-estree.</span><br><span class="line"></span><br><span class="line">You may find <span class="keyword">that</span> <span class="keyword">it</span> works just fine, <span class="keyword">or</span> you may <span class="keyword">not</span>.</span><br><span class="line"></span><br><span class="line">SUPPORTED TYPESCRIPT VERSIONS: &gt;=<span class="number">3.2</span><span class="number">.1</span> &lt;<span class="number">3.6</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line">YOUR TYPESCRIPT VERSION: <span class="number">3.7</span><span class="number">.4</span></span><br><span class="line"></span><br><span class="line">Please only submit bug reports when using <span class="keyword">the</span> officially supported <span class="built_in">version</span>.</span><br><span class="line"></span><br><span class="line">=============</span><br></pre></td></tr></table></figure>
