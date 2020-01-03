@@ -4,8 +4,52 @@
 
     
   <url>
+    <loc>//maple13.top/2020/01/03/Package-json%E4%B8%ADnpm%E4%BE%9D%E8%B5%96%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2020-01-03T07:39:36.362Z</lastmod>
+    <data>
+        <display>
+        <title>Package.json中npm依赖版本管理</title>
+        <pubTime>2020-01-03T07:33:41.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>Typescript</tag>
+         
+        <tag>Npm</tag>
+         
+        <tag>Package.json</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//maple13.top/2018/12/31/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2020-01-02T09:11:43.080Z</lastmod>
+    <data>
+        <display>
+        <title>2018 年终总结</title>
+        <pubTime>2018-12-31T14:01:02.000Z</pubTime>
+        
+        <tag>工作</tag>
+         
+        <tag>个人</tag>
+         
+        <tag>年度总结</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//maple13.top/2019/12/31/2019-%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2020-01-02T08:54:45.777Z</lastmod>
+    <lastmod>2020-01-02T09:10:38.220Z</lastmod>
     <data>
         <display>
         <title>2019-年度总结</title>
@@ -65,27 +109,6 @@
 
     
   <url>
-    <loc>//maple13.top/2018/12/31/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-12-31T15:26:25.801Z</lastmod>
-    <data>
-        <display>
-        <title>2018 年终总结</title>
-        <pubTime>2018-12-31T14:01:02.000Z</pubTime>
-        
-        <tag>工作</tag>
-         
-        <tag>个人</tag>
-         
-        <tag>年度总结</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>//maple13.top/2017/07/24/2017-07-24/</loc>
     <lastmod>2018-12-31T13:58:07.449Z</lastmod>
     <data>
@@ -93,11 +116,11 @@
         <title>React 理解</title>
         <pubTime>2017-07-24T04:16:11.000Z</pubTime>
         
+        <tag>前端</tag>
+         
         <tag>React</tag>
          
         <tag>面试题</tag>
-         
-        <tag>前端</tag>
          
          
            
@@ -114,9 +137,9 @@
         <title>React 版本更新记录</title>
         <pubTime>2018-03-21T12:00:32.000Z</pubTime>
         
-        <tag>React</tag>
-         
         <tag>前端</tag>
+         
+        <tag>React</tag>
          
          
            

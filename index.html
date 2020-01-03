@@ -167,6 +167,99 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Package-json中npm依赖版本管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/03/Package-json中npm依赖版本管理/">Package.json中npm依赖版本管理</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/03/Package-json中npm依赖版本管理/" class="archive-article-date">
+  	<time datetime="2020-01-03T07:33:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Package-json-中npm依赖版本管理"><a href="#Package-json-中npm依赖版本管理" class="headerlink" title="Package.json 中npm依赖版本管理"></a>Package.json 中npm依赖版本管理</h1><p><img src="https://img.maple13.cn/2020-01-03-15780370570177.jpg" alt="什么时候能干完啊"></p>
+<h2 id="来由"><a href="#来由" class="headerlink" title="来由"></a>来由</h2><p>近期项目中总是报<code>Typescript</code>版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了npm依赖版本管理问题。</p>
+<p>警告⚠️信息如下:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">=============</span><br><span class="line"></span><br><span class="line">WARNING: You are currently <span class="built_in">running</span> a <span class="built_in">version</span> <span class="keyword">of</span> TypeScript which <span class="keyword">is</span> <span class="keyword">not</span> officially supported <span class="keyword">by</span> typescript-estree.</span><br><span class="line"></span><br><span class="line">You may find <span class="keyword">that</span> <span class="keyword">it</span> works just fine, <span class="keyword">or</span> you may <span class="keyword">not</span>.</span><br><span class="line"></span><br><span class="line">SUPPORTED TYPESCRIPT VERSIONS: &gt;=<span class="number">3.2</span><span class="number">.1</span> &lt;<span class="number">3.6</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line">YOUR TYPESCRIPT VERSION: <span class="number">3.7</span><span class="number">.4</span></span><br><span class="line"></span><br><span class="line">Please only submit bug reports when using <span class="keyword">the</span> officially supported <span class="built_in">version</span>.</span><br><span class="line"></span><br><span class="line">=============</span><br></pre></td></tr></table></figure>
+<p><code>Package.json</code> 中为:</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"ts"</span>,</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    // 略</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"typescript"</span>: <span class="string">"^3.2.1"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/01/03/Package-json中npm依赖版本管理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Typescript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Npm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Package.json</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/03/Package-json中npm依赖版本管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2019-年度总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -193,9 +286,12 @@ ga('send', 'pageview');
 </blockquote>
 <p>工作方面：</p>
 <ul>
-<li>优化公司主要项目的编译流程，经过努力搭建前端主要项目的<code>GitLab CI</code>自动编译流程，让我们不再花太多的精力放在手动发布上。</li>
-<li>因为主站性质为内容信息类，所以迁移主站Web、M端为<code>Nuxt</code>，主要内容使用静态生成，上传到<code>OSS</code>，使其保留 SEO 的同时，加快页面加载速度。</li>
-<li>配置项目使用<code>TypeScript</code>，让错误暴露在编译阶段，减少线上常见错误。</li>
+<li><p>优化公司主要项目的编译流程，经过努力搭建前端主要项目的<code>GitLab CI</code>自动编译流程，让我们不再花太多的精力放在手动发布上。</p>
+</li>
+<li><p>因为主站性质为内容信息类，所以迁移主站Web、M端为<code>Nuxt</code>，主要内容使用静态生成，上传到<code>OSS</code>，使其保留 SEO 的同时，加快页面加载速度。</p>
+</li>
+<li><p>配置项目使用<code>TypeScript</code>，让错误暴露在编译阶段，减少线上常见错误。</p>
+</li>
 </ul>
 <p>个人方面:</p>
 <p>今年团队又有人员流失，我也努力负责更多的公司事务，初步体会到了繁琐沟通带来的成本，它牵扯我没太多时间保持在Coding状态，且一次次被打断，而随着人员减少工作量的提升，愈发导致疲惫不堪，不知如何平衡。</p>
@@ -364,7 +460,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2018/12/31/2018-年终总结/2018.jpg" alt=""></p>
+        <p><img src="/2018/12/31/2018-年终总结/2018.jpg" alt="2018"></p>
 <h2 id="再见，2018"><a href="#再见，2018" class="headerlink" title="再见，2018"></a>再见，2018</h2><blockquote>
 <p>再回首，一年过去了，时光果真像是⏳中的沙，留不住、回不去</p>
 </blockquote>
@@ -520,86 +616,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-React 版本更新记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/21/React 版本更新记录/">React 版本更新记录</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/21/React 版本更新记录/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="v16-3"><a href="#v16-3" class="headerlink" title="v16.3"></a>v16.3</h2>
-        
-          <a class="article-more-a" href="/2018/03/21/React 版本更新记录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/21/React 版本更新记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-JavaScript 执行机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -665,6 +681,86 @@ ga('send', 'pageview');
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/21/JavaScript 执行机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-React 版本更新记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/React 版本更新记录/">React 版本更新记录</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/21/React 版本更新记录/" class="archive-article-date">
+  	<time datetime="2018-03-21T12:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="v16-3"><a href="#v16-3" class="headerlink" title="v16.3"></a>v16.3</h2>
+        
+          <a class="article-more-a" href="/2018/03/21/React 版本更新记录/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/21/React 版本更新记录/">展开全文 >></a>
         </p>
       
 
@@ -944,93 +1040,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-2017-07-24" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/2017-07-24/">React 理解</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/24/2017-07-24/" class="archive-article-date">
-  	<time datetime="2017-07-24T04:16:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p>
-<h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote>
-<p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/07/24/2017-07-24/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/24/2017-07-24/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1136,15 +1145,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1161,6 +1170,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Package.json</a>
               </li>
              
               <li class="article-tag-list-item">
