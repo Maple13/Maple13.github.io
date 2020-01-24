@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//maple13.top">
-  <title>vue-cli3.x 编译时清除console | Maple13 的博客</title>
+  <title>武汉，加油！ | Maple13 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目的在我们开发Vue项目时, 时常需要使用console.log来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用npm build / yarn run build编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的console.log, 开发环境下保留调试代码.">
-<meta name="keywords" content="Vue,webpack">
+  <meta name="description" content="中国，加油！武汉，加油！ 2020 注定是不平凡的一年。 对于中国，对于武汉，致于深深的祝福， 对于钟南山院士及所有医护人员致于崇高的敬意和祝福；心慕已久的的武汉热干面，武大春天的樱花，我渴望着和你们见面">
+<meta name="keywords" content="中国加油,武汉加油">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-cli3.x 编译时清除console">
-<meta property="og:url" content="//maple13.top/2019/05/30/vue-cli3-x-编译时清除console/index.html">
+<meta property="og:title" content="武汉，加油！">
+<meta property="og:url" content="//maple13.top/2020/01/24/武汉，加油！/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="目的在我们开发Vue项目时, 时常需要使用console.log来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用npm build / yarn run build编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的console.log, 开发环境下保留调试代码.">
+<meta property="og:description" content="中国，加油！武汉，加油！ 2020 注定是不平凡的一年。 对于中国，对于武汉，致于深深的祝福， 对于钟南山院士及所有医护人员致于崇高的敬意和祝福；心慕已久的的武汉热干面，武大春天的樱花，我渴望着和你们见面">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T07:22:25.323Z">
+<meta property="og:image" content="https://img.maple13.cn/2020-01-24-15798678814893.jpg">
+<meta property="og:updated_time" content="2020-01-24T12:16:30.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue-cli3.x 编译时清除console">
-<meta name="twitter:description" content="目的在我们开发Vue项目时, 时常需要使用console.log来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用npm build / yarn run build编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的console.log, 开发环境下保留调试代码.">
+<meta name="twitter:title" content="武汉，加油！">
+<meta name="twitter:description" content="中国，加油！武汉，加油！ 2020 注定是不平凡的一年。 对于中国，对于武汉，致于深深的祝福， 对于钟南山院士及所有医护人员致于崇高的敬意和祝福；心慕已久的的武汉热干面，武大春天的樱花，我渴望着和你们见面">
+<meta name="twitter:image" content="https://img.maple13.cn/2020-01-24-15798678814893.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
   
@@ -166,37 +168,29 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-cli3-x-编译时清除console" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-武汉，加油！" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue-cli3.x 编译时清除console
+      武汉，加油！
     </h1>
   
 
         
-        <a href="/2019/05/30/vue-cli3-x-编译时清除console/" class="archive-article-date">
-  	<time datetime="2019-05-30T06:54:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
+        <a href="/2020/01/24/武汉，加油！/" class="archive-article-date">
+  	<time datetime="2020-01-24T11:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>在我们开发<code>Vue</code>项目时, 时常需要使用<code>console.log</code>来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用<code>npm build / yarn run build</code>编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的<code>console.log</code>, 开发环境下保留调试代码.</p>
-<a id="more"></a>
-<h3 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h3><ul>
-<li><code>@vue/cli 3.5.1</code></li>
-<li><code>terser-webpack-plugin 1.3.0</code></li>
-<li><code>yarn 1.15.2</code></li>
-</ul>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在<code>vue.config.js</code>文件中配置如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> TerserPlugin = <span class="built_in">require</span>(<span class="string">'terser-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  configureWebpack: &#123;</span><br><span class="line">    optimization: &#123;</span><br><span class="line">      minimizer: [</span><br><span class="line">        <span class="keyword">new</span> TerserPlugin(&#123;</span><br><span class="line">          terserOptions: &#123;</span><br><span class="line">            compress: &#123;</span><br><span class="line">              drop_console: <span class="literal">true</span> <span class="comment">// 清除console</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>配置完成后, 我们就实现了开发模式下保留console调试信息, 预发布/生产模式下自动清除console调试信息了.</p>
-<h3 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h3><p><a href="https://github.com/vuejs/vue-cli/issues/3088" target="_blank" rel="noopener">如何在vue.config.js中配置vue-cli3.0打包之后不显示console</a></p>
+        <h1 id="中国，加油！武汉，加油！"><a href="#中国，加油！武汉，加油！" class="headerlink" title="中国，加油！武汉，加油！"></a>中国，加油！武汉，加油！</h1><p><img src="https://img.maple13.cn/2020-01-24-15798678814893.jpg" alt="樱花展"></p>
+<p>2020 注定是不平凡的一年。</p>
+<p>对于中国，对于武汉，致于深深的祝福， 对于钟南山院士及所有医护人员致于崇高的敬意和祝福；心慕已久的的武汉热干面，武大春天的樱花，我渴望着和你们见面</p>
 
       
 
@@ -231,11 +225,11 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">中国加油</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">武汉加油</a>
         		</li>
       		
 		</ul>
@@ -291,7 +285,7 @@ ga('send', 'pageview');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQW7jMBAEQP//09nrAl7L3TNiICxKJyNQGBYNkJMevl7x8/PXc/3z93fe33x///q5HvmGBw8PD28x9WQS7797Tf005qdJXy9QPmc8PDy807xkuHZCCTJfjvz4wcPDw3saLymmr9/Pi2Y8PDy8/5XXxgdJrPCggwEPDw9vEUZcTyWPcZN4N6HenLXg4eHhxby8i/Scz0f6e3h4eHjrrnrb7M+PgU3gW8wWDw8P7wDvrmgg2dBnba22XMbDw8P7HV5LykvbfbCbHzltTIyHh4c34yVl6wn8/juJinU8PDy8A7ykeM1Dh/1iXZfj+TLh4eHhnePlrfdZpDuLJ1bfUr72eHh4eCPeLBKdYdrxkzhjdfUKDw8Pb8TbN7Ta6DYfMwksvnzGw8PDO8bLYXmluok52jgjulOGh4eHdxMvmcSmtZ9fHdiEJsPcBQ8PD280Zv6PfbuJ51Oc/a0o5MXDw8P7Rd6mo5Tnx22c0cbEeHh4eKd5mwD33OHRXiD4x6UrPDw8vFt5OWx2iSrZ3OvtfnOFCw8PD+9W3r1b+V0Fenvk1EcCHh4eXslrG1QtJr8ocGI58PDw8E7wZlPfhAX7lCDhrb4ZPDw8vJI3K7Lz6HZWfLf4L2EEHh4e3prXlsKzsDVvuSVhRPI+Hh4e3mnepn0127jzSeejrfJgPDw8vHUMMSusi2g1DhTynxcBLh4eHt6a127lG0YbYbRtMDw8PLxzvJ/yaa8XtA2zJMAtYl88PDy8A7x2w23L7qQo338uggk8PDy8m3jtYdCuXFuIzwr3jzPEw8PDO8bLrzrlf6ANcF8nHjw8PLwH8No322ijvVLwZSnx8PDwHsBLSuH2ElU+Wt1sw8PDwzvGS7bvdnL5wTBrxRU3I/Dw8PBu5W3+o5+VwvsLCjf09PDw8PAmvD+5ZFS5fAYXLQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACQklEQVR42u3a0W4CMQwFUf7/p7dSn5CqhLlOoKwzeUIUSA6VjGP78cDr+l3Pj5+fmb9+9K7rzxq9d9uSIUPGbRnXdI0Y/NCjY/F956+RIUPGOQwSZOcBlBx0fjiy7/B5GTJkyAAJHDkKCc0yZMiQ8Y6AyzeeB99//t2QIUPG1zNql0lSIOOX3nmg33YXlyFDxg0ZtcbAZx6/vb8hQ4aMr2dcpZWGQtK2XDmVDBkyejN4iZ9vNv9MkgLyAt8j7VTIkCHjhgxe7k+HLVCBbOFrHf5uyJAh4xhGmt6lxTJedEOFPBkyZBzAWAmvadE/bQOgU8mQIeMYxq7UjZf++QDHi7/KkCGjNYOERZ7qxVsuf1loxk2GDBmtGeRYtfYAvzDzVoQMGTK6MngqlpbDeIK44f8gQ4aMwxi1Ua20uLZ5vEOGDBkHMFYusemQxHpDNG4MyJAh4+aMtG3Jr7Ik1VsfuRgmiDJkyGjN4AU1HnBrn89DtgwZMnozeCktLcnVinSkeRDMjMiQIaMFgxfU1o9bC9lxc1SGDBlNGfzymZbMeMJXLLGl5TYZMmQ0YqRXUB6C00G0uMshQ4aMpgxUkysNb6VX5c1LhgwZLRhXuGoNyJULKtpLhgwZrRm1EFzbhqd0xURQhgwZrRlpkE23T0e+ahdmGTJknMBIA18Kjscmwsq/DBkyZKSXSY7hmd6L0C9DhgwZuDSWBl8yHLbUsJQhQ0YjRjquysv9tYHUGCNDhozWjFpjIG0GpJfh9IuWIUNGU8YPrmwZBrWEGOQAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +299,9 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
-    <a href="/2019/12/31/2019-年度总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2019-年度总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/31/2018-年终总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2018 年终总结</div>
+    <a href="/2020/01/03/Package-json中npm依赖版本管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Package.json中npm依赖版本管理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -355,7 +340,7 @@ ga('send', 'pageview');
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//maple13.top/2019/05/30/vue-cli3-x-编译时清除console/",
+  id: "//maple13.top/2020/01/24/武汉，加油！/",
   owner: 'maple13',
   repo: 'Maple13.github.io',
   oauth: {
