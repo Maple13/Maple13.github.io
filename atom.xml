@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//maple13.top/"/>
-  <updated>2020-01-24T12:30:45.327Z</updated>
+  <updated>2020-11-23T09:12:29.072Z</updated>
   <id>//maple13.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Error: Cannot find module &#39;webpack-cli/bin/config-yargs&#39;</title>
+    <link href="//maple13.top/2020/11/23/Error-Cannot-find-module-webpack-cli-bin-config-yargs/"/>
+    <id>//maple13.top/2020/11/23/Error-Cannot-find-module-webpack-cli-bin-config-yargs/</id>
+    <published>2020-11-23T09:04:21.000Z</published>
+    <updated>2020-11-23T09:12:29.072Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h2><p>安装 webpack 5.<em>, webpack-cli 4.</em>, webpack-dev-server 3.11.*, 运行时导致命令行报错 <code>Error: Cannot find module &#39;webpack-cli/bin/config-yargs&#39;</code></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> "dev": "webpack-dev-serve"</span><br><span class="line"></span><br><span class="line">"webpack": "^5.6.0",</span><br><span class="line">"webpack-cli": "^4.2.0",</span><br><span class="line">"webapck-dev-server": "^3.11.0"</span><br></pre></td></tr></table></figure><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>使用 <code>webpack serve</code></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"dev": "webpack serve"</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/webpack/webpack-cli/issues/1948" target="_blank" rel="noopener">webpack-cli issuse</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;出现原因&quot;&gt;&lt;a href=&quot;#出现原因&quot; class=&quot;headerlink&quot; title=&quot;出现原因&quot;&gt;&lt;/a&gt;出现原因&lt;/h2&gt;&lt;p&gt;安装 webpack 5.&lt;em&gt;, webpack-cli 4.&lt;/em&gt;, webpack-dev-server 3.1
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>中国，加油！武汉，加油！</title>
@@ -246,9 +267,9 @@
     </summary>
     
     
-      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="//maple13.top/tags/React/"/>
+    
+      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -347,9 +368,9 @@
     </summary>
     
     
-      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="//maple13.top/tags/React/"/>
+    
+      <category term="前端" scheme="//maple13.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="面试题" scheme="//maple13.top/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
