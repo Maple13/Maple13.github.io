@@ -7,6 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="baidu-site-verification" content="code-OpnfgHunn7" />
   <link rel="apple-touch-icon" sizes="76x76" href="https://img.maple13.cn/2020-11-28-favicon.png">
   <link rel="icon" type="image/png" href="https://img.maple13.cn/2020-11-28-favicon.png">
   <meta name="viewport"
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"maple13.top","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"maple13.top","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
 </head>
 
 
@@ -157,7 +158,7 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="banner" id="banner" parallax=true
          style="background: url('https://img.maple13.cn/2020-11-28-16065399686273.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -225,11 +226,11 @@
     
       
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
@@ -238,7 +239,7 @@
             <div class="markdown-body">
               <h2 id="什么是伪数组？如何将其转化为标准数组？"><a href="#什么是伪数组？如何将其转化为标准数组？" class="headerlink" title="什么是伪数组？如何将其转化为标准数组？"></a>什么是伪数组？如何将其转化为标准数组？</h2><ul>
 <li><p>什么是伪数组（类数组）：</p>
-<div class="hljs"><pre><code>无法直接调用数组方法或期望 `length` 属性有什么特殊的行为，但仍可以使用真正数组遍历方法遍历它们。</code></pre></div>
+<div class="hljs code-wrapper"><pre><code>无法直接调用数组方法或期望 `length` 属性有什么特殊的行为，但仍可以使用真正数组遍历方法遍历它们。</code></pre></div>
 <p>典型的就是 <code>arguments</code> 参数，还有像调用 <code>getElementsByTagName / document.childNodes </code>之类方法，它们都返回的 <code>NodeList</code> 对象都属于伪数组。</p>
 </li>
 </ul>
@@ -247,7 +248,7 @@
 <ul>
 <li><p>如何转换为标准数组？</p>
 <p>可以使用<code>Array.prototype.slice.call(fakeArray)</code>将伪数组转换为真正的 Array 对象。<br>但对于<code>NodeList</code>则不行，其在 IE8 下会报错，只能是 JS 引擎有所限制。因此，如果需要把 NodeList 转换为标准数组，就需要做向下兼容：</p>
-<div class="hljs"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">realArray</span>(<span class="hljs-params">arr</span>) </span>&#123;
+<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">realArray</span>(<span class="hljs-params">arr</span>) </span>&#123;
   <span class="hljs-keyword">try</span> &#123;
     <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.prototype.slice.call(arr)
   &#125; <span class="hljs-keyword">catch</span> &#123;
@@ -259,10 +260,8 @@
     <span class="hljs-keyword">return</span> ret
   &#125;
 &#125;</code></pre></div>
-
 <p>方法二：使用 ES6 数组扩展的 form() 方法</p>
-<div class="hljs"><pre><code class="hljs livescript"><span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">Array</span>.<span class="hljs-keyword">from</span>(<span class="hljs-built_in">arguments</span>);</code></pre></div>
-
+<div class="hljs code-wrapper"><pre><code class="hljs livescript"><span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">Array</span>.<span class="hljs-keyword">from</span>(<span class="hljs-built_in">arguments</span>);</code></pre></div>
 <p>伪数组转换为标准数组的条件：</p>
 <blockquote>
 <p>1、伪数组的键值需要为数字，否则转换后数组均无初始值<br>2、有 length 属性</p>
@@ -271,7 +270,7 @@
 </ul>
 <h2 id="数组去重与排序"><a href="#数组去重与排序" class="headerlink" title="数组去重与排序"></a>数组去重与排序</h2><ol>
 <li><p>去重之一：创建一个新数组，使用 <code>indexOf</code> 判断新数组中是否存在值，例：</p>
-<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupOne = <span class="hljs-function"><span class="hljs-params">arr</span> =&gt;</span> &#123;
+<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupOne = <span class="hljs-function"><span class="hljs-params">arr</span> =&gt;</span> &#123;
    <span class="hljs-keyword">let</span> ret = [];
    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, len = arr.length; i &lt; len; i++) &#123;
        <span class="hljs-keyword">if</span> (ret.indexOf(arr[i) === -<span class="hljs-number">1</span>) &#123;
@@ -279,10 +278,9 @@
        &#125;
    &#125;
    <span class="hljs-keyword">return</span> ret;
-&#125;</code></pre></div>
-</li>
+&#125;</code></pre></div></li>
 <li><p>去重之二：创建一个新对象</p>
-<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupTwo = arr = &gt; &#123;
+<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupTwo = arr = &gt; &#123;
     <span class="hljs-keyword">let</span> hash = &#123;&#125;,
         len  = arr.length,
         ret  = [];
@@ -293,19 +291,17 @@
         &#125;
     &#125;
     <span class="hljs-keyword">return</span> ret;
-&#125;</code></pre></div>
-</li>
+&#125;</code></pre></div></li>
 <li><p>数组排序</p>
-<div class="hljs"><pre><code class="hljs markdown">一般使用 Array 的原生方法 sort() 方法排序。
+<div class="hljs code-wrapper"><pre><code class="hljs markdown">一般使用 Array 的原生方法 sort() 方法排序。
 <span class="hljs-bullet">1.</span> 排序顺序可以是字母和数字，并按升序或降序。
 <span class="hljs-bullet">2.</span> 默认排序是字母升序。
 <span class="hljs-bullet">3.</span> 在原始数组上排序，不会生成数组副本。
 
 使用数字排序，你必须通过一个函数作为参数来调用。
 函数指定数字是按照升序还是降序排列。</code></pre></div>
-
 <p>数组数字升序排序，例：</p>
-<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [
+<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [
   <span class="hljs-number">1</span>,
   <span class="hljs-number">2</span>,
   <span class="hljs-number">1</span>,
@@ -333,10 +329,7 @@
   <span class="hljs-number">99</span>,
 ]
 arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#125;</span>) =&gt;</span> a - b)</code></pre></div>
-
-</li>
-</ol>
-<h2 id="异步加载-JS-的方式"><a href="#异步加载-JS-的方式" class="headerlink" title="异步加载 JS 的方式"></a>异步加载 JS 的方式</h2><ol>
+<h2 id="异步加载-JS-的方式"><a href="#异步加载-JS-的方式" class="headerlink" title="异步加载 JS 的方式"></a>异步加载 JS 的方式</h2></li>
 <li><p><code>async</code></p>
 <blockquote>
 <ol>
@@ -351,7 +344,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 <blockquote>
 <p>三个原则：</p>
 </blockquote>
-<div class="hljs"><pre><code>  1. 单一数据源
+<div class="hljs code-wrapper"><pre><code>  1. 单一数据源
   2. state 是只读的
   3. 使用纯函数来执行修改</code></pre></div>
 <p><code>Immutable</code> 是一个可实现持续数据结构的 JavaScript 库。</p>
@@ -362,7 +355,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 <blockquote>
 <p>JSONP 包含两部分：回调函数和数据。</p>
 </blockquote>
-<div class="hljs"><pre><code>回调函数是当响应到来时要放在当前页面被调用的函数。
+<div class="hljs code-wrapper"><pre><code>回调函数是当响应到来时要放在当前页面被调用的函数。
 数据就是传入回调函数中的 json 数据，也就是回调函数的参数了。
 缺点：
   * 安全问题(请求代码中可能存在安全隐患)
@@ -371,12 +364,12 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 <blockquote>
 <p>CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。</p>
 </blockquote>
-<div class="hljs"><pre><code>  CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</code></pre></div>
+<div class="hljs code-wrapper"><pre><code>  CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</code></pre></div>
 <p>3、 Web Sockets</p>
 <blockquote>
 <p>一种浏览器 API ，它的目标是在一个单独的持久连接上提供全双工、双向通信。（同源策略不适用）</p>
 </blockquote>
-<div class="hljs"><pre><code>  原理：在 js 创建了 web socket 之后，会有一个 HTTP 请求发送到浏览器以发起连接。
+<div class="hljs code-wrapper"><pre><code>  原理：在 js 创建了 web socket 之后，会有一个 HTTP 请求发送到浏览器以发起连接。
     取得服务器响应后，建立的连接会使用 HTTP 升级从 HTTP 协议交换为 web sockt 协议。
   只有在支持 web socket 协议的服务器上才能正常工作。</code></pre></div>
 <h2 id="什么是服务端渲染？有什么好处？"><a href="#什么是服务端渲染？有什么好处？" class="headerlink" title="什么是服务端渲染？有什么好处？"></a>什么是服务端渲染？有什么好处？</h2><blockquote>
@@ -389,13 +382,13 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 <blockquote>
 <p>1、良好的交互体验</p>
 </blockquote>
-<div class="hljs"><pre><code>用户不需要从新刷新页面，获取数据也是通过 AJAX 异步获取，页面显示流畅</code></pre></div>
+<div class="hljs code-wrapper"><pre><code>用户不需要从新刷新页面，获取数据也是通过 AJAX 异步获取，页面显示流畅</code></pre></div>
 <p>2、良好的前后端分离工作模式<br>单页 Web 应用可以和 RESTful 规约一起使用，通过 REST API 提供接口数据，并使用 Ajax 异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。<br>3、减轻服务器压力<br>服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；<br>4、公用一套后端程序代码<br>不用修改后端程序代码就可以同时用于 Web 界面、手机、平板等多种客户端；</p>
 <p>缺点：</p>
 <blockquote>
 <p>1、SEO 难度较高</p>
 </blockquote>
-<div class="hljs"><pre><code>由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧。</code></pre></div>
+<div class="hljs code-wrapper"><pre><code>由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧。</code></pre></div>
 <p>2、前进、后退管理<br>由于单页 Web 应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理，当然此问题也有解决方案，比如利用 URI 中的散列+iframe 实现<br>3、初次加载耗时多<br>为实现单页 Web 应用功能及显示效果，需要在加载页面的时候将 JavaScript、CSS 统一加载，部分页面可以在需要的时候加载。所以必须对 JavaScript 及 CSS 代码进行合并压缩处理，如果使用第三方库，建议使用一些大公司的 CDN，因此带宽的消耗是必然的。</p>
 <h2 id="常用-HTML-状态吗"><a href="#常用-HTML-状态吗" class="headerlink" title="常用 HTML 状态吗"></a>常用 <code>HTML</code> 状态吗</h2><table>
 <thead>
@@ -460,7 +453,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
               
-                <div class="post-prevnext row">
+                <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
                     
@@ -605,22 +598,27 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
   
   <!-- 备案信息 -->
   <div class="beian">
-    <a href="http://beian.miit.gov.cn/" target="_blank"
-       rel="nofollow noopener">京ICP备19000003号</a>
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        京ICP备19000003号
+      </a>
+    </span>
     
       
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037035"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-          
-          <span>京公网安备11010502037035号</span>
-        </a>
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037035"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+            
+            <span>京公网安备11010502037035号</span>
+          </a>
+        </span>
       
     
   </div>
@@ -637,9 +635,6 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":200})
     NProgress.start()
-    document.addEventListener('DOMContentLoaded', function() {
-      window.NProgress && window.NProgress.inc();
-    })
     window.addEventListener('load', function() {
       NProgress.done();
     })
@@ -682,6 +677,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 

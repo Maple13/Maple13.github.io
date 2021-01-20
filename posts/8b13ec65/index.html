@@ -7,6 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="baidu-site-verification" content="code-OpnfgHunn7" />
   <link rel="apple-touch-icon" sizes="76x76" href="https://img.maple13.cn/2020-11-28-favicon.png">
   <link rel="icon" type="image/png" href="https://img.maple13.cn/2020-11-28-favicon.png">
   <meta name="viewport"
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"maple13.top","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"maple13.top","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
 </head>
 
 
@@ -157,7 +158,7 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="banner" id="banner" parallax=true
          style="background: url('https://img.maple13.cn/2020-11-28-16065399686273.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -225,11 +226,11 @@
     
       
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
@@ -239,8 +240,7 @@
               <blockquote>
 <p>React-redux 对外提供的 API 有四个：<code>Provider</code>/<code>createProvider</code>/<code>connectAdvanced</code>/<code>connect</code></p>
 </blockquote>
-<h3 id="connectAdvanced"><a href="#connectAdvanced" class="headerlink" title="connectAdvanced"></a><code>connectAdvanced</code></h3><div class="hljs"><pre><code class="hljs js">connectAdvanced(selectorFactory, [connectOptions])</code></pre></div>
-
+<h3 id="connectAdvanced"><a href="#connectAdvanced" class="headerlink" title="connectAdvanced"></a><code>connectAdvanced</code></h3><div class="hljs code-wrapper"><pre><code class="hljs js">connectAdvanced(selectorFactory, [connectOptions])</code></pre></div>
 <a id="more"></a>
 
 <blockquote>
@@ -259,8 +259,7 @@
 <blockquote>
 <p>如果你真的不想把根组件嵌套在 <code>&lt;Provider&gt;</code> 中，你可以把 <code>store</code> 作为 <code>props</code> 传递到每一个被 <code>connet()</code> 包装的组件，但是我们只推荐您在单元测试中对 <code>store</code> 进行伪造 (stub) 或者在非完全基于 React 的代码中才这样做。<br>正常情况下，你应该使用 <code>&lt;Provider&gt;</code>。</p>
 </blockquote>
-<h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a><code>connect()</code></h3><div class="hljs"><pre><code class="hljs js">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</code></pre></div>
-
+<h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a><code>connect()</code></h3><div class="hljs code-wrapper"><pre><code class="hljs js">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</code></pre></div>
 <blockquote>
 <p>连接 React 组件与 Redux store。<br>连接操作不会改变原来的组件类。<br>反而返回一个新的与 Redux store 连接的组件类。</p>
 </blockquote>
@@ -289,7 +288,7 @@
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
               
-                <div class="post-prevnext row">
+                <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
                     
@@ -434,22 +433,27 @@
   
   <!-- 备案信息 -->
   <div class="beian">
-    <a href="http://beian.miit.gov.cn/" target="_blank"
-       rel="nofollow noopener">京ICP备19000003号</a>
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        京ICP备19000003号
+      </a>
+    </span>
     
       
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037035"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-          
-          <span>京公网安备11010502037035号</span>
-        </a>
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037035"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+            
+            <span>京公网安备11010502037035号</span>
+          </a>
+        </span>
       
     
   </div>
@@ -466,9 +470,6 @@
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":200})
     NProgress.start()
-    document.addEventListener('DOMContentLoaded', function() {
-      window.NProgress && window.NProgress.inc();
-    })
     window.addEventListener('load', function() {
       NProgress.done();
     })
@@ -511,6 +512,7 @@
 
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 

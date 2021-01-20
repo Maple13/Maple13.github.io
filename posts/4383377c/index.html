@@ -7,6 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="baidu-site-verification" content="code-OpnfgHunn7" />
   <link rel="apple-touch-icon" sizes="76x76" href="https://img.maple13.cn/2020-11-28-favicon.png">
   <link rel="icon" type="image/png" href="https://img.maple13.cn/2020-11-28-favicon.png">
   <meta name="viewport"
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"maple13.top","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"maple13.top","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Maple13 的博客" type="application/atom+xml">
 </head>
 
 
@@ -157,7 +158,7 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="banner" id="banner" parallax=true
          style="background: url('https://img.maple13.cn/2020-11-28-16065399686273.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -225,11 +226,11 @@
     
       
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
@@ -242,28 +243,25 @@
 <a id="more"></a>
 
 <h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>如果留意一下有些网站的源代码，有时会发现一些这样的代码：</p>
-<div class="hljs"><pre><code class="hljs bash">&lt;!--[<span class="hljs-keyword">if</span> IE5]&gt;
+<div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;!--[<span class="hljs-keyword">if</span> IE5]&gt;
 &lt;style <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;
     /*将IE5*的CSS盒模型宽高计算修正放在这个条件注释中*/
     <span class="hljs-comment">#Test1 &#123; width: 180px; &#125;</span>
     <span class="hljs-comment">#Test2 &#123; width: 190px; &#125;</span>
 &lt;/style&gt;
 &lt;![endif]--&gt;</code></pre></div>
-
 <p>或者</p>
-<div class="hljs"><pre><code class="hljs bash">&lt;link href=<span class="hljs-string">&quot;css/index.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;
+<div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;link href=<span class="hljs-string">&quot;css/index.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;
 &lt;!--[<span class="hljs-keyword">if</span> IE7]&gt;
 &lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;
 &lt;![endif]--&gt;
 &lt;!--[<span class="hljs-keyword">if</span> IE6]&gt;
 &lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;
 &lt;![endif]--&gt;</code></pre></div>
-
 <blockquote>
 <p>_<!--_ 和 *-->*标识符配对使用表示 HTML 注释语句。但是 IE 会把这些特殊的注释语句当做一个简单的逻辑语句进行解析。</p>
 </blockquote>
-<p>#</p>
-<blockquote>
+<h1 id><a href="#" class="headerlink" title></a></h1><blockquote>
 <ul>
 <li>上面的第一段注释，表示如果当前浏览器是 IE 浏览器，则解析*<!--[if IE]>* 和 *<![endif]-->*标识符之间的样式表。而其他浏览器视而不见，当做注释语句全部忽略。因此可以在此放置一些能够兼容 IE 浏览器的样式代码。</li>
 </ul>
@@ -274,10 +272,9 @@
 </ul>
 </blockquote>
 <h2 id="IE-条件语句的基本用法"><a href="#IE-条件语句的基本用法" class="headerlink" title="IE 条件语句的基本用法"></a>IE 条件语句的基本用法</h2><p>IE 条件语句一般放在 HTML 注释语句中，这样可以避免其他浏览器因为无法解析这些条件语句时可能出现的尴尬。其基本语法如下：</p>
-<div class="hljs"><pre><code class="hljs ruby">&lt;!--[<span class="hljs-keyword">if</span> IE]&gt;
+<div class="hljs code-wrapper"><pre><code class="hljs ruby">&lt;!--[<span class="hljs-keyword">if</span> IE]&gt;
     IE 下可执行语句
 &lt;![endif]--&gt;</code></pre></div>
-
 <blockquote>
 <ul>
 <li>条件语句放在中括号内，然后嵌入到 HTML 注释中。注意，起始条件标记中省略了 HTML 注释语句的后半部分标记（– –&gt;），而结束标记中省略了 HTML 注释语句的前半部分标记（!– –），仅是一个半封闭的形式，这样对于其他浏览器来说，前后两个半封闭的 HTML 注释标记就形成了一个完整的注释标记，从而避免了由于其他浏览器无法解析的尴尬。</li>
@@ -285,16 +282,14 @@
 <li>在 IE 条件中可以放置一些简单的条件语句，或者设置成只能够在特定版本的浏览器中生效的源代码。</li>
 </ul>
 </blockquote>
-<p>#</p>
-<blockquote>
+<h1 id="-1"><a href="#-1" class="headerlink" title></a></h1><blockquote>
 <p>除了使用这些指定某种版本浏览器的条件语句之外，还可以结合 <strong>lte、lt、get、gt、！</strong>关键字来定义 IE 浏览器的版本范围，这些关键字的说明如下：</p>
 </blockquote>
-<div class="hljs"><pre><code class="hljs ruby">- <span class="hljs-symbol">lte:</span> 小于或等于某个版本的IE浏览器。
+<div class="hljs code-wrapper"><pre><code class="hljs ruby">- <span class="hljs-symbol">lte:</span> 小于或等于某个版本的IE浏览器。
 - <span class="hljs-symbol">lt:</span> 小于某个版本的IE浏览器。
 - gte： 大于或等于某个版本的IE浏览器。
 - gt： 大于某个版本的IE浏览器。
 - ！：不等于某个版本的IE浏览器。</code></pre></div>
-
             </div>
             <hr>
             <div>
@@ -315,7 +310,7 @@
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
               
-                <div class="post-prevnext row">
+                <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
                     
@@ -460,22 +455,27 @@
   
   <!-- 备案信息 -->
   <div class="beian">
-    <a href="http://beian.miit.gov.cn/" target="_blank"
-       rel="nofollow noopener">京ICP备19000003号</a>
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        京ICP备19000003号
+      </a>
+    </span>
     
       
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037035"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-          
-          <span>京公网安备11010502037035号</span>
-        </a>
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037035"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+            
+            <span>京公网安备11010502037035号</span>
+          </a>
+        </span>
       
     
   </div>
@@ -492,9 +492,6 @@
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":200})
     NProgress.start()
-    document.addEventListener('DOMContentLoaded', function() {
-      window.NProgress && window.NProgress.inc();
-    })
     window.addEventListener('load', function() {
       NProgress.done();
     })
@@ -537,6 +534,7 @@
 
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
