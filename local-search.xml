@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Could not read from remote repository - 记：一次SSH代理导致的异常</title>
+    <link href="/posts/74a670b7/"/>
+    <url>/posts/74a670b7/</url>
+    
+    <content type="html"><![CDATA[<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>周一刚上班，打开命令行进行<code>git pull</code>时，报错；难道是我打开的方式不对？换个命令，再次<code>git fetch</code>，还是报错；？？？(满头雾水)<br>昨天还好好的呀 难道是我ssh 密钥出问题了？</p><div class="hljs code-wrapper"><pre><code class="hljs sh">$ git pullkex_exchange_identification: Connection closed by remote hostfatal: Could not <span class="hljs-built_in">read</span> from remote repository.Please make sure you have the correct access rightsand the repository exists.$ git fetchkex_exchange_identification: Connection closed by remote hostfatal: Could not <span class="hljs-built_in">read</span> from remote repository.Please make sure you have the correct access rightsand the repository exists.</code></pre></div><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>搜了一圈，大多数都是说SSH配置出问题了，让重新配置一下SSH，感觉不对劲，终于发现一位大佬的<a href="https://blog.csdn.net/codebattle/article/details/103176843">文章</a>， 解决步骤如下：</p><h3 id="使用SSH调试模式输出一下Log"><a href="#使用SSH调试模式输出一下Log" class="headerlink" title="使用SSH调试模式输出一下Log"></a>使用SSH调试模式输出一下Log</h3><div class="hljs code-wrapper"><pre><code class="hljs sh">$ ssh -v git@github.comOpenSSH_8.1p1, LibreSSL 2.7.3...debug1: Executing proxy <span class="hljs-built_in">command</span>: <span class="hljs-built_in">exec</span> nc -X 5 -x 127.0.0.1:1080 github.com 22...debug1: Local version string SSH-2.0-OpenSSH_8.1debug1: kex_exchange_identification: banner line 0: error = 0 61kex_exchange_identification: Connection closed by remote host</code></pre></div><p>关键信息就是<code>Executing proxy command: exec nc -X 5 -x 127.0.0.1:1080 github.com 22</code>, 原来是我之前有配置过命令行<code>git clone</code>代理加速，然后代理挂掉了，导致服务异常。</p><h3 id="注释命令行代理配置"><a href="#注释命令行代理配置" class="headerlink" title="注释命令行代理配置"></a>注释命令行代理配置</h3><p>编辑<code>~/.ssh/config</code>文件，注释其中的代理配置</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/codebattle/article/details/103176843">文章.IceIceBear</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Error: Cannot find module &#39;webpack-cli/bin/config-yargs&#39;</title>
     <link href="/posts/ba3c564c/"/>
     <url>/posts/ba3c564c/</url>

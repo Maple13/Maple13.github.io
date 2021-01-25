@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.maple13.cn/posts/74a670b7/</loc>
+    <lastmod>2021-01-25</lastmod>
+  </url>
+  <url>
     <loc>https://www.maple13.cn/posts/5c046f09/</loc>
     <lastmod>2020-11-28</lastmod>
   </url>
