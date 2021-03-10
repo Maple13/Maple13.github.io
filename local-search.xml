@@ -4,6 +4,46 @@
   
   
   <entry>
+    <title>ERESOLVE unable to resolve dependency tree</title>
+    <link href="/posts/8b080878/"/>
+    <url>/posts/8b080878/</url>
+    
+    <content type="html"><![CDATA[<h2 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h2><p>升级 npm 至 <code>v7.6.2</code> 后, 运行 <code>npm i</code> 安装依赖，报错 <code>ERESOLVE unable to resolve dependency tree</code></p><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul><li>node: 14.15.0</li><li>npm: 7.6.2</li><li>Angular 项目</li></ul><h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>等依赖项中存在无法解决的冲突，<code>npm@7</code> 现在尝试安装它们，而<code>npm@6</code>没有。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>使用 <code>npm i --legacy-peer-deps</code></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/npm/cli/issues/2420">[BUG] ERESOLVE无法解析依赖关系树（postcss-load-config，svelte-preprocess）</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>npm</tag>
+      
+      <tag>Angular</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>flutter 错误❌及解决方式收集</title>
+    <link href="/posts/7ec0e6a0/"/>
+    <url>/posts/7ec0e6a0/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Waiting-for-another-flutter-command-to-release-the-startup-lock"><a href="#Waiting-for-another-flutter-command-to-release-the-startup-lock" class="headerlink" title="Waiting for another flutter command to release the startup lock..."></a><code>Waiting for another flutter command to release the startup lock...</code></h3><h4 id="解决方式1"><a href="#解决方式1" class="headerlink" title="解决方式1"></a>解决方式1</h4><ol><li>打开 flutter 安装目录 <code>/bin/cache</code></li><li>删除<code>lockfile</code>文件</li></ol><h4 id="解决方式2"><a href="#解决方式2" class="headerlink" title="解决方式2"></a>解决方式2</h4><div class="hljs code-wrapper"><pre><code class="hljs sh">// Linuxkillall -9 dart// Windowstaskkill /F /IM dart.exe</code></pre></div><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://link.zhihu.com/?target=https://stackoverflow.com/questions/51679269/waiting-for-another-flutter-command-to-release-the-startup-lock">Waiting for another flutter command to release the startup lock</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Flutter</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Could not read from remote repository - 记：一次SSH代理导致的异常</title>
     <link href="/posts/74a670b7/"/>
     <url>/posts/74a670b7/</url>

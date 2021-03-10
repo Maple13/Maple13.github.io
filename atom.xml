@@ -6,7 +6,7 @@
   <link href="https://www.maple13.cn/atom.xml" rel="self"/>
   
   <link href="https://www.maple13.cn/"/>
-  <updated>2021-01-25T03:59:32.105Z</updated>
+  <updated>2021-03-10T03:12:34.466Z</updated>
   <id>https://www.maple13.cn/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ERESOLVE unable to resolve dependency tree</title>
+    <link href="https://www.maple13.cn/posts/8b080878/"/>
+    <id>https://www.maple13.cn/posts/8b080878/</id>
+    <published>2021-03-10T09:04:21.000Z</published>
+    <updated>2021-03-10T03:12:34.466Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h2><p>升级 npm 至 <code>v7.6.2</code> 后, 运行 <code>npm i</code> 安装依赖，报错 <code>ERESOLVE unable to resolve dependency tree</code></p><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul><li>node: 14.15.0</li><li>npm: 7.6.2</li><li>Angular 项目</li></ul><h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>等依赖项中存在无法解决的冲突，<code>npm@7</code> 现在尝试安装它们，而<code>npm@6</code>没有。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>使用 <code>npm i --legacy-peer-deps</code></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/npm/cli/issues/2420">[BUG] ERESOLVE无法解析依赖关系树（postcss-load-config，svelte-preprocess）</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;出现原因&quot;&gt;&lt;a href=&quot;#出现原因&quot; class=&quot;headerlink&quot; title=&quot;出现原因&quot;&gt;&lt;/a&gt;出现原因&lt;/h2&gt;&lt;p&gt;升级 npm 至 &lt;code&gt;v7.6.2&lt;/code&gt; 后, 运行 &lt;code&gt;npm i&lt;/code&gt; 安装依赖，报错 </summary>
+      
+    
+    
+    
+    
+    <category term="npm" scheme="https://www.maple13.cn/tags/npm/"/>
+    
+    <category term="Angular" scheme="https://www.maple13.cn/tags/Angular/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flutter 错误❌及解决方式收集</title>
+    <link href="https://www.maple13.cn/posts/7ec0e6a0/"/>
+    <id>https://www.maple13.cn/posts/7ec0e6a0/</id>
+    <published>2021-02-22T10:50:31.000Z</published>
+    <updated>2021-03-10T03:15:49.667Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Waiting-for-another-flutter-command-to-release-the-startup-lock"><a href="#Waiting-for-another-flutter-command-to-release-the-startup-lock" class="headerlink" title="Waiting for another flutter command to release the startup lock..."></a><code>Waiting for another flutter command to release the startup lock...</code></h3><h4 id="解决方式1"><a href="#解决方式1" class="headerlink" title="解决方式1"></a>解决方式1</h4><ol><li>打开 flutter 安装目录 <code>/bin/cache</code></li><li>删除<code>lockfile</code>文件</li></ol><h4 id="解决方式2"><a href="#解决方式2" class="headerlink" title="解决方式2"></a>解决方式2</h4><div class="hljs code-wrapper"><pre><code class="hljs sh">// Linuxkillall -9 dart// Windowstaskkill /F /IM dart.exe</code></pre></div><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://link.zhihu.com/?target=https://stackoverflow.com/questions/51679269/waiting-for-another-flutter-command-to-release-the-startup-lock">Waiting for another flutter command to release the startup lock</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Waiting-for-another-flutter-command-to-release-the-startup-lock&quot;&gt;&lt;a href=&quot;#Waiting-for-another-flutter-command-to-release-the-startu</summary>
+      
+    
+    
+    
+    
+    <category term="Flutter" scheme="https://www.maple13.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Could not read from remote repository - 记：一次SSH代理导致的异常</title>
     <link href="https://www.maple13.cn/posts/74a670b7/"/>
     <id>https://www.maple13.cn/posts/74a670b7/</id>
     <published>2021-01-25T04:40:21.000Z</published>
-    <updated>2021-01-25T03:59:32.105Z</updated>
+    <updated>2021-01-25T04:26:58.402Z</updated>
     
     <content type="html"><![CDATA[<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>周一刚上班，打开命令行进行<code>git pull</code>时，报错；难道是我打开的方式不对？换个命令，再次<code>git fetch</code>，还是报错；？？？(满头雾水)<br>昨天还好好的呀 难道是我ssh 密钥出问题了？</p><div class="hljs code-wrapper"><pre><code class="hljs sh">$ git pullkex_exchange_identification: Connection closed by remote hostfatal: Could not <span class="hljs-built_in">read</span> from remote repository.Please make sure you have the correct access rightsand the repository exists.$ git fetchkex_exchange_identification: Connection closed by remote hostfatal: Could not <span class="hljs-built_in">read</span> from remote repository.Please make sure you have the correct access rightsand the repository exists.</code></pre></div><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>搜了一圈，大多数都是说SSH配置出问题了，让重新配置一下SSH，感觉不对劲，终于发现一位大佬的<a href="https://blog.csdn.net/codebattle/article/details/103176843">文章</a>， 解决步骤如下：</p><h3 id="使用SSH调试模式输出一下Log"><a href="#使用SSH调试模式输出一下Log" class="headerlink" title="使用SSH调试模式输出一下Log"></a>使用SSH调试模式输出一下Log</h3><div class="hljs code-wrapper"><pre><code class="hljs sh">$ ssh -v git@github.comOpenSSH_8.1p1, LibreSSL 2.7.3...debug1: Executing proxy <span class="hljs-built_in">command</span>: <span class="hljs-built_in">exec</span> nc -X 5 -x 127.0.0.1:1080 github.com 22...debug1: Local version string SSH-2.0-OpenSSH_8.1debug1: kex_exchange_identification: banner line 0: error = 0 61kex_exchange_identification: Connection closed by remote host</code></pre></div><p>关键信息就是<code>Executing proxy command: exec nc -X 5 -x 127.0.0.1:1080 github.com 22</code>, 原来是我之前有配置过命令行<code>git clone</code>代理加速，然后代理挂掉了，导致服务异常。</p><h3 id="注释命令行代理配置"><a href="#注释命令行代理配置" class="headerlink" title="注释命令行代理配置"></a>注释命令行代理配置</h3><p>编辑<code>~/.ssh/config</code>文件，注释其中的代理配置</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/codebattle/article/details/103176843">文章.IceIceBear</a></p>]]></content>
     
