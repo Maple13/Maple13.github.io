@@ -18,7 +18,7 @@
   <meta name="description" content="学习、积累、记录，为了进步！">
   <meta name="author" content="Maple13">
   <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-  <title>归档 - Maple13 的博客</title>
+  <title>Maple13 的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -49,7 +49,7 @@
 
 
 <body>
-  <header style="height: 30vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -143,18 +143,22 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://img.maple13.cn/2020-11-28-16065399686273.jpg') no-repeat center center;
+         style="background: url('https://img.maple13.cn/2020-11-28-16065397894695.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="自己认为的很努力，对比别人只是表面上的努力而已！">
               
             </span>
 
             
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -165,30 +169,74 @@
     
       <div class="container nopadding-x-md">
         <div class="py-5" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 21 篇文章</p>
-  <hr>
-  
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2017</p>
     
-    <a href="/posts/b9cd3f63/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">2017 年终总结</span>
-      <time style="float: right;">12-30</time>
-    </a>
-  
-</div>
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/990c54fb/" target="_self">
+          <img src="https://img.maple13.cn/2020-11-28-16065310834661.jpg" srcset="/img/loading.gif" alt="Hello World！">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/990c54fb/">Hello World！</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/posts/990c54fb/">
+          
+          
+            
+          
+          Welcome to Hexo! 以下是 Hexo 的一些常用命令，如果需要详细了解,可以前往 documentation 查询详细文档. 如果你在使用 Hexo 时出现问题，你可以在troubleshooting搜索答案,或者可以前往 Hexo 的GitHub上提出问题.
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2015-09-17 16:22" pubdate>
+              2015-09-17
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
