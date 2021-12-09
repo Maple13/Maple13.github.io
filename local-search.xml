@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>hexo 嵌入 CodePen 或 jsFiddle</title>
+    <link href="/posts/262c8128/"/>
+    <url>/posts/262c8128/</url>
+    
+    <content type="html"><![CDATA[<h2 id="嵌入-CodePen"><a href="#嵌入-CodePen" class="headerlink" title="嵌入 CodePen"></a>嵌入 CodePen</h2><h3 id="安装-hexo-codepen"><a href="#安装-hexo-codepen" class="headerlink" title="安装 hexo-codepen"></a>安装 <a href="https://github.com/maliMirkec/hexo-tag-codepen">hexo-codepen</a></h3><div class="hljs code-wrapper"><pre><code class="hljs sh">`$ yarn add hexo-codepen`</code></pre></div><h3 id="Markdown-中语法"><a href="#Markdown-中语法" class="headerlink" title="Markdown 中语法"></a>Markdown 中语法</h3><div class="hljs code-wrapper"><pre><code class="hljs md">&#123;% codepen userId|anonymous|anon slugHash theme [defaultTab [height [width]]] %&#125;</code></pre></div><p>以上语法中的参数分别对应从 CodePen Embed 复制出来的html代码：</p><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;codepen&quot;</span> <span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;265&quot;</span> <span class="hljs-attr">data-theme-id</span>=<span class="hljs-string">&quot;light&quot;</span> <span class="hljs-attr">data-default-tab</span>=<span class="hljs-string">&quot;css,result&quot;</span> <span class="hljs-attr">data-user</span>=<span class="hljs-string">&quot;Maple13&quot;</span> <span class="hljs-attr">data-slug-hash</span>=<span class="hljs-string">&quot;xxVgPvZ&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;</span> <span class="hljs-attr">data-pen-title</span>=<span class="hljs-string">&quot;Navigation&quot;</span>&gt;</span>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>See the Pen <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://codepen.io/Maple13/pen/xxVgPvZ&quot;</span>&gt;</span>  Navigation<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> by Maple13 (<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://codepen.io/Maple13&quot;</span>&gt;</span>@Maple13<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>)  on <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://codepen.io&quot;</span>&gt;</span>CodePen<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cpwebassets.codepen.io/assets/embed/ei.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><code>https://codepen.io/Maple13/pen/xxVgPvZ</code></p><iframe id="cp_embed_xxVgPvZ" src="//codepen.io/Maple13/embed/xxVgPvZ?height=465]&theme-id=dark&slug-hash=xxVgPvZ&default-tab=[html,result" scrolling="no" frameborder="no" height="465]" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe><h2 id="嵌入-jsFiddle"><a href="#嵌入-jsFiddle" class="headerlink" title="嵌入 jsFiddle"></a>嵌入 jsFiddle</h2><h3 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h3><div class="hljs code-wrapper"><pre><code class="hljs md">&#123;% jsfiddle shorttag [tabs] [skin] [width] [height] %&#125;</code></pre></div><p>从jsFiddle的 Embed 中找到对应上面的参数替换即可:</p><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//jsfiddle.net/Maple13/9a57dvnw/1/embed/js,html,css,result/dark/&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p><code>https://jsfiddle.net/Maple13/9a57dvnw/1/</code></p><iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/Maple13/9a57dvnw/embedded/result,html,css,js/dark" frameborder="0" loading="lazy" allowfullscreen></iframe>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ERESOLVE unable to resolve dependency tree</title>
+    <link href="/posts/8b080878/"/>
+    <url>/posts/8b080878/</url>
+    
+    <content type="html"><![CDATA[<h2 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h2><p>升级 npm 至 <code>v7.6.2</code> 后, 运行 <code>npm i</code> 安装依赖，报错 <code>ERESOLVE unable to resolve dependency tree</code></p><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul><li>node: 14.15.0</li><li>npm: 7.6.2</li><li>Angular 项目</li></ul><h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>等依赖项中存在无法解决的冲突，<code>npm@7</code> 现在尝试安装它们，而<code>npm@6</code>没有。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>使用 <code>npm i --legacy-peer-deps</code></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/npm/cli/issues/2420">[BUG] ERESOLVE无法解析依赖关系树（postcss-load-config，svelte-preprocess）</a><br><a href="https://github.blog/2021-02-02-npm-7-is-now-generally-available/#peer-dependencies">npm 7 is now generally available!</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>npm</tag>
+      
+      <tag>Angular</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>flutter 错误❌及解决方式收集</title>
+    <link href="/posts/7ec0e6a0/"/>
+    <url>/posts/7ec0e6a0/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Waiting-for-another-flutter-command-to-release-the-startup-lock"><a href="#Waiting-for-another-flutter-command-to-release-the-startup-lock" class="headerlink" title="Waiting for another flutter command to release the startup lock..."></a><code>Waiting for another flutter command to release the startup lock...</code></h3><h4 id="解决方式1"><a href="#解决方式1" class="headerlink" title="解决方式1"></a>解决方式1</h4><ol><li>打开 flutter 安装目录 <code>/bin/cache</code></li><li>删除<code>lockfile</code>文件</li></ol><h4 id="解决方式2"><a href="#解决方式2" class="headerlink" title="解决方式2"></a>解决方式2</h4><div class="hljs code-wrapper"><pre><code class="hljs sh">// Linuxkillall -9 dart// Windowstaskkill /F /IM dart.exe</code></pre></div><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://link.zhihu.com/?target=https://stackoverflow.com/questions/51679269/waiting-for-another-flutter-command-to-release-the-startup-lock">Waiting for another flutter command to release the startup lock</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Flutter</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Could not read from remote repository - 记：一次SSH代理导致的异常</title>
+    <link href="/posts/74a670b7/"/>
+    <url>/posts/74a670b7/</url>
+    
+    <content type="html"><![CDATA[<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>周一刚上班，打开命令行进行<code>git pull</code>时，报错；难道是我打开的方式不对？换个命令，再次<code>git fetch</code>，还是报错；？？？(满头雾水)<br>昨天还好好的呀 难道是我ssh 密钥出问题了？</p><div class="hljs code-wrapper"><pre><code class="hljs sh">$ git pullkex_exchange_identification: Connection closed by remote hostfatal: Could not <span class="hljs-built_in">read</span> from remote repository.Please make sure you have the correct access rightsand the repository exists.$ git fetchkex_exchange_identification: Connection closed by remote hostfatal: Could not <span class="hljs-built_in">read</span> from remote repository.Please make sure you have the correct access rightsand the repository exists.</code></pre></div><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>搜了一圈，大多数都是说SSH配置出问题了，让重新配置一下SSH，感觉不对劲，终于发现一位大佬的<a href="https://blog.csdn.net/codebattle/article/details/103176843">文章</a>， 解决步骤如下：</p><h3 id="使用SSH调试模式输出一下Log"><a href="#使用SSH调试模式输出一下Log" class="headerlink" title="使用SSH调试模式输出一下Log"></a>使用SSH调试模式输出一下Log</h3><div class="hljs code-wrapper"><pre><code class="hljs sh">$ ssh -v git@github.comOpenSSH_8.1p1, LibreSSL 2.7.3...debug1: Executing proxy <span class="hljs-built_in">command</span>: <span class="hljs-built_in">exec</span> nc -X 5 -x 127.0.0.1:1080 github.com 22...debug1: Local version string SSH-2.0-OpenSSH_8.1debug1: kex_exchange_identification: banner line 0: error = 0 61kex_exchange_identification: Connection closed by remote host</code></pre></div><p>关键信息就是<code>Executing proxy command: exec nc -X 5 -x 127.0.0.1:1080 github.com 22</code>, 原来是我之前有配置过命令行<code>git clone</code>代理加速，然后代理挂掉了，导致服务异常。</p><h3 id="注释命令行代理配置"><a href="#注释命令行代理配置" class="headerlink" title="注释命令行代理配置"></a>注释命令行代理配置</h3><p>编辑<code>~/.ssh/config</code>文件，注释其中的代理配置</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/codebattle/article/details/103176843">文章.IceIceBear</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Error: Cannot find module &#39;webpack-cli/bin/config-yargs&#39;</title>
+    <link href="/posts/ba3c564c/"/>
+    <url>/posts/ba3c564c/</url>
+    
+    <content type="html"><![CDATA[<h2 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h2><p>安装 webpack 5.*, webpack-cli 4.*, webpack-dev-server 3.11.*, 运行时导致命令行报错 <code>Error: Cannot find module &#39;webpack-cli/bin/config-yargs&#39;</code></p><div class="hljs code-wrapper"><pre><code class="hljs json">&quot;dev&quot;: &quot;webpack-dev-serve&quot;&quot;webpack&quot;: &quot;^5.6.0&quot;,&quot;webpack-cli&quot;: &quot;^4.2.0&quot;,&quot;webapck-dev-server&quot;: &quot;^3.11.0&quot;</code></pre></div><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>使用 <code>webpack serve</code></p><div class="hljs code-wrapper"><pre><code class="hljs json">&quot;dev&quot;: &quot;webpack serve&quot;</code></pre></div><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/webpack/webpack-cli/issues/1948">webpack-cli issuse</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>webpack</tag>
+      
+      <tag>TypeScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>中国，加油！武汉，加油！</title>
+    <link href="/posts/5c046f09/"/>
+    <url>/posts/5c046f09/</url>
+    
+    <content type="html"><![CDATA[<p>2020 注定是不平凡的一年。</p><p>对于中国，对于武汉，致于深深的祝福， 对于钟南山院士及所有医护人员致于崇高的敬意和祝福；心慕已久的的武汉热干面，武大春天的樱花，我渴望着和你们见面</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>中国加油</tag>
+      
+      <tag>武汉加油</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Package.json中npm依赖版本管理</title>
+    <link href="/posts/cb9fbe24/"/>
+    <url>/posts/cb9fbe24/</url>
+    
+    <content type="html"><![CDATA[<h2 id="来由"><a href="#来由" class="headerlink" title="来由"></a>来由</h2><p>近期项目中总是报<code>Typescript</code>版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了 npm 依赖版本管理问题。</p><p>警告 ⚠️ 信息如下:</p><div class="hljs code-wrapper"><pre><code class="hljs asciidoc">=============<span class="hljs-symbol">WARNING: </span>You are currently running a version of TypeScript which is not officially supported by typescript-estree.You may find that it works just fine, or you may not.SUPPORTED TYPESCRIPT VERSIONS: &gt;=3.2.1 &lt;3.6.0YOUR TYPESCRIPT VERSION: 3.7.4Please only submit bug reports when using the officially supported version.=============</code></pre></div><p><code>Package.json</code> 中为:</p><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;ts&quot;</span>,  <span class="hljs-attr">&quot;dependencies&quot;</span>: &#123;    <span class="hljs-comment">// 略</span>  &#125;,  <span class="hljs-attr">&quot;devDependencies&quot;</span>: &#123;    <span class="hljs-attr">&quot;typescript&quot;</span>: <span class="hljs-string">&quot;^3.2.1&quot;</span>  &#125;&#125;</code></pre></div><a id="more"></a><h2 id="npm-包版本格式"><a href="#npm-包版本格式" class="headerlink" title="npm 包版本格式"></a>npm 包版本格式</h2><p>npm 包版本的格式为：</p><div class="hljs code-wrapper"><pre><code class="hljs stylus">major<span class="hljs-selector-class">.minor</span>.patch主版本号.次版本号.修补版本号</code></pre></div><ul><li><p><code>major</code>：新的架构调整，不兼容老版本</p></li><li><p><code>minor</code>：新增功能，兼容老版本</p></li><li><p><code>patch</code>：修复 bug，兼容老版本</p></li></ul><p>包版本的声明方式有：</p><ul><li><p><code>version</code> - 必须匹配指定版本, 如 <code>3.2.1</code></p></li><li><p><code>&gt;version</code> - 必须大于指定版本, 如 <code>&gt;3.2.1</code></p></li><li><p><code>&gt;=version</code> - 可大于或等于指定版本, 如 <code>&gt;=3.2.1</code></p></li><li><p><code>&lt;version</code> - 必须小于指定版本, 如 <code>&lt;3.2.1</code></p></li><li><p><code>&lt;=version</code> - 可小于等于指定版本, 如 <code>&lt;=3.2.1</code></p></li><li><p><code>~version</code> - 大约匹配某个版本, 如 <code>~3.2.1</code>, 如果<code>minor</code>版本号指定了，那么<code>minor</code>版本号不变，而<code>patch</code>版本号任意, 如果<code>minor</code>和<code>patch</code>版本号未指定，那么<code>minor</code>和<code>patch</code>版本号任意</p></li><li><p><code>^version</code> - 兼容某个版本, 如 <code>^3.2.1</code></p><blockquote><p>如：<code>^1.1.2</code> ，表示&gt;=1.1.2 &lt;2.0.0，可以是 1.1.2，1.1.3，…..，1.1.n，1.2.n，…..，1.n.n<br>如：<code>^0.2.3</code> ，表示&gt;=0.2.3 &lt;0.3.0，可以是 0.2.3，0.2.4，…..，0.2.n<br>如：<code>^0.0</code>，表示 &gt;=0.0.0 &lt;0.1.0，可以是 0.0.0，0.0.1，…..，0.0.n</p></blockquote></li><li><p><code>x-range</code> - x 的位置表示任意版本, 如 <code>3.2.x</code></p></li><li><p><code>*-range</code> - 任意版本，””也表示任意版本, 如 <code>*</code>, 表示<code>&gt;=0.0.0</code>的任意版本</p></li><li><p><code>version1 - version2</code> - 大于等于<code>version1</code>，小于等于<code>version2</code>, 如 <code>1.1.2 - 1.3.1</code>, 表示包括<code>1.1.2</code>和<code>1.3.1</code>和它们之间的任意版本</p></li><li><p><code>range1 || range2</code> - 满足<code>range1</code>或者满足<code>range2</code>，可以多个范围, 如 <code>&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0</code>, 表示满足这 3 个范围的版本都可以</p></li></ul><p>而通常我们通过 <code>npm install typescript</code>/<code>yarn add typescript</code>命令安装的都是 <code>^version</code>格式</p><h2 id="yarn-lock-package-lock-json的作用"><a href="#yarn-lock-package-lock-json的作用" class="headerlink" title="yarn.lock/package.lock.json的作用"></a><code>yarn.lock</code>/<code>package.lock.json</code>的作用</h2><p>通过上面可知每次下载依赖的版本可能都会不同，这就造成了有时本地 build 完全没有问题，但是推到服务器或者在别人电脑上就会 build 失败。<br>所以 lock 文件会记录所有包的版本以及包的依赖的版本，这样就可以保证每个人下载的依赖版本都是完全相同的，从而避免很多问题。</p><h2 id="问题及总结"><a href="#问题及总结" class="headerlink" title="问题及总结"></a>问题及总结</h2><p>结合上面的内容，大家应该看的出来，问题就出在版本声明<code>^3.2.1</code>中的<code>^version</code>格式上面，随着我们增加依赖包，或者更新项目内依赖包，且依赖有更高版本，导致<code>Typescript</code>从<code>3.2.1</code>自动升级到<code>3.7.4</code>， 而我的跟<code>Typescript</code>相关的依赖却没有随之升高或暂不支持高版本，导致命令行爆出警告 ⚠️ 提示。</p><p>所以大家只有修改一下<code>Package.json</code>中<code>Typescirpt</code>的版本格式并重新安装一下项目依赖就好了。这个问题适用于所有 npm 依赖，并且也反映出我们项目中 npm 依赖版本管理有问题，需要我们改进。</p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://semver.npmjs.com/">npm semver calculator</a><br><a href="https://github.com/npm/node-semver">npm 的语义版本控制程序</a><br><a href="https://docs.npmjs.com/files/package.json">配置 Package.json</a><br><a href="https://semver.org/lang/zh-CN/">语义化版本</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>Typescript</tag>
+      
+      <tag>Npm</tag>
+      
+      <tag>Package.json</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2019-年度总结</title>
+    <link href="/posts/48a46044/"/>
+    <url>/posts/48a46044/</url>
+    
+    <content type="html"><![CDATA[<h2 id="悄悄逝去的-2019"><a href="#悄悄逝去的-2019" class="headerlink" title="悄悄逝去的 2019"></a>悄悄逝去的 2019</h2><blockquote><p>恍惚的一年，忙碌但成果不大的一年，进步缓慢的一年</p></blockquote><p>工作方面：</p><ul><li><p>优化公司主要项目的编译流程，经过努力搭建前端主要项目的<code>GitLab CI</code>自动编译流程，让我们不再花太多的精力放在手动发布上。</p></li><li><p>因为主站性质为内容信息类，所以迁移主站 Web、M 端为<code>Nuxt</code>，主要内容使用静态生成，上传到<code>OSS</code>，使其保留 SEO 的同时，加快页面加载速度。</p></li><li><p>配置项目使用<code>TypeScript</code>，让错误暴露在编译阶段，减少线上常见错误。</p></li></ul><p>个人方面:</p><p>今年团队又有人员流失，我也努力负责更多的公司事务，初步体会到了繁琐沟通带来的成本，它牵扯我没太多时间保持在 Coding 状态，且一次次被打断，而随着人员减少工作量的提升，愈发导致疲惫不堪，不知如何平衡。</p><p>身体方面健身进入瓶颈期，疲惫的我放弃了每周健身计划，进入的放纵期，吃自己想吃的，结果就是减去的体重又回来了，不过还好，心里有所预期，倒也不是很难接受。</p><p>学习方面也愈加懈怠，去年树立的<code>Flag</code>也都没有实现，果真如戏台上后背插满了旗子的老将军。</p><a id="more"></a><p>就这样恍惚间就来到了 2019 年的年终，回过头展望过去的一年，我很惭愧。心态的转变会导致工作状态产生很大的波动，我深以为然。</p><p>又是一年元旦来，2019，你没有少给我一丝时间，而我却辜负了自己</p><h2 id="2020-我准备好了"><a href="#2020-我准备好了" class="headerlink" title="2020 我准备好了"></a>2020 我准备好了</h2><p><img src="https://img.maple13.cn/2019-12-31-2020.jpg" alt="不要亏欠自己，不要亏欠时间"></p><p>致自己：</p><ul><li><p>请坚持健身，瘦，才帅</p></li><li><p>归纳知识体系，梳理自身</p></li><li><p>承担更多，坚持，不要再无意义的浪费时间</p></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>工作</tag>
+      
+      <tag>个人</tag>
+      
+      <tag>年度总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>vue-cli3.x 编译时清除console</title>
+    <link href="/posts/ab9343ef/"/>
+    <url>/posts/ab9343ef/</url>
+    
+    <content type="html"><![CDATA[<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>在我们开发<code>Vue</code>项目时, 时常需要使用<code>console.log</code>来输出一下调试信息, 在不对外的内部测试环境下这样是没有问题的, 但当使用<code>npm build / yarn run build</code>编译打包后调试信息依然存在, 这就有可能导致数据泄漏, 所以我们需要在预发布/生产编译时清除代码中的<code>console.log</code>, 开发环境下保留调试代码.</p><a id="more"></a><h3 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h3><ul><li><code>@vue/cli 3.5.1</code></li><li><code>terser-webpack-plugin 1.3.0</code></li><li><code>yarn 1.15.2</code></li></ul><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在<code>vue.config.js</code>文件中配置如下:</p><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)<span class="hljs-keyword">const</span> TerserPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;terser-webpack-plugin&#x27;</span>)<span class="hljs-built_in">module</span>.exports = &#123;  configureWebpack: &#123;    optimization: &#123;      minimizer: [        <span class="hljs-keyword">new</span> TerserPlugin(&#123;          terserOptions: &#123;            compress: &#123;              drop_console: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 清除console</span>            &#125;,          &#125;,        &#125;),      ],    &#125;,  &#125;,&#125;</code></pre></div><h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>配置完成后, 我们就实现了开发模式下保留 console 调试信息, 预发布/生产模式下自动清除 console 调试信息了.</p><h3 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h3><p><a href="https://github.com/vuejs/vue-cli/issues/3088">如何在 vue.config.js 中配置 vue-cli3.0 打包之后不显示 console</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>webpack</tag>
+      
+      <tag>Vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2018 年终总结</title>
+    <link href="/posts/ef598b95/"/>
+    <url>/posts/ef598b95/</url>
+    
+    <content type="html"><![CDATA[<h2 id="再见，2018"><a href="#再见，2018" class="headerlink" title="再见，2018"></a>再见，2018</h2><blockquote><p>再回首，一年过去了，时光果真像是 ⏳ 中的沙，留不住、回不去</p></blockquote><p>年初公司解散了，我们就像水边被惊到的鸟， 慌慌忙忙的飞走了，然后开始找工作，接着匆忙入职，开始了另外一段工作历程。</p><p>新的公司，新的业务线，新的技术栈，幸运的是，公司业务不算太复杂，使用的技术栈也相对简单，工作融入上没有太多槛。</p><p>不幸的也在此，因为公司业务不算复杂，技术栈也受限于 SEO, 在使用上也没有太过深入。</p><p>在新公司开始更多尝试，尝试着承担更多，尝试着主动，也感谢老大和同事的支持与帮助、配合。</p><a id="more"></a><p>6 月，感谢公司，集体去了泰国旅游，难过的是，太胖了，脸皮薄，人丑（当然主要是这个 😜），没有留下太多影像，这也是坚定我减肥的决心与动力 💪。</p><p>7 月，开始考驾照与减肥，一直到 10 月，第一期减脂结束，体重由 192 斤降到了 172 斤 😆，糖分缺失导致我精神状态较差，作息也不怎么稳定（当然一直也没稳定过），暂停减脂，恢复正常生活节奏，当然减肥不是一时的，要坚持，和工作一样。</p><p>11 月，寒冬来袭，裁员两波，心惊胆战后暂时回归正常，生活还得继续，夜，还长…</p><p>转眼，真的是转眼，元旦了，2018 马上就要过去，明天醒来就是 2019 了，回顾 2018，感慨颇多，驾驶证考下来了，减肥基本成功，进入第二轮减脂期，这一年，也是我的本命年。这一年来，离职、入职、动荡、稳定，一切的一切都发生了，也一切都要过去。2018，再见！</p><h2 id="你好！2019"><a href="#你好！2019" class="headerlink" title="你好！2019"></a>你好！2019</h2><p><img src="https://img.maple13.cn/2020-11-28-16065340133736.jpg" alt="Hi! 2019"></p><blockquote><p>黑夜终将过去，黎明总会到来！新的一年，新的期望，期望遇到更好的自己。</p></blockquote><p>明年的自己，要：</p><ul><li>坚持健身，不要让年卡白费</li><li>归纳知识体系，梳理自身</li><li>再次提醒自己，要写博客、要写博客、要写博客，重要的事说三遍！</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>工作</tag>
+      
+      <tag>个人</tag>
+      
+      <tag>年度总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CSS 盒模型与 BFC</title>
+    <link href="/posts/78aaf02c/"/>
+    <url>/posts/78aaf02c/</url>
+    
+    <content type="html"><![CDATA[<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><img src="https://img.maple13.cn/2020-11-28-16065332707451.jpg"></p><p>盒模型的基本组成, 由里到外 content / padding / border / margin.<br>盒模型有两种标准:</p><ul><li>标准盒模型</li><li>IE 模型</li></ul><a id="more"></a><p>它们的区别是, 标准盒模型的宽高只是内容(content)的宽高;而 IE 模型中的宽高是内容(content)+填充(padding)+边框(border) 的总宽高.</p><h3 id="css-中两种模式的切换"><a href="#css-中两种模式的切换" class="headerlink" title="css 中两种模式的切换"></a>css 中两种模式的切换</h3><p>可以使用 <code>box-sizing</code> 来设置.</p><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 标准模型 */</span><span class="hljs-attribute">box-sizing</span>: content-box;<span class="hljs-comment">/* IE 模型 */</span><span class="hljs-attribute">box-sizing</span>: border-box;<span class="hljs-comment">/* 规定应从父元素继承 box-sizing 属性的值 */</span><span class="hljs-attribute">box-sizing</span>: inherit;</code></pre></div><p>关于 <code>border-box</code> 的使用:</p><ul><li>一个 box 宽度为 100%，又想要两边有内间距，这时候用就比较好</li><li>全局设置 border-box 很好，首先它符合直觉，其次它可以省去一次又一次的加加减减，它还有一个关键作用——让有边框的盒子正常使用百分比宽度</li></ul><h3 id="边距重叠"><a href="#边距重叠" class="headerlink" title="边距重叠"></a>边距重叠</h3><p>什么是边距重叠呢?<br>两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值,如下图:<br><img src="https://img.maple13.cn/2020-11-28-16065332838443.jpg"></p><p>当然外边距合并其实也有存在的意义，如下图：<br><img src="https://img.maple13.cn/2020-11-28-16065332910259.jpg"></p><p>折叠时的取值:</p><ul><li>两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。</li><li>两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。</li><li>两个外边距一正一负时，折叠结果是两者的相加的和</li></ul><p>需要注意的是：只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并.</p><h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p>BFC 意为 Block Formatting Context (块级格式化上下文)</p><h4 id="BFC-的原理"><a href="#BFC-的原理" class="headerlink" title="BFC 的原理:"></a>BFC 的原理:</h4><ol><li>内部的 box 会在垂直方向一个接一个的放置</li><li>每个元素的 <code>margin box</code> 的左边与包含块 <code>border box</code> 的左边相接触(对于从左往右的格式化,否则相反)</li><li>box 垂直方向的距离由 <code>margin</code> 决定,属于同一个 BFC 的两个相邻 box 的 <code>margin</code> 会发生重叠</li><li>BFC 的区域不会与浮动区域的 box 重叠</li><li>BFC 是一个页面上的独立容器, 外面的元素不会影响 BFC 里的元素; 反过来,里面的也不会影响外面的</li><li>计算 BFC 高度的时候, 浮动元素也会参与计算</li></ol><h4 id="怎么创建-BFC"><a href="#怎么创建-BFC" class="headerlink" title="怎么创建 BFC"></a>怎么创建 BFC</h4><ol><li><code>float</code>属性不为 none (脱离文档流)</li><li><code>position</code>为<code>absolute</code>或<code>flex</code></li><li><code>display</code>为<code>inline-block</code>/<code>inline-table</code>/<code>inline-grid</code>/<code>table-cell</code>/<code>table-caption</code>/<code>flex</code>/<code>inline-flex</code></li><li><code>overflow</code>不为<code>visible</code></li><li>根元素</li></ol><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul><li><code>display: table</code> 可能会产生一些问题</li><li><code>overflow: scroll</code> 可能会显示不必要的滚动条</li><li><code>float: left</code> 将会把元素置于容器的左边，其他元素环绕着它</li><li><code>overflow: hidden</code> 将会剪切掉溢出的元素</li></ul><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ol><li>自适应两栏布局</li><li>清除内部浮动</li><li>防止垂直 <code>margin</code> 重叠</li></ol><h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p><a href="https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html">理解 CSS 中 BFC</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">盒模型</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context">BFC</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaScript 执行机制</title>
+    <link href="/posts/29478a68/"/>
+    <url>/posts/29478a68/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>JS 是一门<code>单线程</code>的脚本语言.</p></blockquote><h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p><blockquote><p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p></blockquote><p><strong>栈 ( stack )</strong></p><blockquote><p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p></blockquote><p><strong>队列 ( queue )</strong></p><blockquote><p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p></blockquote><a id="more"></a><h2 id="怎样知道主进程执行栈为空呢"><a href="#怎样知道主进程执行栈为空呢" class="headerlink" title="怎样知道主进程执行栈为空呢?"></a>怎样知道主进程执行栈为空呢?</h2><blockquote><p>JS 引擎存在 <code>monitoring process</code> 进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去<code>任务队列 (Event Queue)</code>那里检查是否有等待被调用的函数。</p></blockquote><h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><ul><li>同步和异步任务分别进入不同的执行”场所”，同步的进入<code>主线程</code>，异步的进入<code>Event Table</code>并注册函数。</li><li>当指定的事情完成时，<code>Event Table</code>会将这个函数移入<code>Event Queue</code>。</li><li><code>Event Loop</code>在不同的运行环境下有着不同的方式。</li></ul><p><strong>微任务(<code>micro-task</code>)与宏任务(<code>macro-task</code>)</strong></p><blockquote><p>任务队列中任务是有区别的, 总是有一些任务会有一些特权(比如插队), 有特权的<code>微任务</code>, 和无特权的<code>宏任务</code>.<br>就是说, 实际任务队列有两个, 微任务队列/宏任务队列, 当主线程执行完毕, 如果微任务队列中有任务则<code>优先执行</code>, 当微任务队列没有任务时才执行宏任务队列.</p><p>微任务: <code>原生Promise(有些实现的promise将then方法放到了宏任务中),Object.observe(已废弃), MutationObserver， MessageChannel, process.nextTick, setImmediate</code></p><p>宏任务: <code>setTimeout, setInterval, setImmediate, I/O</code></p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>React 版本更新记录</title>
+    <link href="/posts/6dcb6b03/"/>
+    <url>/posts/6dcb6b03/</url>
+    
+    <content type="html"><![CDATA[<h2 id="v16-3"><a href="#v16-3" class="headerlink" title="v16.3"></a>v16.3</h2><a id="more"></a><h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul><li><p>新增 <code>Fragment</code></p><p>提高了对子组件的渲染方法返回多个子元素的支持<br><a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html">官方文档 Fragment</a></p><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;  <span class="hljs-keyword">return</span> (    &lt;&gt;      &lt;ChildA /&gt;      &lt;ChildB /&gt;      &lt;ChildC /&gt;    &lt;/&gt;  );&#125;</code></pre></div></li><li><p><code>componentWillMount / </code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p></li><li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p><blockquote><p>它会生成一个新<code>state</code>，方便让你<code>setState</code>。所有生命周期钩子（除了构造器）的<code>context</code>传参都被无效了</p></blockquote></li><li><p>新增 <code>createContext()</code></p><blockquote><p>它会返回一个具有<code>Provider</code>和<code>Consumer</code>方法的对象</p></blockquote></li><li><p>严格模式 <code>StrictMode</code><br>严格模式确保你的代码遵循最佳实践 就像原生 js 的 <code>use strict</code></p><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span>&#123;    <span class="hljs-keyword">return</span> (        &lt;StrictMode&gt;            &lt;Context.Provider&gt;                &lt;Title/&gt;            &lt;/Context.Provider&gt;        &lt;/StrictMode&gt;    )&#125;</code></pre></div></li><li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p></li></ul><h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul><li><p>新核心架构<code>Fiber</code></p></li><li><p><code>React.PropTypes</code> <del>废弃</del></p><blockquote><p>使用<code>prop-types</code>库代替</p></blockquote></li><li><p><code>React.createClass</code> <del>废弃</del></p><blockquote><p>官方推荐使用 ES6<code>class</code>方式创建组件</p></blockquote></li><li><p><code>render</code>可返回数组 或 字符串</p><div class="hljs code-wrapper"><pre><code><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;    <span class="hljs-keyword">return</span> [        &lt;div key=<span class="hljs-string">&#x27;1&#x27;</span>&gt;<span class="hljs-number">1</span>&lt;/div&gt;,        &lt;div key=<span class="hljs-string">&#x27;2&#x27;</span>&gt;<span class="hljs-number">2</span>&lt;/div&gt;,        &lt;div key=<span class="hljs-string">&#x27;3&#x27;</span>&gt;<span class="hljs-number">3</span>&lt;/div&gt;,    ];&#125;<span class="hljs-comment">// 注：不要忘了加key</span><span class="hljs-comment">// 也可以直接返回字符串</span><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello World&#x27;</span>;&#125;</code></pre></div></code></pre><!-- more --></li><li><p>新的生命周期 <code>componentDidCatch</code></p><blockquote><p>错误处理机制，如同<code>try…catch</code><br>可以用于捕获子组件的错误，即使子组件有代码报错，也不至于导致整个 APP 崩溃</p></blockquote></li><li><p>接受元素上的自定义属性</p><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">abc</span>=<span class="hljs-string">&quot;123&quot;</span>&gt;</span>  //  以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误  // 现在会正确的把abc赋加在p标签上<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div></li><li><p>新增<code>ReactDOM.createPortal</code>方法</p><blockquote><p>以前一个组件只能被默认的渲染到父级所引用它的地方，<br>createPortal 方法可以把组件自身的内容渲染到任意一个指定的 dom 元素下<br>但事件的冒泡仍然会从它原本的父级传递<br>官方文档：<a href="https://reactjs.org/docs/portals.html">Portals</a></p></blockquote></li><li><p>其他</p><blockquote><p>服务端渲染优化，比以前更好<br><code>react</code>和<code>react-dom</code>库文件大小比以前更小<br>react 开源协议为<code>MIT</code>协议</p></blockquote></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>React</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2017 年终总结</title>
+    <link href="/posts/b9cd3f63/"/>
+    <url>/posts/b9cd3f63/</url>
+    
+    <content type="html"><![CDATA[<h2 id="近期"><a href="#近期" class="headerlink" title="近期"></a>近期</h2><blockquote><p>在过去的一年里, 换了新的工作, 离开了工作 2 年的外包, 裸辞, 然后因为学历 / 技术 / 个人经历的原因(当然主要是因为技术菜), 面试了 1 个多月才进入现在的公司.</p></blockquote><blockquote><p>新的公司, 不再全国各地的长期出差, 使用的技术栈也稳定在了 React, 但过去 2 年养成的习惯让我每周末都待在家里, 要么看会书, 写一下不会的 小 Demo 😜, 要么玩游戏 / 逛社区 , 眼镜的度数越来越高  ☹️, 身材越来越圆 (●—●), 个人博客也好久没更新 😜, 近期新搬了家 , 楼下就是篮球场,  可以让我捡起我曾经热爱的篮球 🏀, 让我的周末多了一个选择.</p></blockquote><a id="more"></a><h2 id="技术"><a href="#技术" class="headerlink" title="技术 "></a>技术 </h2><blockquote><p>过去的一年, 大多数时间还是在做 Hybrid App 开发,  年初结束了第一次使用 React Native 开发的 App 任务, 随后使用 DCloud 的 MUI / 5+ 开发 App, 但感觉没有使用 React Native 做出的体验好 , 且文档  组织不清晰, 但好处是中文社区响应及时.</p></blockquote><blockquote><p>到了新公司使用 React + React-router 做多页面 App 内嵌, 稳定使用 React 作为开发栈.</p></blockquote><h2 id="2018-新年展望"><a href="#2018-新年展望" class="headerlink" title="2018, 新年展望"></a>2018, 新年展望</h2><blockquote><p>新的一年, 愿望有很多, 举几个栗子 🌰 吧:</p></blockquote><ol><li>更加努力的学习, 学并作出点东西来, 而不是只存在于嘴上说学了;</li><li>定期的更新博客, 及时总结  遇到并解决的问题和学习的历程;(但不能只是摘抄 😆)</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>工作</tag>
+      
+      <tag>个人</tag>
+      
+      <tag>年度总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>React-redux 初识</title>
+    <link href="/posts/8b13ec65/"/>
+    <url>/posts/8b13ec65/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>React-redux 对外提供的 API 有四个：<code>Provider</code>/<code>createProvider</code>/<code>connectAdvanced</code>/<code>connect</code></p></blockquote><h3 id="connectAdvanced"><a href="#connectAdvanced" class="headerlink" title="connectAdvanced"></a><code>connectAdvanced</code></h3><div class="hljs code-wrapper"><pre><code class="hljs js">connectAdvanced(selectorFactory, [connectOptions])</code></pre></div><a id="more"></a><blockquote><p><code>connectAdvanced</code> 用来连接组件到 <code>Redux</code> 的 <code>store</code> 上。是 <code>connect</code> 函数的基础，但并没有规定如果将 <code>state</code> 、<code>props</code> 、 <code>dispatch</code> 处理传入最终的 <code>props</code> 中。</p></blockquote><blockquote><p><code>connectAdvanced</code> 并没有对产生的 <code>props</code> 做缓存来优化性能，都留给了调用者去实现。<br><code>connectAdvanced</code> 并没有修改传入的组件类，而是返回一个新的、连接到 <code>store</code> 的组件类。</p></blockquote><p>返回：</p><blockquote><p>函数返回一个高阶组件，该高阶组件将从 store 的 state 中构建的 props 传递给被包裹组件。</p></blockquote><h3 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h3><blockquote><p><code>Provider</code> 使组件层级中的 <code>connect()</code> 方法都能获取到 <code>Redux Store</code> 。<br>正常情况下，你的根组件应该嵌套在 <code>&lt;Provider&gt;</code> 中才能使用 <code>connect()</code> 方法。</p></blockquote><blockquote><p>如果你真的不想把根组件嵌套在 <code>&lt;Provider&gt;</code> 中，你可以把 <code>store</code> 作为 <code>props</code> 传递到每一个被 <code>connet()</code> 包装的组件，但是我们只推荐您在单元测试中对 <code>store</code> 进行伪造 (stub) 或者在非完全基于 React 的代码中才这样做。<br>正常情况下，你应该使用 <code>&lt;Provider&gt;</code>。</p></blockquote><h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a><code>connect()</code></h3><div class="hljs code-wrapper"><pre><code class="hljs js">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</code></pre></div><blockquote><p>连接 React 组件与 Redux store。<br>连接操作不会改变原来的组件类。<br>反而返回一个新的与 Redux store 连接的组件类。</p></blockquote><p>返回值：</p><blockquote><p>根据配置信息，返回一个注入了 state 和 action creator 的 React 组件。</p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>React</tag>
+      
+      <tag>React-redux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>React 数据流与组件间通信</title>
+    <link href="/posts/af0a4506/"/>
+    <url>/posts/af0a4506/</url>
+    
+    <content type="html"><![CDATA[<h3 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h3><blockquote><p><code>React</code> 是单向数据流，数据主要从父节点传递到子节点（通过 Props）。<br>如果顶层的某个 <code>Props</code> 改变了，<code>React</code> 就会重新渲染所有的相关子节点。</p></blockquote><a id="more"></a><h3 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h3><ol><li><p>父子组件通信<br>在 <code>React</code> 中，最常见的组件通信就是父子了，一般：</p><blockquote><p>父组件更新组件状态 –&gt; Prosp –&gt; 子组件更新<br>子组件更新父组件状态 –&gt; 需要父组件传递回调函数 –&gt; 子组件调用触发</p></blockquote><iframe id="cp_embed_awrobR" src="//codepen.io/Maple13/embed/awrobR?height=465]&theme-id=dark&slug-hash=awrobR&default-tab=[html,result" scrolling="no" frameborder="no" height="465]" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe></li><li><p>兄弟组件通信</p><ul><li><p>方式一：<br>在两个组件处于同一级时（同处父级，或者同处子级），就称为兄弟组件<br>。</p><blockquote><p>按照 <code>React</code> 单向数据流方式，我们需要借助父组件进行传递，通过 <code>父组件回调函数</code> 改变兄弟组件的 <code>Props</code> .</p></blockquote><blockquote><p>其实这种实现方式与子组件更新父组件状态的方式是大同小异的。</p></blockquote></li><li><p>方式二：</p><blockquote><p>方式一只适用于组件层次很少的情况下，当组件层次很深的时候，整个通信的效率就会变得很低。</p></blockquote><blockquote><p>React 官方给我们提供了一种上下文方式，可以让子组件直接访问祖先组件的数据或函数，无需从祖先组件一层层传递数据到子组件中。</p></blockquote><blockquote><p>但这种方式建议按需使用，可能导致一些不可预期的错误（比如数据传递逻辑结构不清晰）。</p></blockquote></li></ul></li></ol><blockquote><p>本文借鉴<a href="https://segmentfault.com/a/1190000006831820#articleHeader6"><code>Samo</code></a>文章</p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>React</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>React 理解</title>
+    <link href="/posts/2d67f0f6/"/>
+    <url>/posts/2d67f0f6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="React-中-Element-与-Component-的区别？"><a href="#React-中-Element-与-Component-的区别？" class="headerlink" title="React 中 Element 与 Component 的区别？"></a>React 中 <code>Element</code> 与 <code>Component</code> 的区别？</h2><p>简单而言，<code>React Element</code> 是描述屏幕上所见内容的数据结构，是对于 UI 的对象表述。典型的 <code>React Element</code> 就是利用 <code>JSX</code> 构建的声明式代码片然后被转化为 <code>createElement</code> 的调用组合。而 <code>React Component</code> 则是可以接收参数输入并且返回某个 <code>React Element</code> 的函数或者类。</p><h2 id="在什么情况下会优先使用-Class-Component-而不是-Functional-Component"><a href="#在什么情况下会优先使用-Class-Component-而不是-Functional-Component" class="headerlink" title="在什么情况下会优先使用 Class Component 而不是 Functional Component"></a>在什么情况下会优先使用 <code>Class Component</code> 而不是 <code>Functional Component</code></h2><blockquote><p>在组件需要包含内部状态或者使用到生命周期函数的时候使用 <code>Class Component</code> ，否则使用函数式组件。</p></blockquote><a id="more"></a><h2 id="React-中-refs-的作用是什么？"><a href="#React-中-refs-的作用是什么？" class="headerlink" title="React 中 refs 的作用是什么？"></a>React 中 <code>refs</code> 的作用是什么？</h2><blockquote><p><code>Refs</code> 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加 <code>ref</code> 属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回.</p></blockquote><h2 id="在生命周期中的哪一步应该发起-AJAX-请求？"><a href="#在生命周期中的哪一步应该发起-AJAX-请求？" class="headerlink" title="在生命周期中的哪一步应该发起 AJAX 请求？"></a>在生命周期中的哪一步应该发起 <code>AJAX</code> 请求？</h2><p>我们应该将 <code>AJAX</code> 请求放在 <code>componentDidMount</code> 函数中执行，主要原因是：</p><blockquote><p>React 下一代调和算法 <code>Fiber</code> 会通过开始或停止渲染的方式优化应用性能，其会影响到 <code>componentWillMount</code> 的触发次数。</p></blockquote><div class="hljs code-wrapper"><pre><code>对于 `componentWillMount` 这个生命周期函数的调用次数会变得不确定，React 可以会多次频繁调用 `componentWillMount` 。如果我们将 AJAX 请求放在 `componentWillMount` 函数中，那么显而易见其会被触发多次，自然不是好选择。</code></pre></div><blockquote></blockquote><blockquote><p>如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了 setState 函数将数据添加到组件状态中，对于未挂载的组件则会报错。<br>而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。</p></blockquote><h2 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h2><div class="hljs code-wrapper"><pre><code><pre><code class="hljs jsx"><span class="hljs-comment">// 构造函数</span>Constructor()<span class="hljs-comment">// 在渲染前调用,在客户端也在服务端</span>componentWillMout()<span class="hljs-comment">// 渲染</span>render()<span class="hljs-comment">// 在第一次渲染后调用，只在客户端。</span><span class="hljs-comment">// 之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。</span>componentDidMout()<span class="hljs-comment">// 在组件接收到一个新的 prop (更新后)时被调用。</span><span class="hljs-comment">// 这个方法在初始化render时不会被调用。</span>componentWillReceiveProps()<span class="hljs-comment">// 返回一个布尔值。</span><span class="hljs-comment">// 在组件接收到新的props或者state时被调用。</span><span class="hljs-comment">// 在初始化时或者使用forceUpdate时不被调用。</span><span class="hljs-comment">// 可以在你确认不需要更新组件时使用</span>shouldComponentUpdate()<span class="hljs-comment">// 在组件接收到新的props或者state但还没有render时被调用。</span><span class="hljs-comment">// 在初始化时不会被调用</span>componentWillUpdate()<span class="hljs-comment">// 渲染</span>render()<span class="hljs-comment">// 在组件完成更新后立即调用。</span><span class="hljs-comment">// 在初始化时不会被调用。</span>componentDidUpdate()<span class="hljs-comment">// 在组件从 DOM 中移除的时候立刻被调用</span>componentWillUnmount</code></pre></div></code></pre><h2 id="shouldComponentUpdate-的作用是啥以及为何它这么重要？"><a href="#shouldComponentUpdate-的作用是啥以及为何它这么重要？" class="headerlink" title="shouldComponentUpdate 的作用是啥以及为何它这么重要？"></a><code>shouldComponentUpdate</code> 的作用是啥以及为何它这么重要？</h2><blockquote><p><code>shouldComponentUpdate</code> 允许我们手动的判断是否要进行组件更新，根据组件的应用场景设置函数的合理返回值能够帮我们避免不必要的更新。</p></blockquote><h2 id="React-中的事件处理逻辑"><a href="#React-中的事件处理逻辑" class="headerlink" title="React 中的事件处理逻辑"></a>React 中的事件处理逻辑</h2><blockquote><p>为了解决跨浏览器兼容性问题，React 会将浏览器原生事件封装为合成事件传入设置的事件处理器中。这里的合成事件提供了与原生事件相同的接口，不过它们屏蔽了底层浏览器的细节差异，保证了行为的一致性。另外有意思的是，React 并没有直接将事件附着到子元素上，而是以单一事件监听器的方式将所有的事件发送到顶层进行处理。这样 React 在更新 DOM 的时候就不需要考虑如何去处理附着在 DOM 上的事件监听器，最终达到优化性能的目的。</p></blockquote><h2 id="createElement-与-cloneElement-的区别是什么？"><a href="#createElement-与-cloneElement-的区别是什么？" class="headerlink" title="createElement 与 cloneElement 的区别是什么？"></a><code>createElement</code> 与 <code>cloneElement</code> 的区别是什么？</h2><blockquote><p><code>createElement</code> 函数是 <code>JSX</code> 编译之后使用的创建 React Element 的函数，而 <code>cloneElement</code> 则是用于复制某个元素并传入新的 <code>Props</code> 。</p></blockquote><h2 id="传入-setState-函数的第二个参数的作用是什么？"><a href="#传入-setState-函数的第二个参数的作用是什么？" class="headerlink" title="传入 setState 函数的第二个参数的作用是什么？"></a>传入 <code>setState</code> 函数的第二个参数的作用是什么？</h2><blockquote><p>该函数会在 <code>setState</code> 函数调用完成并且组件开始重新渲染的时候被调用，我们可以用该函数来监听渲染是否完成。</p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>React</tag>
+      
+      <tag>面试题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>前端常见知识归纳</title>
+    <link href="/posts/8d5aceae/"/>
+    <url>/posts/8d5aceae/</url>
+    
+    <content type="html"><![CDATA[<h2 id="什么是伪数组？如何将其转化为标准数组？"><a href="#什么是伪数组？如何将其转化为标准数组？" class="headerlink" title="什么是伪数组？如何将其转化为标准数组？"></a>什么是伪数组？如何将其转化为标准数组？</h2><ul><li><p>什么是伪数组（类数组）：</p><div class="hljs code-wrapper"><pre><code>无法直接调用数组方法或期望 `length` 属性有什么特殊的行为，但仍可以使用真正数组遍历方法遍历它们。</code></pre></div><p>典型的就是 <code>arguments</code> 参数，还有像调用 <code>getElementsByTagName / document.childNodes </code>之类方法，它们都返回的 <code>NodeList</code> 对象都属于伪数组。</p></li></ul><a id="more"></a><ul><li><p>如何转换为标准数组？</p><p>可以使用<code>Array.prototype.slice.call(fakeArray)</code>将伪数组转换为真正的 Array 对象。<br>但对于<code>NodeList</code>则不行，其在 IE8 下会报错，只能是 JS 引擎有所限制。因此，如果需要把 NodeList 转换为标准数组，就需要做向下兼容：</p><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">realArray</span>(<span class="hljs-params">arr</span>) </span>&#123;  <span class="hljs-keyword">try</span> &#123;    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.prototype.slice.call(arr)  &#125; <span class="hljs-keyword">catch</span> &#123;    <span class="hljs-keyword">var</span> ret = [],      len = arr.length    <span class="hljs-keyword">for</span> (; i &lt; len; i++) &#123;      ret[i] = c[i]    &#125;    <span class="hljs-keyword">return</span> ret  &#125;&#125;</code></pre></div><p>方法二：使用 ES6 数组扩展的 form() 方法</p><div class="hljs code-wrapper"><pre><code class="hljs livescript"><span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">Array</span>.<span class="hljs-keyword">from</span>(<span class="hljs-built_in">arguments</span>);</code></pre></div><p>伪数组转换为标准数组的条件：</p><blockquote><p>1、伪数组的键值需要为数字，否则转换后数组均无初始值<br>2、有 length 属性</p></blockquote></li></ul><h2 id="数组去重与排序"><a href="#数组去重与排序" class="headerlink" title="数组去重与排序"></a>数组去重与排序</h2><ol><li><p>去重之一：创建一个新数组，使用 <code>indexOf</code> 判断新数组中是否存在值，例：</p><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupOne = <span class="hljs-function"><span class="hljs-params">arr</span> =&gt;</span> &#123;   <span class="hljs-keyword">let</span> ret = [];   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, len = arr.length; i &lt; len; i++) &#123;       <span class="hljs-keyword">if</span> (ret.indexOf(arr[i) === -<span class="hljs-number">1</span>) &#123;           ret.push(arr[i]);       &#125;   &#125;   <span class="hljs-keyword">return</span> ret;&#125;</code></pre></div></li><li><p>去重之二：创建一个新对象</p><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupTwo = arr = &gt; &#123;    <span class="hljs-keyword">let</span> hash = &#123;&#125;,        len  = arr.length,        ret  = [];    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;        <span class="hljs-keyword">if</span> (!hash[arr[i]]) &#123;            hash[arr[i]] = arr[i];            ret.push(arr[i]);        &#125;    &#125;    <span class="hljs-keyword">return</span> ret;&#125;</code></pre></div></li><li><p>数组排序</p><div class="hljs code-wrapper"><pre><code class="hljs markdown">一般使用 Array 的原生方法 sort() 方法排序。<span class="hljs-bullet">1.</span> 排序顺序可以是字母和数字，并按升序或降序。<span class="hljs-bullet">2.</span> 默认排序是字母升序。<span class="hljs-bullet">3.</span> 在原始数组上排序，不会生成数组副本。使用数字排序，你必须通过一个函数作为参数来调用。函数指定数字是按照升序还是降序排列。</code></pre></div><p>数组数字升序排序，例：</p><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [  <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">4</span>,  <span class="hljs-number">4</span>,  <span class="hljs-number">8</span>,  <span class="hljs-number">0</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">4</span>,  <span class="hljs-number">33</span>,  <span class="hljs-number">45</span>,  <span class="hljs-number">52</span>,  <span class="hljs-number">42</span>,  <span class="hljs-number">332</span>,  <span class="hljs-number">3342</span>,  <span class="hljs-number">33</span>,  <span class="hljs-number">334</span>,  <span class="hljs-number">33</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">55</span>,  <span class="hljs-number">55</span>,  <span class="hljs-number">88</span>,  <span class="hljs-number">99</span>,]arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#125;</span>) =&gt;</span> a - b)</code></pre></div><h2 id="异步加载-JS-的方式"><a href="#异步加载-JS-的方式" class="headerlink" title="异步加载 JS 的方式"></a>异步加载 JS 的方式</h2></li><li><p><code>async</code></p><blockquote><ol><li>async 属性是一个布尔值</li><li>async 属性一旦脚本可用，则立即异步执行</li><li>async 仅适用于外部脚本(只有在使用 src 属性时)</li></ol></blockquote></li></ol><h2 id="Redux-的作用及优缺点"><a href="#Redux-的作用及优缺点" class="headerlink" title="Redux 的作用及优缺点"></a>Redux 的作用及优缺点</h2><p><code>redux</code> 让 <code>state</code> 的变化变得可预测、可回溯。</p><blockquote><p>三个原则：</p></blockquote><div class="hljs code-wrapper"><pre><code>  1. 单一数据源  2. state 是只读的  3. 使用纯函数来执行修改</code></pre></div><p><code>Immutable</code> 是一个可实现持续数据结构的 JavaScript 库。</p><h2 id="跨域的解决方法"><a href="#跨域的解决方法" class="headerlink" title="跨域的解决方法"></a>跨域的解决方法</h2><blockquote><p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p></blockquote><p>1、 JSONP</p><blockquote><p>JSONP 包含两部分：回调函数和数据。</p></blockquote><div class="hljs code-wrapper"><pre><code>回调函数是当响应到来时要放在当前页面被调用的函数。数据就是传入回调函数中的 json 数据，也就是回调函数的参数了。缺点：  * 安全问题(请求代码中可能存在安全隐患)  * 要确定 jsonp 请求是否失败并不容易</code></pre></div><p>2、 跨域资源共享（CORS）</p><blockquote><p>CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。</p></blockquote><div class="hljs code-wrapper"><pre><code>  CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</code></pre></div><p>3、 Web Sockets</p><blockquote><p>一种浏览器 API ，它的目标是在一个单独的持久连接上提供全双工、双向通信。（同源策略不适用）</p></blockquote><div class="hljs code-wrapper"><pre><code>  原理：在 js 创建了 web socket 之后，会有一个 HTTP 请求发送到浏览器以发起连接。    取得服务器响应后，建立的连接会使用 HTTP 升级从 HTTP 协议交换为 web sockt 协议。  只有在支持 web socket 协议的服务器上才能正常工作。</code></pre></div><h2 id="什么是服务端渲染？有什么好处？"><a href="#什么是服务端渲染？有什么好处？" class="headerlink" title="什么是服务端渲染？有什么好处？"></a>什么是服务端渲染？有什么好处？</h2><blockquote><p>1、 首次加载页面更快。<br>2、 SEO</p></blockquote><h2 id="单页面（SPA）是什么？有什么优缺点？"><a href="#单页面（SPA）是什么？有什么优缺点？" class="headerlink" title="单页面（SPA）是什么？有什么优缺点？"></a>单页面（SPA）是什么？有什么优缺点？</h2><blockquote><p>它将所有的活动局限于一个 Web 页面中，仅在该 Web 页面初始化时加载相应的 HTML、JavaScript 和 CSS。一旦页面加载完成了，SPA 不会因为用户的操作而进行页面的重新加载或跳转。取而代之的是利用 JavaScript 动态的变换 HTML 的内容，从而实现 UI 与用户的交互。由于避免了页面的重新加载，SPA 可以提供较为流畅的用户体验。</p></blockquote><p>优点：</p><blockquote><p>1、良好的交互体验</p></blockquote><div class="hljs code-wrapper"><pre><code>用户不需要从新刷新页面，获取数据也是通过 AJAX 异步获取，页面显示流畅</code></pre></div><p>2、良好的前后端分离工作模式<br>单页 Web 应用可以和 RESTful 规约一起使用，通过 REST API 提供接口数据，并使用 Ajax 异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。<br>3、减轻服务器压力<br>服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；<br>4、公用一套后端程序代码<br>不用修改后端程序代码就可以同时用于 Web 界面、手机、平板等多种客户端；</p><p>缺点：</p><blockquote><p>1、SEO 难度较高</p></blockquote><div class="hljs code-wrapper"><pre><code>由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧。</code></pre></div><p>2、前进、后退管理<br>由于单页 Web 应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理，当然此问题也有解决方案，比如利用 URI 中的散列+iframe 实现<br>3、初次加载耗时多<br>为实现单页 Web 应用功能及显示效果，需要在加载页面的时候将 JavaScript、CSS 统一加载，部分页面可以在需要的时候加载。所以必须对 JavaScript 及 CSS 代码进行合并压缩处理，如果使用第三方库，建议使用一些大公司的 CDN，因此带宽的消耗是必然的。</p><h2 id="常用-HTML-状态吗"><a href="#常用-HTML-状态吗" class="headerlink" title="常用 HTML 状态吗"></a>常用 <code>HTML</code> 状态吗</h2><table><thead><tr><th>状态码</th><th>含义</th></tr></thead><tbody><tr><td>200</td><td>请求已成功，请求所希望的响应头或数据体将随此响应返回。</td></tr><tr><td>400</td><td>1、语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。 2、请求参数有误。</td></tr><tr><td>403</td><td>服务器已经理解请求，但是拒绝执行它。</td></tr><tr><td>404</td><td>请求失败，请求所希望得到的资源未被在服务器上发现</td></tr><tr><td>500</td><td>服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器的程序码出错时出现。</td></tr></tbody></table><h2 id="link-与-import-的区别？"><a href="#link-与-import-的区别？" class="headerlink" title="link 与 @import 的区别？"></a><code>link</code> 与 <code>@import</code> 的区别？</h2><blockquote><ol><li> <code>link</code> 属于<code>XHTML</code>标签，而<code>@import</code>是<code>css</code>提供的.</li><li> 页面在加载的时候，<code>link</code>会同时被加载；而<code>@import</code>引用的<code>CSS</code>会在页面加载完成后加载。</li><li> <code>@import</code>只在<code>IE5</code>以上才能生效；而<code>link</code>是<code>XHTML</code>标签，无兼容性问题.</li><li> <code>link</code>方式引进的样式比 <code>@import</code>方式引进的样式权重高.</li></ol></blockquote><h2 id="谈一下对HTML语义化的理解"><a href="#谈一下对HTML语义化的理解" class="headerlink" title="谈一下对HTML语义化的理解"></a>谈一下对<code>HTML</code>语义化的理解</h2><blockquote><ol><li><code>html</code> 语义化让页面的内容结构化，结构更清晰，便于浏览器、搜索引擎解析.</li><li>即使在没有样式的情况下也以一种文档格式显示，并且是容易阅读的.</li><li>搜索引擎的爬虫也依赖于<code>HTML</code>标记来确定上下文和各个关键字的权重，利于 <code>SEO</code>.</li><li>使阅读源码的人对网站更容易将网站分块，便以阅读维护理解.</li></ol></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>IE 条件语句</title>
+    <link href="/posts/4383377c/"/>
+    <url>/posts/4383377c/</url>
+    
+    <content type="html"><![CDATA[<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><blockquote><p>IE 条件语句包含在 HTML 注释语句中，只会被 IE 浏览器识别并执行，其他浏览器视其为 HTML 注释语句，于是全部被忽略，灵活使用 IE 条件语句可以开发出兼容不同版本的 IE 浏览器的样式。</p></blockquote><a id="more"></a><h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>如果留意一下有些网站的源代码，有时会发现一些这样的代码：</p><div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;!--[<span class="hljs-keyword">if</span> IE5]&gt;&lt;style <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;    /*将IE5*的CSS盒模型宽高计算修正放在这个条件注释中*/    <span class="hljs-comment">#Test1 &#123; width: 180px; &#125;</span>    <span class="hljs-comment">#Test2 &#123; width: 190px; &#125;</span>&lt;/style&gt;&lt;![endif]--&gt;</code></pre></div><p>或者</p><div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;link href=<span class="hljs-string">&quot;css/index.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;&lt;!--[<span class="hljs-keyword">if</span> IE7]&gt;&lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;&lt;![endif]--&gt;&lt;!--[<span class="hljs-keyword">if</span> IE6]&gt;&lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;&lt;![endif]--&gt;</code></pre></div><blockquote><p>_<!--_ 和 *-->*标识符配对使用表示 HTML 注释语句。但是 IE 会把这些特殊的注释语句当做一个简单的逻辑语句进行解析。</p></blockquote><h1 id><a href="#" class="headerlink" title></a></h1><blockquote><ul><li>上面的第一段注释，表示如果当前浏览器是 IE 浏览器，则解析*<!--[if IE]>* 和 *<![endif]-->*标识符之间的样式表。而其他浏览器视而不见，当做注释语句全部忽略。因此可以在此放置一些能够兼容 IE 浏览器的样式代码。</li></ul></blockquote><blockquote><ul><li>在上面的第二段代码中，分别使用了不同的条件语句来设置不同版本的 IE 浏览器中链接不同的 CSS 文件，这样，不同版本的 IE 浏览器就可以导入不同的样式表，以实现兼容性。</li></ul></blockquote><h2 id="IE-条件语句的基本用法"><a href="#IE-条件语句的基本用法" class="headerlink" title="IE 条件语句的基本用法"></a>IE 条件语句的基本用法</h2><p>IE 条件语句一般放在 HTML 注释语句中，这样可以避免其他浏览器因为无法解析这些条件语句时可能出现的尴尬。其基本语法如下：</p><div class="hljs code-wrapper"><pre><code class="hljs ruby">&lt;!--[<span class="hljs-keyword">if</span> IE]&gt;    IE 下可执行语句&lt;![endif]--&gt;</code></pre></div><blockquote><ul><li>条件语句放在中括号内，然后嵌入到 HTML 注释中。注意，起始条件标记中省略了 HTML 注释语句的后半部分标记（– –&gt;），而结束标记中省略了 HTML 注释语句的前半部分标记（!– –），仅是一个半封闭的形式，这样对于其他浏览器来说，前后两个半封闭的 HTML 注释标记就形成了一个完整的注释标记，从而避免了由于其他浏览器无法解析的尴尬。</li><li>IE 浏览器在解析 HTML 源码时，如果遇到类似*<!--[if IE]>*或*<![endif]-->*标记时，会立即解析其中包含的源代码。</li><li>在 IE 条件中可以放置一些简单的条件语句，或者设置成只能够在特定版本的浏览器中生效的源代码。</li></ul></blockquote><h1 id="-1"><a href="#-1" class="headerlink" title></a></h1><blockquote><p>除了使用这些指定某种版本浏览器的条件语句之外，还可以结合 <strong>lte、lt、get、gt、！</strong>关键字来定义 IE 浏览器的版本范围，这些关键字的说明如下：</p></blockquote><div class="hljs code-wrapper"><pre><code class="hljs ruby">- <span class="hljs-symbol">lte:</span> 小于或等于某个版本的IE浏览器。- <span class="hljs-symbol">lt:</span> 小于某个版本的IE浏览器。- gte： 大于或等于某个版本的IE浏览器。- gt： 大于某个版本的IE浏览器。- ！：不等于某个版本的IE浏览器。</code></pre></div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>浏览器</tag>
+      
+      <tag>CSS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Sublime Text 3 下编辑Markdown文件后在浏览器下自动刷新预览</title>
+    <link href="/posts/cc26ec86/"/>
+    <url>/posts/cc26ec86/</url>
+    
+    <content type="html"><![CDATA[<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><blockquote><p>近日在 Sublime 中编辑 Markdown 文件时想要实时预览一下,于是在网上寻找到了一种比较简单有效的方法，此方法来源于网上的 Volcano 大神，他的<a href="http://www.ooso.net/archives/611">博客</a>，他的<a href="https://github.com/volca/markdown-preview">GitHub</a>地址。</p></blockquote><a id="more"></a><h3 id="安装-Sublime-Text-3"><a href="#安装-Sublime-Text-3" class="headerlink" title="安装 Sublime Text 3"></a>安装 Sublime Text 3</h3><blockquote><ul><li>请前往<a href="http://www.sublimetext.com/">Sublime Text</a>官网下载 Sublime 软件并安装</li></ul></blockquote><h3 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h3><blockquote><p>下载用于实时预览 Markdown 文件的 Chrome 插件。</p></blockquote><ul><li><p>使用 Git 方式下载</p><div class="hljs code-wrapper"><pre><code class="hljs bash">$ git <span class="hljs-built_in">clone</span> git://github.com/volca/markdown-preview.git</code></pre></div><blockquote><ul><li>Zip 包<a href="https://github.com/volca/markdown-preview/archive/master.zip">下载</a></li></ul></blockquote></li><li><p><a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl">Chrome 网上应用店下载扩展</a></p></li></ul><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote><ol><li>找到上一步第一、二个方法下载的<strong>markdown-preview</strong>文件夹</li><li>开启 chrome 扩展的开发者模式，具体位置在<strong>设置</strong> -&gt; <strong>扩展程序</strong>里</li><li><strong>加载已解压的扩展程序</strong></li><li>将<strong>允许访问文件网址</strong>勾选上</li></ol></blockquote><blockquote><p>然后你就可以尝试用 chrome 浏览器打开 markdown 文件预览了，采用趁手的编辑器去修改它。它会在浏览器自动刷新！</p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Sublime</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World！</title>
+    <link href="/posts/990c54fb/"/>
+    <url>/posts/990c54fb/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! 以下是 Hexo 的一些常用命令，如果需要详细了解,可以前往 <a href="http://hexo.io/docs/">documentation</a> 查询详细文档. 如果你在使用 Hexo 时出现问题，你可以在<a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a>搜索答案,或者可以前往 Hexo 的<a href="https://github.com/hexojs/hexo/issues">GitHub</a>上提出问题.</p><a id="more"></a><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre></div><p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p><h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo server</code></pre></div><p>More info: <a href="http://hexo.io/docs/server.html">Server</a></p><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo generate</code></pre></div><p>More info: <a href="http://hexo.io/docs/generating.html">Generating</a></p><h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo deploy</code></pre></div><p>More info: <a href="http://hexo.io/docs/deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>

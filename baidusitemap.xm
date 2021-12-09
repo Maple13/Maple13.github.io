@@ -33,11 +33,11 @@
     <lastmod>2020-11-28</lastmod>
   </url>
   <url>
-    <loc>https://www.maple13.cn/posts/6dcb6b03/</loc>
+    <loc>https://www.maple13.cn/posts/cb9fbe24/</loc>
     <lastmod>2020-11-28</lastmod>
   </url>
   <url>
-    <loc>https://www.maple13.cn/posts/cb9fbe24/</loc>
+    <loc>https://www.maple13.cn/posts/6dcb6b03/</loc>
     <lastmod>2020-11-28</lastmod>
   </url>
   <url>
