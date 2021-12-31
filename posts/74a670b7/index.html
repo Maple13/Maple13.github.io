@@ -16,12 +16,12 @@
   <meta name="author" content="Maple13">
   <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
   
-    <meta name="description" content="缘由周一刚上班，打开命令行进行git pull时，报错；难道是我打开的方式不对？换个命令，再次git fetch，还是报错；？？？(满头雾水)昨天还好好的呀 难道是我ssh 密钥出问题了？ $ git pull kex_exchange_identification: Connection closed by remote host fatal: Could not read from remot">
+    <meta name="description" content="缘由周一刚上班，打开命令行进行git pull时，报错；难道是我打开的方式不对？换个命令，再次git fetch，还是报错；？？？(满头雾水)昨天还好好的呀 难道是我ssh 密钥出问题了？ 12345678910111213$ git pullkex_exchange_identification: Connection closed by remote hostfatal: Could not">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Could not read from remote repository - 记：一次SSH代理导致的异常">
 <meta property="og:url" content="https://www.maple13.cn/posts/74a670b7/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="缘由周一刚上班，打开命令行进行git pull时，报错；难道是我打开的方式不对？换个命令，再次git fetch，还是报错；？？？(满头雾水)昨天还好好的呀 难道是我ssh 密钥出问题了？ $ git pull kex_exchange_identification: Connection closed by remote host fatal: Could not read from remot">
+<meta property="og:description" content="缘由周一刚上班，打开命令行进行git pull时，报错；难道是我打开的方式不对？换个命令，再次git fetch，还是报错；？？？(满头雾水)昨天还好好的呀 难道是我ssh 密钥出问题了？ 12345678910111213$ git pullkex_exchange_identification: Connection closed by remote hostfatal: Could not">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.maple13.cn/git-error.jpg">
 <meta property="article:published_time" content="2021-01-25T04:40:21.000Z">
@@ -34,22 +34,22 @@
   
   <title>Could not read from remote repository - 记：一次SSH代理导致的异常 - Maple13 的博客</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/atom-one-dark.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
 
 
@@ -59,7 +59,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -69,7 +69,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -200,7 +200,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      939 字
+      964 字
     </span>
   
 
@@ -209,7 +209,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      9 分钟
     </span>
   
 
@@ -250,28 +250,9 @@
             
             <div class="markdown-body">
               <h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>周一刚上班，打开命令行进行<code>git pull</code>时，报错；难道是我打开的方式不对？换个命令，再次<code>git fetch</code>，还是报错；？？？(满头雾水)<br>昨天还好好的呀 难道是我ssh 密钥出问题了？</p>
-<div class="hljs code-wrapper"><pre><code class="hljs sh">$ git pull
-kex_exchange_identification: Connection closed by remote host
-fatal: Could not <span class="hljs-built_in">read</span> from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-
-$ git fetch
-kex_exchange_identification: Connection closed by remote host
-fatal: Could not <span class="hljs-built_in">read</span> from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.</code></pre></div>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">$ git pull<br>kex_exchange_identification: Connection closed by remote host<br>fatal: Could not <span class="hljs-built_in">read</span> from remote repository.<br><br>Please make sure you have the correct access rights<br>and the repository exists.<br><br>$ git fetch<br>kex_exchange_identification: Connection closed by remote host<br>fatal: Could not <span class="hljs-built_in">read</span> from remote repository.<br><br>Please make sure you have the correct access rights<br>and the repository exists.<br></code></pre></div></td></tr></table></figure>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>搜了一圈，大多数都是说SSH配置出问题了，让重新配置一下SSH，感觉不对劲，终于发现一位大佬的<a href="https://blog.csdn.net/codebattle/article/details/103176843">文章</a>， 解决步骤如下：</p>
-<h3 id="使用SSH调试模式输出一下Log"><a href="#使用SSH调试模式输出一下Log" class="headerlink" title="使用SSH调试模式输出一下Log"></a>使用SSH调试模式输出一下Log</h3><div class="hljs code-wrapper"><pre><code class="hljs sh">$ ssh -v git@github.com
-OpenSSH_8.1p1, LibreSSL 2.7.3
-...
-debug1: Executing proxy <span class="hljs-built_in">command</span>: <span class="hljs-built_in">exec</span> nc -X 5 -x 127.0.0.1:1080 github.com 22
-...
-debug1: Local version string SSH-2.0-OpenSSH_8.1
-debug1: kex_exchange_identification: banner line 0: error = 0 61
-kex_exchange_identification: Connection closed by remote host</code></pre></div>
+<h3 id="使用SSH调试模式输出一下Log"><a href="#使用SSH调试模式输出一下Log" class="headerlink" title="使用SSH调试模式输出一下Log"></a>使用SSH调试模式输出一下Log</h3><figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">$ ssh -v git@github.com<br>OpenSSH_8.1p1, LibreSSL 2.7.3<br>...<br>debug1: Executing proxy <span class="hljs-built_in">command</span>: <span class="hljs-built_in">exec</span> nc -X 5 -x 127.0.0.1:1080 github.com 22<br>...<br>debug1: Local version string SSH-2.0-OpenSSH_8.1<br>debug1: kex_exchange_identification: banner line 0: error = 0 61<br>kex_exchange_identification: Connection closed by remote host<br></code></pre></div></td></tr></table></figure>
 <p>关键信息就是<code>Executing proxy command: exec nc -X 5 -x 127.0.0.1:1080 github.com 22</code>, 原来是我之前有配置过命令行<code>git clone</code>代理加速，然后代理挂掉了，导致服务异常。</p>
 <h3 id="注释命令行代理配置"><a href="#注释命令行代理配置" class="headerlink" title="注释命令行代理配置"></a>注释命令行代理配置</h3><p>编辑<code>~/.ssh/config</code>文件，注释其中的代理配置</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/codebattle/article/details/103176843">文章.IceIceBear</a></p>
@@ -325,7 +306,7 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -334,7 +315,7 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
         var options = Object.assign(
           {"clientID":"25b2986bc8dba2768d79","clientSecret":"2b499ba2abfe4f5349c9e82a82e448f037f89bf8","repo":"Maple13.github.io","owner":"maple13","admin":["maple13"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
@@ -454,7 +435,7 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
           >
             
               <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+              <img src="/img/police_beian.png" alt="police-icon"/>
             
             <span>京公网安备11010502037035号</span>
           </a>
@@ -470,11 +451,11 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -482,8 +463,8 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
   </script>
 
 
-<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -494,10 +475,6 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
 
 
 
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
 
 
   
@@ -505,16 +482,16 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
 
 
   
-    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
   
   
-    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
   
 
 
@@ -524,7 +501,7 @@ kex_exchange_identification: Connection closed by remote host</code></pre></div>
 
 
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;

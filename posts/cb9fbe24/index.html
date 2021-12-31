@@ -16,12 +16,12 @@
   <meta name="author" content="Maple13">
   <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
   
-    <meta name="description" content="来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了 npm 依赖版本管理问题。 警告 ⚠️ 信息如下: &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;  WARNING: You are currently running a version of TypeScript which is not officially supported by typescript-estr">
+    <meta name="description" content="来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了 npm 依赖版本管理问题。 警告 ⚠️ 信息如下: 12345678910111213&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;WARNING: You are currently running a version of TypeScript which is not officially supported by">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Package.json中npm依赖版本管理">
 <meta property="og:url" content="https://www.maple13.cn/posts/cb9fbe24/index.html">
 <meta property="og:site_name" content="Maple13 的博客">
-<meta property="og:description" content="来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了 npm 依赖版本管理问题。 警告 ⚠️ 信息如下: &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;  WARNING: You are currently running a version of TypeScript which is not officially supported by typescript-estr">
+<meta property="og:description" content="来由近期项目中总是报Typescript版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了 npm 依赖版本管理问题。 警告 ⚠️ 信息如下: 12345678910111213&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;WARNING: You are currently running a version of TypeScript which is not officially supported by">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.maple13.cn/2020-01-03-15780370570177.jpg">
 <meta property="article:published_time" content="2020-01-03T07:33:41.000Z">
@@ -37,22 +37,22 @@
   
   <title>Package.json中npm依赖版本管理 - Maple13 的博客</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/atom-one-dark.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
 
 
@@ -62,7 +62,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -72,7 +72,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -254,34 +254,13 @@
             <div class="markdown-body">
               <h2 id="来由"><a href="#来由" class="headerlink" title="来由"></a>来由</h2><p>近期项目中总是报<code>Typescript</code>版本警告，很是烦人，趁着有空，找一下原因，随之就浮现了 npm 依赖版本管理问题。</p>
 <p>警告 ⚠️ 信息如下:</p>
-<div class="hljs code-wrapper"><pre><code class="hljs asciidoc">=============
-
-<span class="hljs-symbol">WARNING: </span>You are currently running a version of TypeScript which is not officially supported by typescript-estree.
-
-You may find that it works just fine, or you may not.
-
-SUPPORTED TYPESCRIPT VERSIONS: &gt;=3.2.1 &lt;3.6.0
-
-YOUR TYPESCRIPT VERSION: 3.7.4
-
-Please only submit bug reports when using the officially supported version.
-
-=============</code></pre></div>
+<figure class="highlight asciidoc"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs asciidoc">=============<br><br><span class="hljs-symbol">WARNING: </span>You are currently running a version of TypeScript which is not officially supported by typescript-estree.<br><br>You may find that it works just fine, or you may not.<br><br>SUPPORTED TYPESCRIPT VERSIONS: &gt;=3.2.1 &lt;3.6.0<br><br>YOUR TYPESCRIPT VERSION: 3.7.4<br><br>Please only submit bug reports when using the officially supported version.<br><br>=============<br></code></pre></div></td></tr></table></figure>
 <p><code>Package.json</code> 中为:</p>
-<div class="hljs code-wrapper"><pre><code class="hljs json">&#123;
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;ts&quot;</span>,
-  <span class="hljs-attr">&quot;dependencies&quot;</span>: &#123;
-    <span class="hljs-comment">// 略</span>
-  &#125;,
-  <span class="hljs-attr">&quot;devDependencies&quot;</span>: &#123;
-    <span class="hljs-attr">&quot;typescript&quot;</span>: <span class="hljs-string">&quot;^3.2.1&quot;</span>
-  &#125;
-&#125;</code></pre></div>
+<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;ts&quot;</span>,<br>  <span class="hljs-attr">&quot;dependencies&quot;</span>: &#123;<br>    <span class="hljs-comment">// 略</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;devDependencies&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;typescript&quot;</span>: <span class="hljs-string">&quot;^3.2.1&quot;</span><br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <a id="more"></a>
 
 <h2 id="npm-包版本格式"><a href="#npm-包版本格式" class="headerlink" title="npm 包版本格式"></a>npm 包版本格式</h2><p>npm 包版本的格式为：</p>
-<div class="hljs code-wrapper"><pre><code class="hljs stylus">major<span class="hljs-selector-class">.minor</span>.patch
-主版本号.次版本号.修补版本号</code></pre></div>
+<figure class="highlight stylus"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stylus">major<span class="hljs-selector-class">.minor</span>.patch<br>主版本号.次版本号.修补版本号<br></code></pre></div></td></tr></table></figure>
 <ul>
 <li><p><code>major</code>：新的架构调整，不兼容老版本</p>
 </li>
@@ -379,7 +358,7 @@ Please only submit bug reports when using the officially supported version.
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -388,7 +367,7 @@ Please only submit bug reports when using the officially supported version.
   <script type="text/javascript">
     Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
         var options = Object.assign(
           {"clientID":"25b2986bc8dba2768d79","clientSecret":"2b499ba2abfe4f5349c9e82a82e448f037f89bf8","repo":"Maple13.github.io","owner":"maple13","admin":["maple13"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
@@ -508,7 +487,7 @@ Please only submit bug reports when using the officially supported version.
           >
             
               <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+              <img src="/img/police_beian.png" alt="police-icon"/>
             
             <span>京公网安备11010502037035号</span>
           </a>
@@ -524,11 +503,11 @@ Please only submit bug reports when using the officially supported version.
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -536,8 +515,8 @@ Please only submit bug reports when using the officially supported version.
   </script>
 
 
-<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -548,10 +527,6 @@ Please only submit bug reports when using the officially supported version.
 
 
 
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
 
 
   
@@ -559,16 +534,16 @@ Please only submit bug reports when using the officially supported version.
 
 
   
-    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
   
   
-    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
   
 
 
@@ -578,7 +553,7 @@ Please only submit bug reports when using the officially supported version.
 
 
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;

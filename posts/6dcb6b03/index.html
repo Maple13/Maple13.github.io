@@ -35,22 +35,22 @@
   
   <title>React 版本更新记录 - Maple13 的博客</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/atom-one-dark.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
 
 
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -70,7 +70,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -255,15 +255,7 @@
 <h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul>
 <li><p>新增 <code>Fragment</code></p>
 <p>提高了对子组件的渲染方法返回多个子元素的支持<br><a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html">官方文档 Fragment</a></p>
-<div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;
-  <span class="hljs-keyword">return</span> (
-    &lt;&gt;
-      &lt;ChildA /&gt;
-      &lt;ChildB /&gt;
-      &lt;ChildC /&gt;
-    &lt;/&gt;
-  );
-&#125;</code></pre></div></li>
+<figure class="highlight jsx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>  <span class="hljs-keyword">return</span> (<br>    &lt;&gt;<br>      &lt;ChildA /&gt;<br>      &lt;ChildB /&gt;<br>      &lt;ChildC /&gt;<br>    &lt;/&gt;<br>  );<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
 <li><p><code>componentWillMount / </code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p>
 </li>
 <li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p>
@@ -277,15 +269,7 @@
 </blockquote>
 </li>
 <li><p>严格模式 <code>StrictMode</code><br>严格模式确保你的代码遵循最佳实践 就像原生 js 的 <code>use strict</code></p>
-<div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span>&#123;
-    <span class="hljs-keyword">return</span> (
-        &lt;StrictMode&gt;
-            &lt;Context.Provider&gt;
-                &lt;Title/&gt;
-            &lt;/Context.Provider&gt;
-        &lt;/StrictMode&gt;
-    )
-&#125;</code></pre></div></li>
+<figure class="highlight jsx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-keyword">return</span> (<br>        &lt;StrictMode&gt;<br>            &lt;Context.Provider&gt;<br>                &lt;Title/&gt;<br>            &lt;/Context.Provider&gt;<br>        &lt;/StrictMode&gt;<br>    )<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
 <li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p>
 </li>
 </ul>
@@ -303,18 +287,7 @@
 </blockquote>
 </li>
 <li><p><code>render</code>可返回数组 或 字符串</p>
-<div class="hljs code-wrapper"><pre><code class="hljs"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;
-    <span class="hljs-keyword">return</span> [
-        &lt;div key=<span class="hljs-string">&#x27;1&#x27;</span>&gt;<span class="hljs-number">1</span>&lt;/div&gt;,
-        &lt;div key=<span class="hljs-string">&#x27;2&#x27;</span>&gt;<span class="hljs-number">2</span>&lt;/div&gt;,
-        &lt;div key=<span class="hljs-string">&#x27;3&#x27;</span>&gt;<span class="hljs-number">3</span>&lt;/div&gt;,
-    ];
-&#125;
-<span class="hljs-comment">// 注：不要忘了加key</span>
-<span class="hljs-comment">// 也可以直接返回字符串</span>
-<span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello World&#x27;</span>;
-&#125;</code></pre></div></code></pre>
+<div class="hljs code-wrapper"><pre><code class="hljs"><figure class="highlight jsx"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> [<br>        &lt;div key=<span class="hljs-string">&#x27;1&#x27;</span>&gt;<span class="hljs-number">1</span>&lt;/div&gt;,<br>        &lt;div key=<span class="hljs-string">&#x27;2&#x27;</span>&gt;<span class="hljs-number">2</span>&lt;/div&gt;,<br>        &lt;div key=<span class="hljs-string">&#x27;3&#x27;</span>&gt;<span class="hljs-number">3</span>&lt;/div&gt;,<br>    ];<br>&#125;<br><span class="hljs-comment">// 注：不要忘了加key</span><br><span class="hljs-comment">// 也可以直接返回字符串</span><br><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello World&#x27;</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></code></pre>
 <!-- more -->
 </li>
 <li><p>新的生命周期 <code>componentDidCatch</code></p>
@@ -323,11 +296,7 @@
 </blockquote>
 </li>
 <li><p>接受元素上的自定义属性</p>
-<div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">abc</span>=<span class="hljs-string">&quot;123&quot;</span>&gt;</span>
-  //
-  以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误
-  // 现在会正确的把abc赋加在p标签上
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div></li>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">abc</span>=<span class="hljs-string">&quot;123&quot;</span>&gt;</span><br>  //<br>  以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误<br>  // 现在会正确的把abc赋加在p标签上<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li>
 <li><p>新增<code>ReactDOM.createPortal</code>方法</p>
 <blockquote>
 <p>以前一个组件只能被默认的渲染到父级所引用它的地方，<br>createPortal 方法可以把组件自身的内容渲染到任意一个指定的 dom 元素下<br>但事件的冒泡仍然会从它原本的父级传递<br>官方文档：<a href="https://reactjs.org/docs/portals.html">Portals</a></p>
@@ -391,7 +360,7 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -400,7 +369,7 @@
   <script type="text/javascript">
     Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
         var options = Object.assign(
           {"clientID":"25b2986bc8dba2768d79","clientSecret":"2b499ba2abfe4f5349c9e82a82e448f037f89bf8","repo":"Maple13.github.io","owner":"maple13","admin":["maple13"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
@@ -520,7 +489,7 @@
           >
             
               <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+              <img src="/img/police_beian.png" alt="police-icon"/>
             
             <span>京公网安备11010502037035号</span>
           </a>
@@ -536,11 +505,11 @@
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -548,8 +517,8 @@
   </script>
 
 
-<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -560,10 +529,6 @@
 
 
 
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
 
 
   
@@ -571,16 +536,16 @@
 
 
   
-    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
   
   
-    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
   
 
 
@@ -590,7 +555,7 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;

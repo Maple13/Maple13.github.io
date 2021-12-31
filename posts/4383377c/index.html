@@ -35,22 +35,22 @@
   
   <title>IE 条件语句 - Maple13 的博客</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/atom-one-dark.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
 
 
@@ -60,7 +60,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -70,7 +70,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -256,21 +256,9 @@
 <a id="more"></a>
 
 <h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>如果留意一下有些网站的源代码，有时会发现一些这样的代码：</p>
-<div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;!--[<span class="hljs-keyword">if</span> IE5]&gt;
-&lt;style <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;
-    /*将IE5*的CSS盒模型宽高计算修正放在这个条件注释中*/
-    <span class="hljs-comment">#Test1 &#123; width: 180px; &#125;</span>
-    <span class="hljs-comment">#Test2 &#123; width: 190px; &#125;</span>
-&lt;/style&gt;
-&lt;![endif]--&gt;</code></pre></div>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;!--[<span class="hljs-keyword">if</span> IE5]&gt;<br>&lt;style <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;<br>    /*将IE5*的CSS盒模型宽高计算修正放在这个条件注释中*/<br>    <span class="hljs-comment">#Test1 &#123; width: 180px; &#125;</span><br>    <span class="hljs-comment">#Test2 &#123; width: 190px; &#125;</span><br>&lt;/style&gt;<br>&lt;![endif]--&gt;<br></code></pre></div></td></tr></table></figure>
 <p>或者</p>
-<div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;link href=<span class="hljs-string">&quot;css/index.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;
-&lt;!--[<span class="hljs-keyword">if</span> IE7]&gt;
-&lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;
-&lt;![endif]--&gt;
-&lt;!--[<span class="hljs-keyword">if</span> IE6]&gt;
-&lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;
-&lt;![endif]--&gt;</code></pre></div>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">&lt;link href=<span class="hljs-string">&quot;css/index.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;<br>&lt;!--[<span class="hljs-keyword">if</span> IE7]&gt;<br>&lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;<br>&lt;![endif]--&gt;<br>&lt;!--[<span class="hljs-keyword">if</span> IE6]&gt;<br>&lt;link href=<span class="hljs-string">&quot;css/ie7.css&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> /&gt;<br>&lt;![endif]--&gt;<br></code></pre></div></td></tr></table></figure>
 <blockquote>
 <p>_<!--_ 和 *-->*标识符配对使用表示 HTML 注释语句。但是 IE 会把这些特殊的注释语句当做一个简单的逻辑语句进行解析。</p>
 </blockquote>
@@ -285,9 +273,7 @@
 </ul>
 </blockquote>
 <h2 id="IE-条件语句的基本用法"><a href="#IE-条件语句的基本用法" class="headerlink" title="IE 条件语句的基本用法"></a>IE 条件语句的基本用法</h2><p>IE 条件语句一般放在 HTML 注释语句中，这样可以避免其他浏览器因为无法解析这些条件语句时可能出现的尴尬。其基本语法如下：</p>
-<div class="hljs code-wrapper"><pre><code class="hljs ruby">&lt;!--[<span class="hljs-keyword">if</span> IE]&gt;
-    IE 下可执行语句
-&lt;![endif]--&gt;</code></pre></div>
+<figure class="highlight ruby"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ruby">&lt;!--[<span class="hljs-keyword">if</span> IE]&gt;<br>    IE 下可执行语句<br>&lt;![endif]--&gt;<br></code></pre></div></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>条件语句放在中括号内，然后嵌入到 HTML 注释中。注意，起始条件标记中省略了 HTML 注释语句的后半部分标记（– –&gt;），而结束标记中省略了 HTML 注释语句的前半部分标记（!– –），仅是一个半封闭的形式，这样对于其他浏览器来说，前后两个半封闭的 HTML 注释标记就形成了一个完整的注释标记，从而避免了由于其他浏览器无法解析的尴尬。</li>
@@ -298,11 +284,7 @@
 <h1 id="-1"><a href="#-1" class="headerlink" title></a></h1><blockquote>
 <p>除了使用这些指定某种版本浏览器的条件语句之外，还可以结合 <strong>lte、lt、get、gt、！</strong>关键字来定义 IE 浏览器的版本范围，这些关键字的说明如下：</p>
 </blockquote>
-<div class="hljs code-wrapper"><pre><code class="hljs ruby">- <span class="hljs-symbol">lte:</span> 小于或等于某个版本的IE浏览器。
-- <span class="hljs-symbol">lt:</span> 小于某个版本的IE浏览器。
-- gte： 大于或等于某个版本的IE浏览器。
-- gt： 大于某个版本的IE浏览器。
-- ！：不等于某个版本的IE浏览器。</code></pre></div>
+<figure class="highlight ruby"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ruby">- <span class="hljs-symbol">lte:</span> 小于或等于某个版本的IE浏览器。<br>- <span class="hljs-symbol">lt:</span> 小于某个版本的IE浏览器。<br>- gte： 大于或等于某个版本的IE浏览器。<br>- gt： 大于某个版本的IE浏览器。<br>- ！：不等于某个版本的IE浏览器。<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -354,7 +336,7 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -363,7 +345,7 @@
   <script type="text/javascript">
     Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
         var options = Object.assign(
           {"clientID":"25b2986bc8dba2768d79","clientSecret":"2b499ba2abfe4f5349c9e82a82e448f037f89bf8","repo":"Maple13.github.io","owner":"maple13","admin":["maple13"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
@@ -483,7 +465,7 @@
           >
             
               <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+              <img src="/img/police_beian.png" alt="police-icon"/>
             
             <span>京公网安备11010502037035号</span>
           </a>
@@ -499,11 +481,11 @@
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -511,8 +493,8 @@
   </script>
 
 
-<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -523,10 +505,6 @@
 
 
 
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
 
 
   
@@ -534,16 +512,16 @@
 
 
   
-    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
   
   
-    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
   
 
 
@@ -553,7 +531,7 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;

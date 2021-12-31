@@ -34,22 +34,22 @@
   
   <title>前端常见知识归纳 - Maple13 的博客</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/atom-one-dark.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/atom-one-dark.min.css" />
     
   
 
   
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
   
 
 
@@ -59,7 +59,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -69,7 +69,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.maple13.cn","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -200,7 +200,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.2k 字
+      3.3k 字
     </span>
   
 
@@ -209,7 +209,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      27 分钟
+      28 分钟
     </span>
   
 
@@ -260,20 +260,9 @@
 <ul>
 <li><p>如何转换为标准数组？</p>
 <p>可以使用<code>Array.prototype.slice.call(fakeArray)</code>将伪数组转换为真正的 Array 对象。<br>但对于<code>NodeList</code>则不行，其在 IE8 下会报错，只能是 JS 引擎有所限制。因此，如果需要把 NodeList 转换为标准数组，就需要做向下兼容：</p>
-<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">realArray</span>(<span class="hljs-params">arr</span>) </span>&#123;
-  <span class="hljs-keyword">try</span> &#123;
-    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.prototype.slice.call(arr)
-  &#125; <span class="hljs-keyword">catch</span> &#123;
-    <span class="hljs-keyword">var</span> ret = [],
-      len = arr.length
-    <span class="hljs-keyword">for</span> (; i &lt; len; i++) &#123;
-      ret[i] = c[i]
-    &#125;
-    <span class="hljs-keyword">return</span> ret
-  &#125;
-&#125;</code></pre></div>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">realArray</span>(<span class="hljs-params">arr</span>) </span>&#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.prototype.slice.call(arr)<br>  &#125; <span class="hljs-keyword">catch</span> &#123;<br>    <span class="hljs-keyword">var</span> ret = [],<br>      len = arr.length<br>    <span class="hljs-keyword">for</span> (; i &lt; len; i++) &#123;<br>      ret[i] = c[i]<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>方法二：使用 ES6 数组扩展的 form() 方法</p>
-<div class="hljs code-wrapper"><pre><code class="hljs livescript"><span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">Array</span>.<span class="hljs-keyword">from</span>(<span class="hljs-built_in">arguments</span>);</code></pre></div>
+<figure class="highlight livescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs livescript"><span class="hljs-keyword">var</span> arr = <span class="hljs-built_in">Array</span>.<span class="hljs-keyword">from</span>(<span class="hljs-built_in">arguments</span>);<br></code></pre></div></td></tr></table></figure>
 <p>伪数组转换为标准数组的条件：</p>
 <blockquote>
 <p>1、伪数组的键值需要为数字，否则转换后数组均无初始值<br>2、有 length 属性</p>
@@ -282,65 +271,13 @@
 </ul>
 <h2 id="数组去重与排序"><a href="#数组去重与排序" class="headerlink" title="数组去重与排序"></a>数组去重与排序</h2><ol>
 <li><p>去重之一：创建一个新数组，使用 <code>indexOf</code> 判断新数组中是否存在值，例：</p>
-<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupOne = <span class="hljs-function"><span class="hljs-params">arr</span> =&gt;</span> &#123;
-   <span class="hljs-keyword">let</span> ret = [];
-   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, len = arr.length; i &lt; len; i++) &#123;
-       <span class="hljs-keyword">if</span> (ret.indexOf(arr[i) === -<span class="hljs-number">1</span>) &#123;
-           ret.push(arr[i]);
-       &#125;
-   &#125;
-   <span class="hljs-keyword">return</span> ret;
-&#125;</code></pre></div></li>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupOne = <span class="hljs-function"><span class="hljs-params">arr</span> =&gt;</span> &#123;<br>   <span class="hljs-keyword">let</span> ret = [];<br>   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, len = arr.length; i &lt; len; i++) &#123;<br>       <span class="hljs-keyword">if</span> (ret.indexOf(arr[i) === -<span class="hljs-number">1</span>) &#123;<br>           ret.push(arr[i]);<br>       &#125;<br>   &#125;<br>   <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
 <li><p>去重之二：创建一个新对象</p>
-<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupTwo = arr = &gt; &#123;
-    <span class="hljs-keyword">let</span> hash = &#123;&#125;,
-        len  = arr.length,
-        ret  = [];
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;
-        <span class="hljs-keyword">if</span> (!hash[arr[i]]) &#123;
-            hash[arr[i]] = arr[i];
-            ret.push(arr[i]);
-        &#125;
-    &#125;
-    <span class="hljs-keyword">return</span> ret;
-&#125;</code></pre></div></li>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dedupTwo = arr = &gt; &#123;<br>    <span class="hljs-keyword">let</span> hash = &#123;&#125;,<br>        len  = arr.length,<br>        ret  = [];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>        <span class="hljs-keyword">if</span> (!hash[arr[i]]) &#123;<br>            hash[arr[i]] = arr[i];<br>            ret.push(arr[i]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
 <li><p>数组排序</p>
-<div class="hljs code-wrapper"><pre><code class="hljs markdown">一般使用 Array 的原生方法 sort() 方法排序。
-<span class="hljs-bullet">1.</span> 排序顺序可以是字母和数字，并按升序或降序。
-<span class="hljs-bullet">2.</span> 默认排序是字母升序。
-<span class="hljs-bullet">3.</span> 在原始数组上排序，不会生成数组副本。
-
-使用数字排序，你必须通过一个函数作为参数来调用。
-函数指定数字是按照升序还是降序排列。</code></pre></div>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">一般使用 Array 的原生方法 sort() 方法排序。<br><span class="hljs-bullet">1.</span> 排序顺序可以是字母和数字，并按升序或降序。<br><span class="hljs-bullet">2.</span> 默认排序是字母升序。<br><span class="hljs-bullet">3.</span> 在原始数组上排序，不会生成数组副本。<br><br>使用数字排序，你必须通过一个函数作为参数来调用。<br>函数指定数字是按照升序还是降序排列。<br></code></pre></div></td></tr></table></figure>
 <p>数组数字升序排序，例：</p>
-<div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [
-  <span class="hljs-number">1</span>,
-  <span class="hljs-number">2</span>,
-  <span class="hljs-number">1</span>,
-  <span class="hljs-number">2</span>,
-  <span class="hljs-number">4</span>,
-  <span class="hljs-number">4</span>,
-  <span class="hljs-number">8</span>,
-  <span class="hljs-number">0</span>,
-  <span class="hljs-number">3</span>,
-  <span class="hljs-number">4</span>,
-  <span class="hljs-number">33</span>,
-  <span class="hljs-number">45</span>,
-  <span class="hljs-number">52</span>,
-  <span class="hljs-number">42</span>,
-  <span class="hljs-number">332</span>,
-  <span class="hljs-number">3342</span>,
-  <span class="hljs-number">33</span>,
-  <span class="hljs-number">334</span>,
-  <span class="hljs-number">33</span>,
-  <span class="hljs-number">3</span>,
-  <span class="hljs-number">5</span>,
-  <span class="hljs-number">55</span>,
-  <span class="hljs-number">55</span>,
-  <span class="hljs-number">88</span>,
-  <span class="hljs-number">99</span>,
-]
-arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#125;</span>) =&gt;</span> a - b)</code></pre></div>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [<br>  <span class="hljs-number">1</span>,<br>  <span class="hljs-number">2</span>,<br>  <span class="hljs-number">1</span>,<br>  <span class="hljs-number">2</span>,<br>  <span class="hljs-number">4</span>,<br>  <span class="hljs-number">4</span>,<br>  <span class="hljs-number">8</span>,<br>  <span class="hljs-number">0</span>,<br>  <span class="hljs-number">3</span>,<br>  <span class="hljs-number">4</span>,<br>  <span class="hljs-number">33</span>,<br>  <span class="hljs-number">45</span>,<br>  <span class="hljs-number">52</span>,<br>  <span class="hljs-number">42</span>,<br>  <span class="hljs-number">332</span>,<br>  <span class="hljs-number">3342</span>,<br>  <span class="hljs-number">33</span>,<br>  <span class="hljs-number">334</span>,<br>  <span class="hljs-number">33</span>,<br>  <span class="hljs-number">3</span>,<br>  <span class="hljs-number">5</span>,<br>  <span class="hljs-number">55</span>,<br>  <span class="hljs-number">55</span>,<br>  <span class="hljs-number">88</span>,<br>  <span class="hljs-number">99</span>,<br>]<br>arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#125;</span>) =&gt;</span> a - b)<br></code></pre></div></td></tr></table></figure>
 <h2 id="异步加载-JS-的方式"><a href="#异步加载-JS-的方式" class="headerlink" title="异步加载 JS 的方式"></a>异步加载 JS 的方式</h2></li>
 <li><p><code>async</code></p>
 <blockquote>
@@ -496,7 +433,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 
             
               <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
+              <article class="comments" id="comments">
                 
                   
                 
@@ -505,7 +442,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
   <script type="text/javascript">
     Fluid.utils.loadComments('#gitalk-container', function() {
       Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
         var options = Object.assign(
           {"clientID":"25b2986bc8dba2768d79","clientSecret":"2b499ba2abfe4f5349c9e82a82e448f037f89bf8","repo":"Maple13.github.io","owner":"maple13","admin":["maple13"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
@@ -625,7 +562,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
           >
             
               <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+              <img src="/img/police_beian.png" alt="police-icon"/>
             
             <span>京公网安备11010502037035号</span>
           </a>
@@ -641,11 +578,11 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -653,8 +590,8 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
   </script>
 
 
-<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -665,10 +602,6 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 
 
 
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
 
 
   
@@ -676,16 +609,16 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 
 
   
-    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
   
   
-    <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
   
   
-    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
   
 
 
@@ -695,7 +628,7 @@ arr.sort(<span class="hljs-function">(<span class="hljs-params">&#123; a, b &#12
 
 
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
