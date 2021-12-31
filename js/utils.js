@@ -1,112 +1,64 @@
-/* global Fluid, CONFIG */
-
-window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+/* global Fluid, Debouncer */
 
 Fluid.utils = {
 
   listenScroll: function(callback) {
-    var dbc = new Debouncer(callback);
+    const dbc = new Debouncer(callback);
     window.addEventListener('scroll', dbc, false);
     dbc.handleEvent();
-    return dbc;
-  },
-
-  unlistenScroll: function(callback) {
-    window.removeEventListener('scroll', callback);
   },
 
   scrollToElement: function(target, offset) {
-    var of = jQuery(target).offset();
+    var of = $(target).offset();
     if (of) {
-      jQuery('html,body').animate({
+      $('html,body').animate({
         scrollTop: of.top + (offset || 0),
         easing   : 'swing'
       });
     }
   },
 
-  elementVisible: function(element, offsetFactor) {
-    offsetFactor = (offsetFactor && offsetFactor >= 0) ? offsetFactor : 0;
-    var rect = element.getBoundingClientRect();
-    var height = window.innerHeight || document.documentElement.clientHeight;
-    var top = rect.top;
-    return (top >= 0 && top <= height * (offsetFactor + 1))
-      || (top <= 0 && top >= -(height * offsetFactor) - rect.height);
-  },
-
-  waitElementVisible: function(selectorOrElement, callback, offsetFactor) {
+  waitElementVisible: function(targetId, callback) {
     var runningOnBrowser = typeof window !== 'undefined';
-    var isBot = (runningOnBrowser && !('onscroll' in window)) ||
-      (typeof navigator !== 'undefined' && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent));
-    if (!runningOnBrowser || isBot) {
-      return;
-    }
-
-    offsetFactor = (offsetFactor && offsetFactor >= 0) ? offsetFactor : 0;
-
-    function waitInViewport(element) {
-      if (Fluid.utils.elementVisible(element, offsetFactor)) {
-        callback();
-        return;
-      }
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function(entries, ob) {
-          if (entries[0].isIntersecting) {
-            callback();
-            ob.disconnect();
-          }
-        }, {
-          threshold : [0],
-          rootMargin: (window.innerHeight || document.documentElement.clientHeight) * offsetFactor + 'px'
-        });
-        io.observe(element);
-      } else {
-        var wrapper = Fluid.utils.listenScroll(function() {
-          if (Fluid.utils.elementVisible(element, offsetFactor)) {
-            Fluid.utils.unlistenScroll(wrapper);
-            callback();
-          }
-        });
-      }
-    }
-
-    if (typeof selectorOrElement === 'string') {
-      this.waitElementLoaded(selectorOrElement, function(element) {
-        waitInViewport(element);
+    var isBot = (runningOnBrowser && !('onscroll' in window)) || (typeof navigator !== 'undefined'
+    && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent));
+    var supportsIntersectionObserver = runningOnBrowser && 'IntersectionObserver' in window;
+    if (!isBot && supportsIntersectionObserver) {
+      var io = new IntersectionObserver(function(entries, ob) {
+        if (entries[0].isIntersecting) {
+          callback && callback();
+          ob.disconnect();
+        }
+      }, {
+        threshold : [0],
+        rootMargin: (window.innerHeight || document.documentElement.clientHeight) + 'px'
       });
+      io.observe(document.getElementById(targetId));
     } else {
-      waitInViewport(selectorOrElement);
+      callback && callback();
     }
   },
 
-  waitElementLoaded: function(selector, callback) {
+  waitElementLoaded: function(targetId, callback) {
     var runningOnBrowser = typeof window !== 'undefined';
-    var isBot = (runningOnBrowser && !('onscroll' in window)) ||
-      (typeof navigator !== 'undefined' && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent));
+    var isBot = (runningOnBrowser && !('onscroll' in window)) || (typeof navigator !== 'undefined'
+    && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent));
     if (!runningOnBrowser || isBot) {
       return;
     }
 
     if ('MutationObserver' in window) {
       var mo = new MutationObserver(function(records, ob) {
-        var ele = document.querySelector(selector);
+        var ele = document.getElementById(targetId);
         if (ele) {
-          callback(ele);
+          callback && callback();
           ob.disconnect();
         }
       });
       mo.observe(document, { childList: true, subtree: true });
     } else {
       document.addEventListener('DOMContentLoaded', function() {
-        var waitLoop = function() {
-          var ele = document.querySelector(selector);
-          if (ele) {
-            callback(ele);
-          } else {
-            setTimeout(waitLoop, 100);
-          }
-        };
-        waitLoop();
+        callback && callback();
       });
     }
   },
@@ -145,59 +97,6 @@ Fluid.utils = {
     || document.getElementsByTagName('head')[0]
     || document.head || document.documentElement;
     e.parentNode.insertBefore(l, e);
-  },
-
-  loadComments: function(selectors, loadFunc) {
-    var ele = document.querySelector('#comments[lazyload]');
-    if (ele) {
-      var callback = function() {
-        loadFunc();
-        ele.removeAttribute('lazyload');
-      };
-      Fluid.utils.waitElementVisible(selectors, callback, CONFIG.lazyload.offset_factor);
-    } else {
-      loadFunc();
-    }
   }
 
-};
-
-/**
- * Handles debouncing of events via requestAnimationFrame
- * @see http://www.html5rocks.com/en/tutorials/speed/animations/
- * @param {Function} callback The callback to handle whichever event
- */
-function Debouncer(callback) {
-  this.callback = callback;
-  this.ticking = false;
-}
-Debouncer.prototype = {
-  constructor: Debouncer,
-
-  /**
-   * dispatches the event to the supplied callback
-   * @private
-   */
-  update: function() {
-    this.callback && this.callback();
-    this.ticking = false;
-  },
-
-  /**
-   * ensures events don't get stacked
-   * @private
-   */
-  requestTick: function() {
-    if (!this.ticking) {
-      requestAnimationFrame(this.rafCallback || (this.rafCallback = this.update.bind(this)));
-      this.ticking = true;
-    }
-  },
-
-  /**
-   * Attach this as the event listeners
-   */
-  handleEvent: function() {
-    this.requestTick();
-  }
 };

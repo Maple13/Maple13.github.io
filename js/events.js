@@ -9,8 +9,8 @@ HTMLElement.prototype.wrap = function(wrapper) {
 Fluid.events = {
 
   registerNavbarEvent: function() {
-    var navbar = jQuery('#navbar');
-    var submenu = jQuery('#navbar .dropdown-menu');
+    var navbar = $('#navbar');
+    var submenu = $('#navbar .dropdown-menu');
     if (navbar.offset().top > 0) {
       navbar.removeClass('navbar-dark');
       submenu.removeClass('navbar-dark');
@@ -26,23 +26,23 @@ Fluid.events = {
         submenu.removeClass('navbar-dark');
       }
     });
-    jQuery('#navbar-toggler-btn').on('click', function() {
-      jQuery('.animated-icon').toggleClass('open');
-      jQuery('#navbar').toggleClass('navbar-col-show');
+    $('#navbar-toggler-btn').on('click', function() {
+      $('.animated-icon').toggleClass('open');
+      $('#navbar').toggleClass('navbar-col-show');
     });
   },
 
   registerParallaxEvent: function() {
-    var bg = jQuery('#banner[parallax="true"]');
+    var bg = $('#banner[parallax="true"]');
     if (bg.length === 0) {
       return;
     }
-    var board = jQuery('#board');
+    var board = $('#board');
     if (board.length === 0) {
       return;
     }
     var parallax = function() {
-      var oVal = jQuery(window).scrollTop() / 5;
+      var oVal = $(window).scrollTop() / 5;
       var offset = parseInt(board.css('margin-top'), 0);
       var max = 96 + offset;
       if (oVal > max) {
@@ -54,9 +54,9 @@ Fluid.events = {
         '-ms-transform'    : 'translate3d(0,' + oVal + 'px,0)',
         '-o-transform'     : 'translate3d(0,' + oVal + 'px,0)'
       });
-      var toc = jQuery('#toc');
+      var toc = $('#toc');
       if (toc) {
-        jQuery('#toc-ctn').css({
+        $('#toc-ctn').css({
           'padding-top': oVal + 'px'
         });
       }
@@ -65,21 +65,21 @@ Fluid.events = {
   },
 
   registerScrollDownArrowEvent: function() {
-    var scrollbar = jQuery('.scroll-down-bar');
+    var scrollbar = $('.scroll-down-bar');
     if (scrollbar.length === 0) {
       return;
     }
     scrollbar.on('click', function() {
-      Fluid.utils.scrollToElement('#board', -jQuery('#navbar').height());
+      Fluid.utils.scrollToElement('#board', -$('#navbar').height());
     });
   },
 
   registerScrollTopArrowEvent: function() {
-    var topArrow = jQuery('#scroll-top-button');
+    var topArrow = $('#scroll-top-button');
     if (topArrow.length === 0) {
       return;
     }
-    var board = jQuery('#board');
+    var board = $('#board');
     if (board.length === 0) {
       return;
     }
@@ -97,7 +97,7 @@ Fluid.events = {
       });
     };
     setTopArrowPos();
-    jQuery(window).resize(setTopArrowPos);
+    $(window).resize(setTopArrowPos);
     // Display
     var headerHeight = board.offset().top;
     Fluid.utils.listenScroll(function() {
@@ -109,59 +109,10 @@ Fluid.events = {
     });
     // Click
     topArrow.on('click', function() {
-      jQuery('body,html').animate({
+      $('body,html').animate({
         scrollTop: 0,
         easing   : 'swing'
       });
     });
-  },
-
-  registerImageLoadedEvent: function() {
-    if (!('NProgress' in window)) { return; }
-
-    var bg = document.getElementById('banner');
-    if (bg) {
-      var src = bg.style.backgroundImage;
-      var url = src.match(/\((.*?)\)/)[1].replace(/(['"])/g, '');
-      var img = new Image();
-      img.onload = function() {
-        window.NProgress && window.NProgress.inc(0.2);
-      };
-      img.src = url;
-      if (img.complete) { img.onload(); }
-    }
-
-    var notLazyImages = jQuery('main img:not([lazyload])');
-    var total = notLazyImages.length;
-    for (const img of notLazyImages) {
-      const old = img.onload;
-      img.onload = function() {
-        old && old();
-        window.NProgress && window.NProgress.inc(0.5 / total);
-      };
-      if (img.complete) { img.onload(); }
-    }
-  },
-
-  billboard: function() {
-    if (!('console' in window)) {
-      return;
-    }
-    // eslint-disable-next-line no-console
-    console.log(`
-------------------------------------------------
-|                                              |
-|     ________  __            _        __      |
-|    |_   __  |[  |          (_)      |  ]     |
-|      | |_ \\_| | | __   _   __   .--.| |      |
-|      |  _|    | |[  | | | [  |/ /'\`\\' |      |
-|     _| |_     | | | \\_/ |, | || \\__/  |      |
-|    |_____|   [___]'.__.'_/[___]'.__.;__]     |
-|                                              |
-|           Powered by Hexo x Fluid            |
-|         GitHub: https://git.io/JqpVD         |
-|                                              |
-------------------------------------------------
-    `);
   }
 };
