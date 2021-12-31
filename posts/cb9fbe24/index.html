@@ -322,7 +322,7 @@ Please only submit bug reports when using the officially supported version.
 <h2 id="yarn-lock-package-lock-json的作用"><a href="#yarn-lock-package-lock-json的作用" class="headerlink" title="yarn.lock/package.lock.json的作用"></a><code>yarn.lock</code>/<code>package.lock.json</code>的作用</h2><p>通过上面可知每次下载依赖的版本可能都会不同，这就造成了有时本地 build 完全没有问题，但是推到服务器或者在别人电脑上就会 build 失败。<br>所以 lock 文件会记录所有包的版本以及包的依赖的版本，这样就可以保证每个人下载的依赖版本都是完全相同的，从而避免很多问题。</p>
 <h2 id="问题及总结"><a href="#问题及总结" class="headerlink" title="问题及总结"></a>问题及总结</h2><p>结合上面的内容，大家应该看的出来，问题就出在版本声明<code>^3.2.1</code>中的<code>^version</code>格式上面，随着我们增加依赖包，或者更新项目内依赖包，且依赖有更高版本，导致<code>Typescript</code>从<code>3.2.1</code>自动升级到<code>3.7.4</code>， 而我的跟<code>Typescript</code>相关的依赖却没有随之升高或暂不支持高版本，导致命令行爆出警告 ⚠️ 提示。</p>
 <p>所以大家只有修改一下<code>Package.json</code>中<code>Typescirpt</code>的版本格式并重新安装一下项目依赖就好了。这个问题适用于所有 npm 依赖，并且也反映出我们项目中 npm 依赖版本管理有问题，需要我们改进。</p>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a target="_blank" rel="noopener" href="https://semver.npmjs.com/">npm semver calculator</a><br><a target="_blank" rel="noopener" href="https://github.com/npm/node-semver">npm 的语义版本控制程序</a><br><a target="_blank" rel="noopener" href="https://docs.npmjs.com/files/package.json">配置 Package.json</a><br><a target="_blank" rel="noopener" href="https://semver.org/lang/zh-CN/">语义化版本</a></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://semver.npmjs.com/">npm semver calculator</a><br><a href="https://github.com/npm/node-semver">npm 的语义版本控制程序</a><br><a href="https://docs.npmjs.com/files/package.json">配置 Package.json</a><br><a href="https://semver.org/lang/zh-CN/">语义化版本</a></p>
 
             </div>
             <hr>
@@ -347,7 +347,7 @@ Please only submit bug reports when using the officially supported version.
               
                 <p class="note note-warning">
                   
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                   
                 </p>
               
