@@ -260,27 +260,6 @@
   
   
   <entry>
-    <title>JavaScript 执行机制</title>
-    <link href="/posts/29478a68/"/>
-    <url>/posts/29478a68/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>JS 是一门<code>单线程</code>的脚本语言.</p></blockquote><h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p><blockquote><p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p></blockquote><p><strong>栈 ( stack )</strong></p><blockquote><p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p></blockquote><p><strong>队列 ( queue )</strong></p><blockquote><p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p></blockquote><a id="more"></a><h2 id="怎样知道主进程执行栈为空呢"><a href="#怎样知道主进程执行栈为空呢" class="headerlink" title="怎样知道主进程执行栈为空呢?"></a>怎样知道主进程执行栈为空呢?</h2><blockquote><p>JS 引擎存在 <code>monitoring process</code> 进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去<code>任务队列 (Event Queue)</code>那里检查是否有等待被调用的函数。</p></blockquote><h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><ul><li>同步和异步任务分别进入不同的执行”场所”，同步的进入<code>主线程</code>，异步的进入<code>Event Table</code>并注册函数。</li><li>当指定的事情完成时，<code>Event Table</code>会将这个函数移入<code>Event Queue</code>。</li><li><code>Event Loop</code>在不同的运行环境下有着不同的方式。</li></ul><p><strong>微任务(<code>micro-task</code>)与宏任务(<code>macro-task</code>)</strong></p><blockquote><p>任务队列中任务是有区别的, 总是有一些任务会有一些特权(比如插队), 有特权的<code>微任务</code>, 和无特权的<code>宏任务</code>.<br>就是说, 实际任务队列有两个, 微任务队列/宏任务队列, 当主线程执行完毕, 如果微任务队列中有任务则<code>优先执行</code>, 当微任务队列没有任务时才执行宏任务队列.</p><p>微任务: <code>原生Promise(有些实现的promise将then方法放到了宏任务中),Object.observe(已废弃), MutationObserver， MessageChannel, process.nextTick, setImmediate</code></p><p>宏任务: <code>setTimeout, setInterval, setImmediate, I/O</code></p></blockquote>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>前端</tag>
-      
-      <tag>JavaScript</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>React 版本更新记录</title>
     <link href="/posts/6dcb6b03/"/>
     <url>/posts/6dcb6b03/</url>
@@ -294,6 +273,27 @@
       <tag>前端</tag>
       
       <tag>React</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaScript 执行机制</title>
+    <link href="/posts/29478a68/"/>
+    <url>/posts/29478a68/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>JS 是一门<code>单线程</code>的脚本语言.</p></blockquote><h2 id="堆-栈-队列"><a href="#堆-栈-队列" class="headerlink" title="堆/栈/队列"></a>堆/栈/队列</h2><p><strong>堆 ( heap )</strong></p><blockquote><p>堆是指程序运行时申请的动态内存,在 JS 运行时用来存放对象.</p></blockquote><p><strong>栈 ( stack )</strong></p><blockquote><p>栈遵循的原则是<code>先进后出</code>, JS 的基本数据类型和指向对象的地址存放在栈内存中,此外还有一块栈内存用来指向 JS 主线程–<code>执行栈( execution context stack )</code>.</p></blockquote><p><strong>队列 ( queue )</strong></p><blockquote><p>队列遵循<code>先进先出</code>, JS 中除了<code>主线程</code>之外还存在一个<code>任务队列</code>.</p></blockquote><a id="more"></a><h2 id="怎样知道主进程执行栈为空呢"><a href="#怎样知道主进程执行栈为空呢" class="headerlink" title="怎样知道主进程执行栈为空呢?"></a>怎样知道主进程执行栈为空呢?</h2><blockquote><p>JS 引擎存在 <code>monitoring process</code> 进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去<code>任务队列 (Event Queue)</code>那里检查是否有等待被调用的函数。</p></blockquote><h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><ul><li>同步和异步任务分别进入不同的执行”场所”，同步的进入<code>主线程</code>，异步的进入<code>Event Table</code>并注册函数。</li><li>当指定的事情完成时，<code>Event Table</code>会将这个函数移入<code>Event Queue</code>。</li><li><code>Event Loop</code>在不同的运行环境下有着不同的方式。</li></ul><p><strong>微任务(<code>micro-task</code>)与宏任务(<code>macro-task</code>)</strong></p><blockquote><p>任务队列中任务是有区别的, 总是有一些任务会有一些特权(比如插队), 有特权的<code>微任务</code>, 和无特权的<code>宏任务</code>.<br>就是说, 实际任务队列有两个, 微任务队列/宏任务队列, 当主线程执行完毕, 如果微任务队列中有任务则<code>优先执行</code>, 当微任务队列没有任务时才执行宏任务队列.</p><p>微任务: <code>原生Promise(有些实现的promise将then方法放到了宏任务中),Object.observe(已废弃), MutationObserver， MessageChannel, process.nextTick, setImmediate</code></p><p>宏任务: <code>setTimeout, setInterval, setImmediate, I/O</code></p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>JavaScript</tag>
       
     </tags>
     
