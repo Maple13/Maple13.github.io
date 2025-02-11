@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.maple13.cn/posts/ab9343ef/</loc>
-    <lastmod>2022-03-15</lastmod>
+    <lastmod>2025-02-11</lastmod>
   </url>
   <url>
     <loc>https://www.maple13.cn/posts/6dcb6b03/</loc>

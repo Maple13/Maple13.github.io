@@ -260,27 +260,6 @@
   
   
   <entry>
-    <title>React 版本更新记录</title>
-    <link href="/posts/6dcb6b03/"/>
-    <url>/posts/6dcb6b03/</url>
-    
-    <content type="html"><![CDATA[<h2 id="v16-3"><a href="#v16-3" class="headerlink" title="v16.3"></a>v16.3</h2><a id="more"></a><h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul><li><p>新增 <code>Fragment</code></p><p>提高了对子组件的渲染方法返回多个子元素的支持<br><a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html">官方文档 Fragment</a></p><figure class="highlight jsx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>  <span class="hljs-keyword">return</span> (<br>    &lt;&gt;<br>      &lt;ChildA /&gt;<br>      &lt;ChildB /&gt;<br>      &lt;ChildC /&gt;<br>    &lt;/&gt;<br>  );<br>&#125;<br></code></pre></div></td></tr></table></figure></li><li><p><code>componentWillMount / </code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p></li><li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p><blockquote><p>它会生成一个新<code>state</code>，方便让你<code>setState</code>。所有生命周期钩子（除了构造器）的<code>context</code>传参都被无效了</p></blockquote></li><li><p>新增 <code>createContext()</code></p><blockquote><p>它会返回一个具有<code>Provider</code>和<code>Consumer</code>方法的对象</p></blockquote></li><li><p>严格模式 <code>StrictMode</code><br>严格模式确保你的代码遵循最佳实践 就像原生 js 的 <code>use strict</code></p><figure class="highlight jsx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-keyword">return</span> (<br>        &lt;StrictMode&gt;<br>            &lt;Context.Provider&gt;<br>                &lt;Title/&gt;<br>            &lt;/Context.Provider&gt;<br>        &lt;/StrictMode&gt;<br>    )<br>&#125;<br></code></pre></div></td></tr></table></figure></li><li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p></li></ul><h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul><li><p>新核心架构<code>Fiber</code></p></li><li><p><code>React.PropTypes</code> <del>废弃</del></p><blockquote><p>使用<code>prop-types</code>库代替</p></blockquote></li><li><p><code>React.createClass</code> <del>废弃</del></p><blockquote><p>官方推荐使用 ES6<code>class</code>方式创建组件</p></blockquote></li><li><p><code>render</code>可返回数组 或 字符串</p><div class="hljs code-wrapper"><pre><code class="hljs"><figure class="highlight jsx"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> [<br>        &lt;div key=<span class="hljs-string">&#x27;1&#x27;</span>&gt;<span class="hljs-number">1</span>&lt;/div&gt;,<br>        &lt;div key=<span class="hljs-string">&#x27;2&#x27;</span>&gt;<span class="hljs-number">2</span>&lt;/div&gt;,<br>        &lt;div key=<span class="hljs-string">&#x27;3&#x27;</span>&gt;<span class="hljs-number">3</span>&lt;/div&gt;,<br>    ];<br>&#125;<br><span class="hljs-comment">// 注：不要忘了加key</span><br><span class="hljs-comment">// 也可以直接返回字符串</span><br><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello World&#x27;</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></code></pre><!-- more --></li><li><p>新的生命周期 <code>componentDidCatch</code></p><blockquote><p>错误处理机制，如同<code>try…catch</code><br>可以用于捕获子组件的错误，即使子组件有代码报错，也不至于导致整个 APP 崩溃</p></blockquote></li><li><p>接受元素上的自定义属性</p><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">abc</span>=<span class="hljs-string">&quot;123&quot;</span>&gt;</span><br>  //<br>  以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误<br>  // 现在会正确的把abc赋加在p标签上<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li><li><p>新增<code>ReactDOM.createPortal</code>方法</p><blockquote><p>以前一个组件只能被默认的渲染到父级所引用它的地方，<br>createPortal 方法可以把组件自身的内容渲染到任意一个指定的 dom 元素下<br>但事件的冒泡仍然会从它原本的父级传递<br>官方文档：<a href="https://reactjs.org/docs/portals.html">Portals</a></p></blockquote></li><li><p>其他</p><blockquote><p>服务端渲染优化，比以前更好<br><code>react</code>和<code>react-dom</code>库文件大小比以前更小<br>react 开源协议为<code>MIT</code>协议</p></blockquote></li></ul>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>React</tag>
-      
-      <tag>前端</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>JavaScript 执行机制</title>
     <link href="/posts/29478a68/"/>
     <url>/posts/29478a68/</url>
@@ -294,6 +273,27 @@
       <tag>前端</tag>
       
       <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>React 版本更新记录</title>
+    <link href="/posts/6dcb6b03/"/>
+    <url>/posts/6dcb6b03/</url>
+    
+    <content type="html"><![CDATA[<h2 id="v16-3"><a href="#v16-3" class="headerlink" title="v16.3"></a>v16.3</h2><a id="more"></a><h2 id="v16-2"><a href="#v16-2" class="headerlink" title="v16.2"></a>v16.2</h2><ul><li><p>新增 <code>Fragment</code></p><p>提高了对子组件的渲染方法返回多个子元素的支持<br><a href="https://doc.react-china.org/blog/2017/11/28/react-v16.2.0-fragment-support.html">官方文档 Fragment</a></p><figure class="highlight jsx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>  <span class="hljs-keyword">return</span> (<br>    &lt;&gt;<br>      &lt;ChildA /&gt;<br>      &lt;ChildB /&gt;<br>      &lt;ChildC /&gt;<br>    &lt;/&gt;<br>  );<br>&#125;<br></code></pre></div></td></tr></table></figure></li><li><p><code>componentWillMount / </code>componentWillUpdate / componentWillReceiveProps` <del>废弃倒计时</del></p></li><li><p>新增静态方法<code>getDerivedStateFromProps</code>替代<code>componentWillReceiveProps</code></p><blockquote><p>它会生成一个新<code>state</code>，方便让你<code>setState</code>。所有生命周期钩子（除了构造器）的<code>context</code>传参都被无效了</p></blockquote></li><li><p>新增 <code>createContext()</code></p><blockquote><p>它会返回一个具有<code>Provider</code>和<code>Consumer</code>方法的对象</p></blockquote></li><li><p>严格模式 <code>StrictMode</code><br>严格模式确保你的代码遵循最佳实践 就像原生 js 的 <code>use strict</code></p><figure class="highlight jsx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-keyword">return</span> (<br>        &lt;StrictMode&gt;<br>            &lt;Context.Provider&gt;<br>                &lt;Title/&gt;<br>            &lt;/Context.Provider&gt;<br>        &lt;/StrictMode&gt;<br>    )<br>&#125;<br></code></pre></div></td></tr></table></figure></li><li><p>异步组件<code>AsyncMode</code><br>尚未全面支持</p></li></ul><h2 id="v16-0-变动"><a href="#v16-0-变动" class="headerlink" title="v16.0 变动"></a>v16.0 变动</h2><ul><li><p>新核心架构<code>Fiber</code></p></li><li><p><code>React.PropTypes</code> <del>废弃</del></p><blockquote><p>使用<code>prop-types</code>库代替</p></blockquote></li><li><p><code>React.createClass</code> <del>废弃</del></p><blockquote><p>官方推荐使用 ES6<code>class</code>方式创建组件</p></blockquote></li><li><p><code>render</code>可返回数组 或 字符串</p><div class="hljs code-wrapper"><pre><code class="hljs"><figure class="highlight jsx"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsx"><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> [<br>        &lt;div key=<span class="hljs-string">&#x27;1&#x27;</span>&gt;<span class="hljs-number">1</span>&lt;/div&gt;,<br>        &lt;div key=<span class="hljs-string">&#x27;2&#x27;</span>&gt;<span class="hljs-number">2</span>&lt;/div&gt;,<br>        &lt;div key=<span class="hljs-string">&#x27;3&#x27;</span>&gt;<span class="hljs-number">3</span>&lt;/div&gt;,<br>    ];<br>&#125;<br><span class="hljs-comment">// 注：不要忘了加key</span><br><span class="hljs-comment">// 也可以直接返回字符串</span><br><span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello World&#x27;</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></code></pre><!-- more --></li><li><p>新的生命周期 <code>componentDidCatch</code></p><blockquote><p>错误处理机制，如同<code>try…catch</code><br>可以用于捕获子组件的错误，即使子组件有代码报错，也不至于导致整个 APP 崩溃</p></blockquote></li><li><p>接受元素上的自定义属性</p><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">abc</span>=<span class="hljs-string">&quot;123&quot;</span>&gt;</span><br>  //<br>  以前react会忽略abc属性（因为p元素没有abc这个属性），并在控制台抛出一个错误<br>  // 现在会正确的把abc赋加在p标签上<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li><li><p>新增<code>ReactDOM.createPortal</code>方法</p><blockquote><p>以前一个组件只能被默认的渲染到父级所引用它的地方，<br>createPortal 方法可以把组件自身的内容渲染到任意一个指定的 dom 元素下<br>但事件的冒泡仍然会从它原本的父级传递<br>官方文档：<a href="https://reactjs.org/docs/portals.html">Portals</a></p></blockquote></li><li><p>其他</p><blockquote><p>服务端渲染优化，比以前更好<br><code>react</code>和<code>react-dom</code>库文件大小比以前更小<br>react 开源协议为<code>MIT</code>协议</p></blockquote></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>React</tag>
       
     </tags>
     
@@ -375,9 +375,9 @@
     
     <tags>
       
-      <tag>React</tag>
-      
       <tag>前端</tag>
+      
+      <tag>React</tag>
       
       <tag>面试题</tag>
       
